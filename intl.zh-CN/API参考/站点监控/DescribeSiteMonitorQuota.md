@@ -1,105 +1,94 @@
-# DescribeSiteMonitorQuota {#doc_api_Cms_DescribeSiteMonitorQuota .reference}
+# DescribeSiteMonitorQuota
 
-查询站点监控的配额以及版本。
+调用DescribeSiteMonitorQuota接口查询站点监控的配额以及版本。
 
-## 调试 {#apiExplorer .section}
+## 调试
 
-前往【[API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeSiteMonitorQuota)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cms&api=DescribeSiteMonitorQuota&type=RPC&version=2019-01-01)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeSiteMonitorQuota|系统规定参数。取值：DescribeSiteMonitorQuota。
+|Action|String|是|DescribeSiteMonitorQuota|要执行的操作，取值：DescribeSiteMonitorQuota。 |
 
- |
-
-## 返回参数 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|状态码，200表示成功。
+|Code|String|200|状态码。
 
- |
-|Data| | |配额。
+ **说明：** 200表示成功。 |
+|Data|Struct| |配额。 |
+|SecondMonitor|Boolean|false|是否开启秒级监控。取值：
 
- |
-|└SiteMonitorIdcQuota|Integer|5|站点监控IDC（阿里巴巴）探点配额，免费为为5个配额。
+ -   true：开启。
+-   false：关闭。 |
+|SiteMonitorIdcQuota|Integer|5|阿里巴巴探测点配额。免费配额5个。 |
+|SiteMonitorOperatorQuotaQuota|Integer|0|非阿里巴巴探测点配额。默认值：0。 |
+|SiteMonitorQuotaTaskUsed|Integer|6|站点监控探测任务配额使用数。 |
+|SiteMonitorTaskQuota|Integer|10|站点监控探测任务配额。 |
+|SiteMonitorVersion|String|V1|站点监控版本。取值：
 
- |
-|└SiteMonitorOperatorQuotaQuota|Integer|3|非IDC（阿里巴巴）探测点配额，默认为0。
+ -   V1：老版本。
+-   V2：新版本。 |
+|Message|String|请求成功|返回信息。 |
+|RequestId|String|26860260-76C6-404E-AB7A-EB98D36A6885|请求ID。 |
+|Success|String|true|操作是否成功。取值：
 
- |
-|└SiteMonitorQuotaTaskUsed|Integer|6|站点监控探测任务配额使用数。
+ -   true：成功。
+-   false：失败。 |
 
- |
-|└SiteMonitorTaskQuota|Integer|10|站点监控探测任务配额。
-
- |
-|└SiteMonitorVersion|String|V1|站点监控版本， V1为老版本， V2为新版。
-
- |
-|Message|String|success|错误信息。
-
- |
-|RequestId|String|26860260-76C6-404E-AB7A-EB98D36A6885|请求ID，用于排查问题。
-
- |
-|Success|String|successful|是否成功。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/?Action=DescribeSiteMonitorQuota
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <DescribeSiteMonitorQuotaResponse>
-  <Data>
-    <SiteMonitorIdcQuota>20</SiteMonitorIdcQuota>
-    <SiteMonitorVersion>V1</SiteMonitorVersion>
-    <SiteMonitorTaskQuota>9999</SiteMonitorTaskQuota>
-    <SiteMonitorQuotaTaskUsed>39</SiteMonitorQuotaTaskUsed>
-    <SiteMonitorOperatorQuotaQuota>500</SiteMonitorOperatorQuotaQuota>
-  </Data>
-  <Message>successful</Message>
-  <RequestId>26860260-76C6-404E-AB7A-EB98D36A6885</RequestId>
-  <Success>true</Success>
-  <Code>200</Code>
+		  <Message>请求成功</Message>
+		  <RequestId>C1359088-B0D3-4344-BA51-FB920425D836</RequestId>
+		  <Data>
+			    <SiteMonitorVersion>V2</SiteMonitorVersion>
+			    <SiteMonitorQuotaTaskUsed>2</SiteMonitorQuotaTaskUsed>
+			    <SecondMonitor>false</SecondMonitor>
+			    <SiteMonitorOperatorQuotaQuota>0</SiteMonitorOperatorQuotaQuota>
+			    <SiteMonitorTaskQuota>100</SiteMonitorTaskQuota>
+			    <SiteMonitorIdcQuota>5</SiteMonitorIdcQuota>
+		  </Data>
+		  <Code>200</Code>
+		  <Success>true</Success>
 </DescribeSiteMonitorQuotaResponse>
-
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
-	"Data":{
-		"SiteMonitorIdcQuota":20,
-		"SiteMonitorVersion":"V1",
-		"SiteMonitorTaskQuota":9999,
-		"SiteMonitorOperatorQuotaQuota":500,
-		"SiteMonitorQuotaTaskUsed":39
+	"Message": "请求成功",
+	"RequestId": "C1359088-B0D3-4344-BA51-FB920425D836",
+	"Data": {
+		"SiteMonitorVersion": "V2",
+		"SiteMonitorQuotaTaskUsed": 2,
+		"SecondMonitor": false,
+		"SiteMonitorOperatorQuotaQuota": 0,
+		"SiteMonitorTaskQuota": 100,
+		"SiteMonitorIdcQuota": 5
 	},
-	"Message":"successful",
-	"RequestId":"26860260-76C6-404E-AB7A-EB98D36A6885",
-	"Success":true,
-	"Code":"200"
+	"Code": "200",
+	"Success": true
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Cms)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Cms)查看更多错误码。
 
