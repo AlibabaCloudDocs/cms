@@ -95,7 +95,7 @@
     |（Agent）Host.load15|无|load\_15m|userId、instanceId|Maximum、Minimum、Average|
     |（Agent）Host.load1|无|load\_1m|userId、instanceId|Maximum、Minimum、Average|
     |（Agent）Host.load5|无|load\_5m|userId、instanceId|Maximum、Minimum、Average|
-    |（Agent）Host.mem.actualUsedSpace|Byte|memory\_actualUsedSpace|userId、instanceId|Maximum、Minimum、Average|
+    |（Agent）Host.mem.actualUsedSpace|Byte|memory\_actualusedspace|userId、instanceId|Maximum、Minimum、Average|
     |（Agent）Host.mem.free|Byte|memory\_freespace|userId、instanceId|Maximum、Minimum、Average|
     |（Agent）Host.mem.freeutilization|%|memory\_freeutilization|userId、instanceId|Maximum、Minimum、Average|
     |（Agent）Host.mem.total|Byte|memory\_totalspace|userId、instanceId|Maximum、Minimum、Average|
