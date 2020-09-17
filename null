@@ -1,55 +1,55 @@
-# 云监控Java版本插件介绍
+# CloudMonitor Java agent overview
 
-云监控主机监控服务是通过在服务器上安装插件，为用户提供服务器的系统监控服务的。
+The host monitoring feature of CloudMonitor monitors your hosts by using the CloudMonitor agents that are installed on the hosts.
 
-**警告：** 目前不推荐使用Java版本插件，Java版本插件将不再提供升级，请尽量使用Go语言版本。
+**Warning:** The Java agent is no longer upgraded. We recommend that you use the GoLang agent.
 
-## 安装位置
+## Installation path
 
--   Linux：/usr/local/cloudmonitor
--   Windows： C:\\Program Files\\Alibaba\\cloudmonitor
+-   Linux: /usr/local/cloudmonitor
+-   Windows: C:\\Program Files\\Alibaba\\cloudmonitor
 
-## 进程信息
+## Processes
 
-插件安装后，会在您的服务器上运行以下两个进程：
+After the Java agent is installed, the following two processes run on your hosts:
 
 -   /usr/local/cloudmonitor/jre/bin/java
 -   /usr/local/cloudmonitor/wrapper/bin/wrapper
 
-## 端口说明
+## Ports
 
--   通过TCP协议监听、访问本地主机的32000端口， 用于守护进程。
--   通过TCP协议访问远程服务器的3128、8080、443端口， 用于心跳联网与监控数据上报，非阿里云主机使用443端口，阿里云主机使用3128或8080端口。
--   通过HTTP协议访问远程服务器的80端口，用于云监控插件升级。
+-   The Java agent accesses and listens on TCP port 32000 of the local host to daemonize processes.
+-   The Java agent accesses TCP port 3128, 8080, or 443 of a remote host to send heartbeat messages and report monitoring data. The Java agent that is installed on an Alibaba Cloud Elastic Compute Service \(ECS\) instance accesses port 3128 or 8080, whereas the Java agent that is installed on a host that is not provided by Alibaba Cloud accesses port 443.
+-   The Java agent accesses HTTP port 80 of a remote host to obtain upgrade packages.
 
-## 插件日志
+## Logs
 
--   监控数据日志位于/usr/local/cloudmonitor/logs 。
--   启动、关闭、守护进程等日志位于 /usr/local/cloudmonitor/wrapper/logs 。
--   可以通过修改/usr/local/cloudmonitor/config/log4j.properties配置来调整日志级别。
+-   The Java agent stores monitoring logs in the /usr/local/cloudmonitor/logs directory.
+-   The Java agent stores other logs such as those about process startup, shutdown, and daemonization in the /usr/local/cloudmonitor/wrapper/logs directory.
+-   You can modify the /usr/local/cloudmonitor/config/log4j.properties file to adjust the log level.
 
-## 资源占用情况
+## Resource usage
 
--   /usr/local/cloudmonitor/wrapper/bin/wrapper进程占用1M左右内存，基本不消耗CPU。
--   /usr/local/cloudmonitor/jre/bin/java进程占用70M左右内存和1~2%的单核CPU。
--   安装包大小70M，安装完成后约占用200M磁盘空间。
--   日志最多占用40M空间，超过40M会进行清除。
--   每15秒发送一次监控数据，约占用内网网络带宽10KB。
--   每3分钟发送一次心跳数据，约占用内网网络带宽2KB左右。
+-   The /usr/local/cloudmonitor/wrapper/bin/wrapper process occupies about 1 MB of memory and few CPU resources.
+-   The /usr/local/cloudmonitor/jre/bin/java process occupies about 70 MB of memory and 1% to 2% of one CPU core.
+-   The size of the installation package is 75 MB. The Java agent occupies about 200 MB of disk space after it is installed.
+-   Logs can occupy up to 40 MB of disk space. When the log size exceeds 40 MB, earlier logs are deleted.
+-   The Java agent reports monitoring data at an interval of 15 seconds, which occupies about 10 Kbit/s of network bandwidth.
+-   The Java agent sends a heartbeat message at an interval of 3 minutes, which occupies about 2 Kbit/s of network bandwidth.
 
-## 外部依赖
+## External dependencies
 
--   云监控Java版本插件，使用Java语言编写，内置JRE 1.8。
--   Java service wrapper 用于守护进程、开机启动、Windows服务注册等。
--   `ss -s`命令用于采集TCP连接数，如果当前系统没有此命令，需要您自己安装iproute。
+-   The Java agent is built in with Java Runtime Environment \(JRE\) 1.8.
+-   Java Service Wrapper is used to provide features such as daemonizing processes, starting processes at the system boot, and registering the Java agent as a Windows service.
+-   The Java agent runs the `ss -s` command to collect the number of TCP connections. If your operating system does not support this command, you must install the iproute utility.
 
-## 安装说明
+## Installation guide
 
-请参见[云监控Java版本插件安装](/intl.zh-CN/主机监控/云监控Java版本插件安装.md)。
+For more information, see [Install the CloudMonitor Java agent](/intl.en-US/Host monitoring/Install the CloudMonitor Java agent.md).
 
-## 非阿里云主机安装方法
+## Install the Java agent on a host that is not provided by Alibaba Cloud
 
-1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
-2.  单击左侧导航栏中的**主机监控**，进入**主机监控**页面。
-3.  单击页面上方的**非阿里云主机安装**按钮，进入**监控安装指引**页面，选择监控类型、操作系统后，可查看与其对应的安装方法。
+1.  Log on to the [CloudMonitor console](https://cms-intl.console.aliyun.com).
+2.  In the left-side navigation pane, click **Host Monitoring**.
+3.  On the Host Monitoring page, click **Not Aliyun ecs install**. In the **Monitor Install Guide** right-side pane, select the type and operating system of the target host and install the Java agent as instructed.
 
