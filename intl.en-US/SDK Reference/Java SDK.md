@@ -1,8 +1,8 @@
-# Java SDK {#concept_llz_kz4_zdb .concept}
+# Java SDK
 
 This topic is a reference for installing and using the Java SDK.
 
-## Install SDK {#section_vlh_lz4_zdb .section}
+## Install SDK
 
 When performing installation through maven, the following dependencies must be added.
 
@@ -21,11 +21,11 @@ When performing installation through maven, the following dependencies must be a
 </dependencies>
 ```
 
-## Download SDK {#section_t5g_5z4_zdb .section}
+## Download SDK
 
- [Download address](https://github.com/aliyun/aliyun-openapi-java-sdk/tree/master/aliyun-java-sdk-cms)
+[aliyun-java-sdk-cms](https://github.com/aliyun/aliyun-openapi-java-sdk/tree/master/aliyun-java-sdk-cms)
 
-## Test code {#section_yyd_dn1_f2b .section}
+## Test code
 
 -   Query monitoring data.
     -   Request example
