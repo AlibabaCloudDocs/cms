@@ -22,7 +22,7 @@ In addition to emails and DingTalk chatbots, Cloud Monitor allows you to report 
 
 4.  In the Notification Method section of the Create Alert Rule page, enter the prepared callback URL in the HTTP CallBack field.
 
-    ![Callback URL of the alert rule](../images/p102554.png)
+    ![Callback URL of the alert rule](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/9506390061/p102554.png)
 
 5.  Click **Confirm**.
 
