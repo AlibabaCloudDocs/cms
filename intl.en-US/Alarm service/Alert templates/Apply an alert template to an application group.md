@@ -3,7 +3,7 @@
 If you have a large amount of resources, we recommend that you add these resources to application groups based on business needs. Then, you can create and apply alert templates to the application groups, which simplifies the creation and maintenance of alert rules. Alert templates must be used together with application groups. You can apply alert templates to application groups to create alert rules for resources from different services.
 
 -   An application group is created. For more information, see [Create an application group](/intl.en-US/Application groups/Create an application group.md).
--   An alert template is created. For more information, see [Create an alert template](/intl.en-US/Alarm service/Alert templates/Use alarm templates.md).
+-   An alert template is created. For more information, see [Create an alert template](/intl.en-US/Alarm service/Alert templates/Create an alert template.md).
 
 When an alert template is applied to an application group, Cloud Monitor automatically deletes the original alert rules configured for the application group and creates alert rules based on the alert template.
 
