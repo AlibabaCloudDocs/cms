@@ -47,8 +47,6 @@
 
  **说明：** 该参数支持一次查询多个，多个ID之间用英文逗号（,）分隔，一次最多可查询20条。 |
 
-查询报警规则列表。
-
 ## 返回数据
 
 |名称|类型|示例值|描述|
@@ -105,7 +103,7 @@
 
  例如：该参数设置为$Average\>80，ComparisonOperator设置为GreaterThanYesterday，Threshold设置为10，表示当平均值大于80且环比昨天上涨10%时，触发报警。
 
- **说明：** $Average\>0中的$Average为一个占位符，为"$"+监控结果字段值，云监控会将其替换为对应的统计值或原始的监控值。 |
+ **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Critical级别报警统计方法。 |
 |Threshold|String|90|Critical级别阈值。 |
 |Times|String|3|Critical级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
@@ -127,7 +125,7 @@
 
  例如：该参数设置为$Average\>80，ComparisonOperator设置为GreaterThanYesterday，Threshold设置为10，表示当平均值大于80且环比昨天上涨10%时，触发报警。
 
- **说明：** $Average\>0中的$Average为一个占位符，为"$"+监控结果字段值，云监控会将其替换为对应的统计值或原始的监控值。 |
+ **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Info级别报警统计方法。 |
 |Threshold|String|90|Info级别阈值。 |
 |Times|String|1|Info级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
@@ -149,7 +147,7 @@
 
  例如：该参数设置为$Average\>80，ComparisonOperator设置为GreaterThanYesterday，Threshold设置为10，表示当平均值大于80且环比昨天上涨10%时，触发报警。
 
- **说明：** $Average\>0中的$Average为一个占位符，为"$"+监控结果字段值，云监控会将其替换为对应的统计值或原始的监控值。 |
+ **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Warn级别报警统计方法。 |
 |Threshold|String|90|Warn级别阈值。 |
 |Times|String|3|Warn级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
