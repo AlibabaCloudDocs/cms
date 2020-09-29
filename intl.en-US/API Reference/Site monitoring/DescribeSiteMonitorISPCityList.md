@@ -1,167 +1,153 @@
-# DescribeSiteMonitorISPCityList {#doc_api_Cms_DescribeSiteMonitorISPCityList .reference}
+# DescribeSiteMonitorISPCityList
 
-You can call this operation to query the detection points that are available for creating site monitoring tasks.
+Queries the detection points that are available for creating site monitoring tasks.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use [OpenAPI Explorer](https://api.aliyun.com/#product=Cms&api=DescribeSiteMonitorISPCityList) to search for APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeSiteMonitorISPCityList&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DescribeSiteMonitorISPCityList|The operation that you want to perform. Set this parameter to DescribeSiteMonitorISPCityList.
+|Action|String|Yes|DescribeSiteMonitorISPCityList|The operation that you want to perform. Set the value to DescribeSiteMonitorISPCityList. |
+|Isp|String|No|China Mobile|The name or ID of the carrier to which the detection point belongs. Fuzzy search is supported for carrier names. |
+|City|String|No|Beijing|The name or ID of the city where the detection point resides. Fuzzy search is supported for city names. |
+|IPV6|Boolean|No|false|Specifies whether to query the detection points that use IPv6. Valid values:
 
- |
-|City|String|No|Beijing|The name or ID of the city where the detection point is located. Fuzzy search is supported for city names.
+-   true
+-   false |
+|IPV4|Boolean|No|true|Specifies whether to query the detection points that use IPv4. Valid values:
 
- |
-|Isp|String|No|Chine Mobile|The name or ID of the carrier to which the detection point belongs. Fuzzy search is supported for carrier names.
+-   true
+-   false |
 
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call was successful.
+|Code|String|200|The HTTP status code.
 
- |
-|RequestId|String|848EF34A-FD9F-48A6-879F-414279ED4F26|The ID of the request.
+**Note:** The status code 200 indicates that the call was successful. |
+|RequestId|String|848EF34A-FD9F-48A6-879F-414279ED4F26|The ID of the request. |
+|Message|String|successful|The returned message. |
+|IspCityList|Array of IspCity|N/A|The detection points that were found. |
+|IspCity|N/A|N/A|N/A|
+|City|String|738|The ID of a city. |
+|CityName.en|String|Yantai|The name of the city. |
+|Country.en|String|China|The name of the country. |
+|IPV4ProbeCount|String|2|The number of detection points that use IPv4. |
+|IPV6ProbeCount|String|3|The number of detection points that use IPv6. |
+|Isp|String|232|The ID of the carrier. |
+|IspName.en|String|China-Mobile|The name of the carrier. |
+|Region|String|200|The code of the province. |
+|Region.en|String|Shandong|The name of the province. |
+|Success|String|true|Indicates whether the call was successful. Valid values:
 
- |
-|Message|String|success|The error message.
+-   true: The call was successful.
+-   false: The call failed. |
 
- |
-|IspCityList| | |The list of the detection points that were queried.
+## Examples
 
- |
-|└City|String|738|The ID of the city.
-
- |
-|└CityName.zh\_CN|String|Beijing|The name of the city.
-
- |
-|└Country.zh\_CN|String|China|The name of the country or region.
-
- |
-|└Isp|String|232|The ID of the carrier.
-
- |
-|└IspName.zh\_CN|String|China Unicom|The name of the carrier.
-
- |
-|└Region.zh\_CN|String|Liaoning|The name of the province.
-
- |
-|Success|String|true|Indicates whether the call was successful.
-
- |
-
-## Examples {#demo .section}
-
-Sample request
-
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=DescribeSiteMonitorISPCityList
-&<Common request parameters>
+Sample requests
 
 ```
+http(s)://[Endpoint]/?Action=DescribeSiteMonitorISPCityList
+&<Common request parameters>
+```
 
-Sample success response
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
-<DescribeSiteMonitorISPAreaCityResponse>
-  <IspCityList>
-    <IspCity>
-      <IspName.zh_CN>China Unicom</IspName.zh_CN>
-      <Isp>232</Isp>
-      <Region.zh_CN>Liaoning</Region.zh_CN>
-      <Country.zh_CN>China</Country.zh_CN>
-      <City>395</City>
-      <CityName.zh_CN>Dalian</CityName.zh_CN>
-    </IspCity>
-    <IspCity>
-      <IspName.zh_CN>China Unicom</IspName.zh_CN>
-      <Isp>232</Isp>
-      <Region.zh_CN>Heilongjiang</Region.zh_CN>
-      <Country.zh_CN>China</Country.zh_CN>
-      <City>392</City>
-      <CityName.zh_CN>Jixi</CityName.zh_CN>
-    </IspCity>
-    <IspCity>
-      <IspName.zh_CN>China Unicom</IspName.zh_CN>
-      <Isp>232</Isp>
-      <Region.zh_CN>Shaanxi</Region.zh_CN>
-      <Country.zh_CN>China</Country.zh_CN>
-      <City>267</City>
-      <CityName.zh_CN>Hanzhong</CityName.zh_CN>
-    </IspCity>
-    <IspCity>
-      <IspName.zh_CN>China Unicom</IspName.zh_CN>
-      <Isp>232</Isp>
-      <Region.zh_CN>Sichuan</Region.zh_CN>
-      <Country.zh_CN>China</Country.zh_CN>
-      <City>205</City>
-      <CityName.zh_CN>Mianyang</CityName.zh_CN>
-    </IspCity>
-  </IspCityList>
-  <Success>true</Success>
-  <Code>200</Code>
-</DescribeSiteMonitorISPAreaCityResponse>
-
+```
+<DescribeSiteMonitorISPCityListResponse>
+          <Message>successful</Message>
+                <IspCity>
+                      <Country.zh_CN>China</Country.zh_CN>
+                      <CityName.en>Xian</CityName.en>
+                      <Region.zh_CN>Shaanxi</Region.zh_CN>
+                      <Isp>507</Isp>
+                      <Region>28</Region>
+                      <Country>629</Country>
+                      <City>311</City>
+                      <IspName.en>DrPeng</IspName.en>
+                      <IspName.zh_CN>Dr.Peng</IspName.zh_CN>
+                      <Region.en>Shaanxi</Region.en>
+                      <Country.en>China</Country.en>
+                      <IPV6ProbeCount>0</IPV6ProbeCount>
+                      <IPV4ProbeCount>2</IPV4ProbeCount>
+                      <CityName.zh_CN>Xi'an</CityName.zh_CN>
+                </IspCity>
+                <IspCity>
+                      <Country.zh_CN>China</Country.zh_CN>
+                      <CityName.en>Jingzhou</CityName.en>
+                      <Region.zh_CN>Hubei</Region.zh_CN>
+                      <Isp>5</Isp>
+                      <Region>591</Region>
+                      <Country>629</Country>
+                      <City>407</City>
+                      <IspName.en>China-Mobile</IspName.en>
+                      <IspName.zh_CN>China Mobile</IspName.zh_CN>
+                      <Region.en>Hubei</Region.en>
+                      <Country.en>China</Country.en>
+                      <IPV6ProbeCount>0</IPV6ProbeCount>
+                      <IPV4ProbeCount>2</IPV4ProbeCount>
+                      <CityName.zh_CN>Jingzhou</CityName.zh_CN>
+                </IspCity>
+          </IspCityList>
+          <Success>true</Success>
+          <Code>200</Code>
+</DescribeSiteMonitorISPCityListResponse>
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"successful",
-	"IspCityList":{
-		"IspCity":[
-			{
-				"IspName.zh_CN":"China Unicom",
-				"Isp":"232",
-				"Region.zh_CN":"Liaoning",
-				"City":"395",
-				"Country.zh_CN":"China",
-				"CityName.zh_CN":"Dalian"
-			},
-			{
-				"IspName.zh_CN":"China Unicom",
-				"Isp":"232",
-				"Region.zh_CN":"Heilongjiang",
-				"City":"392",
-				"Country.zh_CN":"China",
-				"CityName.zh_CN":"Jixi"
-			},
-			{
-				"IspName.zh_CN":"China Unicom",
-				"Isp":"232",
-				"Region.zh_CN":"Shaanxi",
-				"City":"267",
-				"Country.zh_CN":"China",
-				"CityName.zh_CN":"Hanzhong"
-			},
-			{
-				"IspName.zh_CN":"China Unicom",
-				"Isp":"232",
-				"Region.zh_CN":"Sichuan",
-				"City":"205",
-				"Country.zh_CN":"China",
-				"CityName.zh_CN":"Mianyang"
-			}
-		]
-	},
-	"Success":true,
-	"Code":"200"
+    "Message": "successful",
+    "IspCityList": {
+        "IspCity": [
+            {
+                "Country.zh_CN": "China",
+                "CityName.en": "Xian",
+                "Region.zh_CN": "Shaanxi",
+                "Isp": "507",
+                "Region": "28",
+                "Country": "629",
+                "City": "311",
+                "IspName.en": "DrPeng",
+                "IspName.zh_CN": "Dr.Peng",
+                "Region.en": "Shaanxi",
+                "Country.en": "China",
+                "IPV6ProbeCount": 0,
+                "IPV4ProbeCount": 2,
+                "CityName.zh_CN": "Xi'an"
+            },
+            {
+                "Country.zh_CN": "China",
+                "CityName.en": "Jingzhou",
+                "Region.zh_CN": "Hubei",
+                "Isp": "5",
+                "Region": "591",
+                "Country": "629",
+                "City": "407",
+                "IspName.en": "China-Mobile",
+                "IspName.zh_CN": "China Mobile",
+                "Region.en": "Hubei",
+                "Country.en": "China",
+                "IPV6ProbeCount": 0,
+                "IPV4ProbeCount": 2,
+                "CityName.zh_CN": "Jingzhou"
+            }
+        ]
+    },
+    "Success": true,
+    "Code": "200"
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes.](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
