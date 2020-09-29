@@ -1,109 +1,82 @@
-# DescribeMetricRuleCount {#doc_api_Cms_DescribeMetricRuleCount .reference}
+# DescribeMetricRuleCount
 
-You can call this operation to obtain the numbers of alert rules by status.
+Queries the number of alert rules in each state.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeMetricRuleCount) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeMetricRuleCount&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|No|DescribeMetricRuleCount|The operation that you want to perform. Set the value to DescribeMetricRuleCount.
+|Action|String|Yes|DescribeMetricRuleCount|The operation that you want to perform. Set the value to DescribeMetricRuleCount. |
+|Namespace|String|No|acs\_ecs\_dashboard|The namespace of the service. For more information, see [DescribeMetricMetaList](~~98846~~). |
+|MetricName|String|No|cpu\_total|The name of the metric. For more information, see [DescribeMetricMetaList](~~98846~~). |
 
- |
-|MetricName|String|No|cpu\_total|The name of the metric. For more information, call DescribeMetricMetaList or see [Preset metrics reference](~~28619~~).
-
- |
-|Namespace|String|No|acs\_ecs\_dashboard|The data namespace of the service. For more information, call DescribeMetricMetaList or see [Preset metrics reference](~~28619~~).
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|success|The error message.
+**Note:** The status code 200 indicates that the call was successful. |
+|Message|String|The Request is not authorization.|The returned message. |
+|MetricRuleCount|Struct|N/A|The number of alert rules in each state. |
+|Alarm|Integer|5|The number of alert rules with active alerts. |
+|Disable|Integer|0|The number of disabled alert rules. |
+|Nodata|Integer|0|The number of alert rules with no data. |
+|Ok|Integer|40|The number of alert rules with no active alerts. |
+|Total|Integer|45|The total number of alert rules. |
+|RequestId|String|FF38D33A-67C1-40EB-AB65-FAEE51EDB644|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. The value true indicates a success. The value false indicates a failure. |
 
- |
-|MetricRuleCount| | |The numbers of alert rules by status.
-
- |
-|└Alarm|Integer|5|The number of alert rules based on which alerts were triggered and not cleared.
-
- |
-|└Disable|Integer|0|The number of disabled alert rules.
-
- |
-|└Nodata|Integer|0|The number of alert rules for which status data is unavailable.
-
- |
-|└Ok|Integer|40|The number of alert rules that do not have active alerts triggered.
-
- |
-|└Total|Integer|45|The total number of alert rules.
-
- |
-|RequestId|String|FF38D33A-67C1-40EB-AB65-FAEE51EDB644|The request ID for troubleshooting.
-
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=DescribeMetricRuleCount
+```
+http(s)://[Endpoint]/?Action=DescribeMetricRuleCount
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeMetricRuleCountResponse>
-  <Success>true</Success> 
-  <Code>200</Code>
-  <RequestId>FF38D33A-67C1-40EB-AB65-FAEE51EDB644</RequestId>
-  <MetricRuleCount>
-    <Ok>40</Ok>
-    <Disable>0</Disable>
-    <Total>45</Total>
-    <Nodata>0</Nodata>
-    <Alarm>5</Alarm>
-  </MetricRuleCount>
+      <Success>true</Success>
+      <Code>200</Code>
+      <RequestId>FF38D33A-67C1-40EB-AB65-FAEE51EDB644</RequestId>
+      <MetricRuleCount>
+            <Ok>40</Ok>
+            <Disable>0</Disable>
+            <Total>45</Total>
+            <Nodata>0</Nodata>
+            <Alarm>5</Alarm>
+      </MetricRuleCount>
 </DescribeMetricRuleCountResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"FF38D33A-67C1-40EB-AB65-FAEE51EDB644",
-	"Success":true,
-	"Code":"200",
-	"MetricRuleCount":{
-		"Ok":40,
-		"Disable":0,
-		"Nodata":0,
-		"Total":45,
-		"Alarm":5
-	}
+  "Success": true,
+  "Code": "200",
+  "RequestId":"FF38D33A-67C1-40EB-AB65-FAEE51EDB644",
+  "MetricRuleCount": {
+    "Ok": 40,
+    "Disable": 0,
+    "Total": 45,
+    "Nodata": 0,
+    "Alarm": 5
+  }
 }
 ```
 
-## Error code { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
