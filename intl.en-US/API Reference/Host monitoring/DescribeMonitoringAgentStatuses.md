@@ -1,111 +1,104 @@
-# DescribeMonitoringAgentStatuses {#doc_api_Cms_DescribeMonitoringAgentStatuses .reference}
+# DescribeMonitoringAgentStatuses
 
-You can call this operation to query the status of the CloudMonitor agent.
+Queries the status of the Cloud Monitor agent.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeMonitoringAgentStatuses) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeMonitoringAgentStatuses&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|InstanceIds|String|Yes|i-12345w55tr2rcpejp\*\*\*\*,i-23456w55tr2rcpejp\*\*\*\*|The ID of the instance of which the status is to be obtained. Multiple instance IDs must be separated with commas \(,\).
+|Action|String|Yes|DescribeMonitoringAgentStatuses|The operation that you want to perform. Set the value to DescribeMonitoringAgentStatuses. |
+|InstanceIds|String|Yes|i-12345w55tr2rcpejp\*\*\*\*,i-23456w55tr2rcpejp\*\*\*\*|The ID of the instance. Separate multiple instance IDs with commas \(,\). |
 
- |
-|Action|String|No|DescribeMonitoringAgentStatuses|The operation that you want to perform. Set the value to DescribeMonitoringAgentStatuses.
+## Response parameters
 
- |
+|Parameter|Type|Example|Description|
+|---------|----|-------|-----------|
+|Code|String|200|The HTTP status code.
 
-## Response parameters {#resultMapping .section}
+**Note:** The status code 200 indicates that the call was successful. |
+|Message|String|The Request is not authorization.|The returned message. |
+|NodeStatusList|Array of NodeStatus|N/A|The status of the Cloud Monitor agent on the instances. |
+|NodeStatus|N/A|N/A|N/A|
+|AutoInstall|Boolean|true|Indicates whether automatic installation is enabled. Valid values:
 
-|Parameter|Type|Example|Description |
-|---------|----|-------|------------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+-   true
+-   false |
+|InstanceId|String|i-123456w55tr2rcpejp\*\*\*\*|The ID of the instance. |
+|Status|String|running|The status of the Cloud Monitor agent. Valid values:
 
- |
-|Message|String|Successfully|The error message.
+-   running: The Cloud Monitor agent is running on the instance.
+-   stopped: The Cloud Monitor agent is stopped on the instance.
+-   installing: The Cloud Monitor agent is being installed on the instance.
+-   install\_faild: The Cloud Monitor agent fails to be installed on the instance.
+-   abnormal: The Cloud Monitor agent is not properly installed on the instance.
+-   not\_installed: The Cloud Monitor agent is not installed on the instance. |
+|RequestId|String|E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|NodeStatusList| | |The status list.
+-   true: The call was successful.
+-   false: The call failed. |
 
- |
-|└AutoInstall|Boolean|true|Indicates whether to enable automatic installation.
-
- |
-|└InstanceId|String|i-123456w55tr2rcpejp\*\*\*\*|The ID of the instance.
-
- |
-|└Status|String|running|The status of the agent. Valid values: running and stopped.
-
- |
-|RequestId|String|E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D|The request ID for troubleshooting.
-
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=DescribeMonitoringAgentStatuses
+```
+http(s)://[Endpoint]/?Action=DescribeMonitoringAgentStatuses
 &InstanceIds=i-12345w55tr2rcpejp****,i-23456w55tr2rcpejp****
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeMonitoringAgentStatusesResponse>
-  <NodeStatusList>
-    <NodeStatus>
-      <Status>running</Status> 
-      <InstanceId>i-123455cpejp****</InstanceId>
-      <AutoInstall>true</AutoInstall>
-    </NodeStatus>
-    <NodeStatus>
-      <Status>running</Status> 
-      <InstanceId>i-123567kg04****</InstanceId>
-      <AutoInstall>true</AutoInstall>
-    </NodeStatus>
-  </NodeStatusList>
-  <Success>true</Success> 
-  <Code>200</Code>
+      <NodeStatusList>
+            <NodeStatus>
+                  <Status>running</Status>
+                  <InstanceId>i-123455cpejp****</InstanceId>
+                  <AutoInstall>true</AutoInstall>
+            </NodeStatus>
+            <NodeStatus>
+                  <Status>running</Status>
+                  <InstanceId>i-123567kg04****</InstanceId>
+                  <AutoInstall>true</AutoInstall>
+            </NodeStatus>
+      </NodeStatusList>
+      <Success>true</Success>
+      <Code>200</Code>
 </DescribeMonitoringAgentStatusesResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"NodeStatusList":{
-		"NodeStatus":[
-			{
-				"Status":"running",
-				"InstanceId":"i-123455cpejp****",
-				"AutoInstall":true
-			},
-			{
-				"Status":"running",
-				"InstanceId":"i-123567kg04****",
-				"AutoInstall":true
-			}
-		]
-	},
-	"Success":true,
-	"Code":200
+    "NodeStatusList": {
+        "NodeStatus": [
+            {
+                "Status": "running",
+                "InstanceId": "i-123455cpejp****",
+                "AutoInstall": true
+            },
+            {
+                "Status": "running",
+                "InstanceId": "i-123567kg04****",
+                "AutoInstall": true
+            }
+        ]
+    },
+    "Success": true,
+    "Code": 200
 }
 ```
 
-## Error code { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
