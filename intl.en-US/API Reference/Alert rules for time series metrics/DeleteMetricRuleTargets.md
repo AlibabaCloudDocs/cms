@@ -1,92 +1,75 @@
-# DeleteMetricRuleTargets {#doc_api_Cms_DeleteMetricRuleTargets .reference}
+# DeleteMetricRuleTargets
 
-You can call this operation to delete targets of an alert rule.
+Deletes the message resources of an alert rule. This operation supports only Message Service \(MNS\) resources.
 
-Currently, this operation only supports targets of the MNS type.
+## Debugging
 
-## Debugging {#apiExplorer .section}
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DeleteMetricRuleTargets&type=RPC&version=2019-01-01)
 
-Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use [OpenAPI Explorer](https://api.aliyun.com/#product=Cms&api=DeleteMetricRuleTargets) to search for APIs, call APIs, and dynamically generate SDK example code.
-
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DeleteMetricRuleTargets|The operation that you want to perform. Set this parameter to DeleteMetricRuleTargets.
+|Action|String|Yes|DeleteMetricRuleTargets|The operation that you want to perform. Set the value to DeleteMetricRuleTargets. |
+|RuleId|String|Yes|ruleId-xxxxxx|The ID of the alert rule. |
+|TargetIds.N|RepeatList|Yes|12345|The ID of the message resource. Valid values of N: 1 to 5. |
 
- |
-|RuleId|String|Yes|ruleId-xxxxxx|The ID of the alert rule for which you want to delete targets.
-
- |
-|TargetIds.N|RepeatList|No|1|The ID of the target to delete.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call was successful.
+|Code|String|200|The HTTP status code.
 
- |
-|FailIds| | |The list of the targets that failed to be deleted.
+**Note:** The status code 200 indicates that the call was successful. |
+|FailIds|Struct|N/A|The message resources that failed to be deleted. |
+|TargetIds|List|1|The ID of the message resource that failed to be deleted. |
+|Message|String|The Request is not authorization.|The returned message. |
+|RequestId|String|786E92D2-AC66-4250-B76F-F1E2FCDDBA1C|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|└TargetIds| |1|The ID of the target that failed to be deleted.
+-   true: The call was successful.
+-   false: The call failed. |
 
- |
-|Message|String|success|The error message.
+## Examples
 
- |
-|RequestId|String|786E92D2-AC66-4250-B76F-F1E2FCDDBA1C|The ID of the request.
-
- |
-|Success|Boolean|true|Indicates whether the call was successful.
-
- |
-
-## Examples {#demo .section}
-
-Sample request
-
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=DeleteMetricRuleTargets
-&RuleId=ruleId-xxxxxx
-&<Common request parameters>
+Sample requests
 
 ```
+http(s)://[Endpoint]/?Action=DeleteMetricRuleTargets
+&RuleId=ruleId-xxxxxx
+&TargetIds.1=12345
+&<Common request parameters>
+```
 
-Sample success response
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DeleteMetricRuleTargetsResponse>
-  <Code>200</Code>
-  <Message>Success</Message>
-  <Success>true</Success>
-  <RequestId>786E92D2-AC66-4250-B76F-F1E2FCDDBA1C</RequestId>
-  <FailIds>1</FailIds>
+          <RequestId>786E92D2-AC66-4250-B76F-F1E2FCDDBA1C</RequestId>
+          <Code>200</Code>
+          <Success>true</Success>
+          <FailIds>
+                <TargetIds>1</TargetIds>
+          </FailIds>
 </DeleteMetricRuleTargetsResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"Success",
-	"RequestId":"786E92D2-AC66-4250-B76F-F1E2FCDDBA1C",
-	"Success":true,
-	"Code":"200",
-	"FailIds":[
-		"1"
-	]
+    "RequestId":"786E92D2-AC66-4250-B76F-F1E2FCDDBA1C",
+    "Code":"200",
+    "Success":"true",
+    "FailIds":{
+        "TargetIds":"1"
+    }
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes.](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
