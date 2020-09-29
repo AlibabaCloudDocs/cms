@@ -1,83 +1,87 @@
-# DescribeUnhealthyHostAvailability {#doc_api_Cms_DescribeUnhealthyHostAvailability .reference}
+# DescribeUnhealthyHostAvailability
 
-You can call this operation to query the list of unhealthy servers.
+Queries unhealthy instances.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeUnhealthyHostAvailability) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can call APIs, dynamically generate SDK example code, and retrieve APIs.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeUnhealthyHostAvailability&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DescribeUnhealthyHostAvailability|The operation that you want to perform. Set the value to DescribeUnhealthyHostAvailability.
+|Action|String|Yes|DescribeUnhealthyHostAvailability|The operation that you want to perform. Set the value to DescribeUnhealthyHostAvailability. |
+|Id.N|RepeatList|Yes|123456|The ID of the availability monitoring task. Valid values of N: 1 to 20. |
 
- |
-|Id.N|RepeatList|No|12346|The ID of the task. Valid values of N: 1 to 20.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|success|The error message.
+**Note:** The status code 200 indicates that the call was successful. |
+|Message|String|User not authorized to operate on the specified resource.|The returned message. |
+|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|The request ID for troubleshooting.
+-   true: The call was successful.
+-   false: The call failed. |
+|UnhealthyList|Array of NodeTaskInstance|N/A|The unhealthy instances that are detected by the specified availability monitoring tasks. |
+|NodeTaskInstance|N/A|N/A|N/A|
+|Id|Long|123456|The ID of the availability monitoring task. |
+|InstanceList|List|i-a34b581\*\*\*\*|The unhealthy instances that are detected by the availability monitoring task. |
 
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-|UnhealthyList| | |The list of unhealthy servers.
-
- |
-|└Id|Long|123|The ID of the task.
-
- |
-|└InstanceList| |i-a34b581\*\*\*\*|The list of unhealthy servers.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=DescribeUnhealthyHostAvailability
+```
+http(s)://[Endpoint]/?Action=DescribeUnhealthyHostAvailability
+&Id.1=123456
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeUnhealthyHostAvailabilityResponse>
-  <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
-  <Success>true</Success> 
-  <Code>200</Code>
+          <RequestId>8C2F25CB-F9E7-4693-95C7-A095417B2948</RequestId>
+          <Code>200</Code>
+          <Success>true</Success>
+          <UnhealthyList>
+                <NodeTaskInstance>
+                      <Id>123456</Id>
+                      <InstanceList>
+                            <String>i-a34b581****</String>
+                      </InstanceList>
+                </NodeTaskInstance>
+          </UnhealthyList>
 </DescribeUnhealthyHostAvailabilityResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
-	"Success":true,
-	"Code":200
+    "RequestId": "8C2F25CB-F9E7-4693-95C7-A095417B2948",
+    "Code": 200,
+    "Success": true,
+    "UnhealthyList": {
+        "NodeTaskInstance": [
+            {
+                "Id": 123456,
+                "InstanceList": {
+                    "String": ["i-a34b581****"]
+                }
+            } 
+        ]
+    }
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
