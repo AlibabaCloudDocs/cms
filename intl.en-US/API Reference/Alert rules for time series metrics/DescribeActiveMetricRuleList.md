@@ -29,7 +29,7 @@ Queries details about one-click alert rules.
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|AlertList|Array of Alert|N/A|The details of the alert rules. The result is in the same structure as that returned by the DescribeMetricRuleList operation. |
+|AlertList|Array of Alert|N/A|The details of the alert rules. |
 |Alert|N/A|N/A|N/A|
 |AlertState|String|OK|The status of the alert rule. Valid values:
 
