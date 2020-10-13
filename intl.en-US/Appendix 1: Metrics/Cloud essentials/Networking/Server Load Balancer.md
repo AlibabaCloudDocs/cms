@@ -2,15 +2,19 @@
 
 This topic describes the metrics for Server Load Balancer \(SLB\).
 
+When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
+
 -   Set the **Namespace** parameter to **acs\_slb\_dashboard**.
 -   Set the **Period** parameter to an integral multiple of 60s. The default value is 60s.
+
+The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
 
 |Metric|Unit|MetricName|Dimensions|Statistics|
 |------|----|----------|----------|----------|
 |Number of Active Port Connections|count|ActiveConnection|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
 |Number of Discarded Port Connections|count/s|DropConnection|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
-|Number of Discarded Inbound Data Packets by Port|count/s|DropPackerRX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
-|Number of Discarded Outbound Data Packets by Port|count/s|DropPackerTX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
+|Number of Discarded Inbound Data Packets by Port|count/s|DropPacketRX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
+|Number of Discarded Outbound Data Packets by Port|count/s|DropPacketTX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
 |Number of Discarded Inbound Bandwidth by Port|bit/s|DropTrafficRX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
 |Number of Discarded Outbound Bandwidth by Port|bit/s|DropTrafficTX|userId, instanceId, port, and protocol|Maximum, Minimum, and Average|
 |Number of Backend Healthy ECS Instances by Port|count|HeathyServerCount|userId, instanceId, port, and vip|Maximum, Minimum, and Average|
