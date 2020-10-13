@@ -2,8 +2,12 @@
 
 This topic describes the metrics for Object Storage Service \(OSS\).
 
+When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
+
 -   Set the **Namespace** parameter to **acs\_oss**.
 -   Set the **Period** parameter to an integral multiple of 60s. The default value is 60s.
+
+The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
 
 |Metric|Unit|MetricName|Dimensions|Statistics|
 |------|----|----------|----------|----------|
@@ -12,7 +16,6 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |AppendObject Request Average Server Latency|ms|AppendObjectServerLatency|userId and BucketName|Value|
 |Number of Incorrect Authorization Requests|count|AuthorizationErrorCount|userId and BucketName|Value|
 |Number of Authorization Error Requests|%|AuthorizationErrorRate|userId and BucketName|Value|
-|Availability|%|Avaliability|userId and BucketName|Value|
 |CDN Inbound Traffic|byte|CdnRecv|userId and BucketName|Value|
 |CND Outbound Traffic|byte|CdnSend|userId and BucketName|Value|
 |Number of Client Other Error Requests|count|ClientOtherErrorCount|userId and BucketName|Value|
@@ -24,9 +27,9 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |CopyObject Request Average Server Latency|ms|CopyObjectServerLatency|userId and BucketName|Value|
 |Number of Successful DeleteObject Requests|count|DeleteObjectCount|userId and BucketName|Value|
 |Number of Successful DeleteObjects Requests|count|DeleteObjectsCount|userId and BucketName|Value|
-|Number of Successful GetObject Requests|Frequency|GetObjectCount|userId and BucketName|Value|
+|Number of Successful GetObject Requests|frequency|GetObjectCount|userId and BucketName|Value|
 |Getobject Request Average E2E Latency|ms|GetObjectE2eLatency|userId and BucketName|Value|
-|Getobject Request Average Server Latency|ms|GetObjectCountServerLatency|userId and BucketName|Value|
+|Getobject Request Average Server Latency|ms|GetObjectServerLatency|userId and BucketName|Value|
 |Number of Successful HeadObject Requests|count|HeadObjectCount|userId and BucketName|Value|
 |HeadObject Request Average E2E Latency|ms|HeadObjectE2eLatency|userId and BucketName|Value|
 |HeadObject Request Average Server Latency|ms|HeadObjectServerLatency|userId and BucketName|Value|
@@ -38,7 +41,7 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |AppendObject Request Maximum Server Latency|ms|MaxAppendObjectServerLatency|userId and BucketName|Value|
 |CopyObject requests the maximum E2E latency|ms|MaxCopyObjectE2eLatency|userId and BucketName|Value|
 |CopyObject Request Maximum Server Latency|ms|MaxCopyObjectServerLatency|userId and BucketName|Value|
-|CopyObject requests the maximum E2E latency|ms|MaxGetObjectE2eLatency|userId and BucketName|Value|
+|Maximum E2E Latency for GetObject Requests|ms|MaxGetObjectE2eLatency|userId and BucketName|Value|
 |Getobject Request Maximum Server Latency|ms|MaxGetObjectServerLatency|userId and BucketName|Value|
 |HeadObject Request Maximum E2E Latency|ms|MaxHeadObjectE2eLatency|userId and BucketName|Value|
 |HeadObject Request Maximum Server Latency|ms|MaxHeadObjectServerLatency|userId and BucketName|Value|
@@ -46,8 +49,8 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |PostObject Request Maximum Server Latency|ms|MaxPostObjectServerLatency|userId and BucketName|Value|
 |PutObject Request Maximum E2E Latency|ms|MaxPutObjectE2eLatency|userId and BucketName|Value|
 |PutObject Request Maximum Server Latency|ms|MaxPutObjectServerLatency|userId and BucketName|Value|
-|UploadPart Request Maximum E2E Latency|ms|MaxUploadCopyPartE2eLatency|userId and BucketName|Value|
-|UploadPart Request Maximum Server Latency|ms|MaxUploadCopyPartServerLatency|userId and BucketName|Value|
+|UploadPart Request Maximum E2E Latency|ms|MaxUploadPartCopyE2eLatency|userId and BucketName|Value|
+|UploadPart Request Maximum Server Latency|ms|MaxUploadPartCopyServerLatency|userId and BucketName|Value|
 |UploadPart Request Maximum E2E Latency|ms|MaxUploadPartE2eLatency|userId and BucketName|Value|
 |UploadPart Request Maximum Server Latency|ms|MaxUploadPartServerLatency|userId and BucketName|Value|
 |CDN inflow metering flow|byte|MeteringCdnRX|userId, BucketName, region, and storageType|Value|
@@ -59,8 +62,8 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |MeteringIntranetTX|byte|MeteringIntranetTX|userId, BucketName, region, and storageType|Value|
 |Number of PUT Requests|count|MeteringPutRequest|userId, BucketName, region, and storageType|Value|
 |Storage Size|byte|MeteringStorageUtilization|userId, BucketName, region, and storageType|Value|
-|Cross-region Replication Inbound Traffic|byte|MeteringSyncRx|userId, BucketName, region, and storageType|Value|
-|MeteringSyncTX|byte|MeteringSyncTx|userId, BucketName, region, and storageType|Value|
+|Cross-region Replication Inbound Traffic|byte|MeteringSyncRX|userId, BucketName, region, and storageType|Value|
+|MeteringSyncTX|byte|MeteringSyncTX|userId, BucketName, region, and storageType|Value|
 |MirrorAverageLatency|N/A|MirrorAverageLatency|userId, BucketName, and Host|Value|
 |MirrorAverageLatencyByStatus|N/A|MirrorAverageLatencyByStatus|userId, BucketName, Host, and Status|Value|
 |MirrorRequestCount|N/A|MirrorRequestCount|userId, BucketName, and Host|Value|
@@ -95,9 +98,9 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |Number of Successful UploadPart Requests|count|UploadPartCount|userId and BucketName|Value|
 |UploadPart Request Average E2E Latency|ms|UploadPartE2eLatency|userId and BucketName|Value|
 |UploadPart Request Average Server Latency|ms|UploadPartServerLatency|userId and BucketName|Value|
-|Number of Authorization Error Requests by User|count|UserAuthorizationErroCount|userId|Value|
-|Authorization Error Request Proportion by User|%|UserAuthorizationErroRate|userId|Value|
-|Availability by User|%|UserAvaliability|userId|Value|
+|Number of Authorization Error Requests by User|count|UserAuthorizationErrorCount|userId|Value|
+|Authorization Error Request Proportion by User|%|UserAuthorizationErrorRate|userId|Value|
+|Availability by User|%|UserAvailability|userId|Value|
 |CDN Inbound Traffic by User|byte|UserCdnRecv|userId|Value|
 |CDN Outbound Traffic by User|byte|UserCdnSend|userId|Value|
 |Number of Client Other Error Requests by User|count|UserClientOtherErrorCount|userId|Value|
@@ -123,6 +126,6 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 |Cross-region Sync Outbound Traffic by User|byte|UserSyncSend|userId|Value|
 |Total Number of Requests by User|count|UserTotalRequestCount|userId|Value|
 |Number of Valid Requests by User|count|UserValidRequestCount|userId|Value|
-|Number of Valid Requests|count|validRequestCount|userId and BucketName|Value|
-|Availability|%|Availability|userId and BucketName|Value|
+|Number of Valid Requests|count|ValidRequestCount|userId and BucketName|Value|
+|Availability by User|%|Availability|userId and BucketName|Value|
 
