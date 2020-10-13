@@ -81,7 +81,7 @@ If you need to call CloudMonitor API operations, you can click the links in the 
 -   [DTS\(Migration\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS(Migration).md)
 -   [DTS\(Synchronization\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS(Synchronization).md) |
 |Security|Cloud security|-   [ddosdip](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/ddosdip.md)
--   [DDOS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDOS.md)
+-   [DDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDoS.md)
 -   [NewBGPDDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/NewBGPDDoS.md)
 -   [WAF](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/WAF.md) |
 |Big data|Cloud-native data warehouses|-   [Stream Computing](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/Stream Computing.md)
