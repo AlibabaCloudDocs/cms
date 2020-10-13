@@ -1,0 +1,15 @@
+# NAT网关带宽包
+
+通过本文您可以了解NAT网关带宽包的监控项。
+
+-   **Namespace**为**acs\_nat\_gateway**。
+-   **Period**默认为60秒，也可以为60的整数倍。
+
+|监控项|单位|Metric|Dimensions|Statistics|
+|---|--|------|----------|----------|
+|流入包速率|Count/Second|net\_rx.Pkgs|userId、instanceId|Value|
+|流入带宽|bits/s|net\_rx.rate|userId、instanceId|Value|
+|流出包速率|Count/Second|net\_tx.Pkgs|userId、instanceId|Value|
+|流出带宽|bits/s|net\_tx.rate|userId、instanceId|Value|
+|网络流出带宽使用率|%|net\_tx.ratePercent|userId、instanceId|Value|
+
