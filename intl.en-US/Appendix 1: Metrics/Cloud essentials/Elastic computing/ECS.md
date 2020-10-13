@@ -4,8 +4,12 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
 
 -   Basic metrics
 
+    When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
+
     -   Set the **Namespace** parameter to **acs\_ecs\_dashboard**.
     -   Set the **Period** parameter to an integral multiple of 60s. The default value is 60s.
+    The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
+
     |Metric|Unit|MetricName|Dimensions|Statistics|
     |------|----|----------|----------|----------|
     |AdvanceCredit|count|AdvanceCredit|userId and instanceId|Maximum, Minimum, and Average|
@@ -14,7 +18,7 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
     |\(ECS\) Disk Read BPS|byte/s|DiskReadBPS|userId and instanceId|Maximum, Minimum, and Average|
     |\(ECS\) SystemDiskReadIOPS|count/s|DiskReadIOPS|userId and instanceId|Maximum, Minimum, and Average|
     |\(ECS\) Disk Write BPS|byte/s|DiskWriteBPS|userId and instanceId|Maximum, Minimum, and Average|
-    |\(ECS\) SystemDiskReadIOPS|count/s|DiskWriteIOPS|userId and instanceId|Maximum, Minimum, and Average|
+    |\(ECS\) Disk Write IOPS|count/s|DiskWriteIOPS|userId and instanceId|Maximum, Minimum, and Average|
     |\(ECS\) Public Network Inbound Traffic|byte|InternetIn|userId and instanceId|Maximum, Minimum, Average, and Sum|
     |\(ECS\) Public Network In Band Width|bit/s|InternetInRate|userId and instanceId|Maximum, Minimum, and Average|
     |\(ECS\) InternetOut|byte|InternetOut|userId and instanceId|Maximum, Minimum, Average, and Sum|
@@ -26,9 +30,9 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
     |\(ECS\) Intranet Outbound Traffic|bit/s|IntranetOutRate|userId and instanceId|Maximum, Minimum, and Average|
     |Notpaid Surplus Credit|count|NotpaidSurplusCredit|userId and instanceId|Maximum, Minimum, and Average|
     |Total Credit|count|TotlCredit|userId and instanceId|Maximum, Minimum, and Average|
-    |\(ECS\) VPC-Internet Inbound Bandwidth|bit/s|VPC\_PublicIp\_InternetInRate|userId, instanceId, and ip|Maximum, Minimum, and Average|
-    |\(ECS\) VPC-Internet Outbound Bandwidth|bit/s|VPC\_PublicIp\_InternetOutRate|userId, instanceId, and ip|Maximum, Minimum, and Average|
-    |\(ECS\) VPC-Internet Outbound Bandwidth Usage|%|VPC\_PublicIp\_InternetOutRate\_Percent|userId, instanceId, and ip|Average|
+    |\(ECS\) VPC-Internet Inbound Bandwidth|bit/s|VPC\_PublicIP\_InternetInRate|userId, instanceId, and ip|Maximum, Minimum, and Average|
+    |\(ECS\) VPC-Internet Outbound Bandwidth|bit/s|VPC\_PublicIP\_InternetOutRate|userId, instanceId, and ip|Maximum, Minimum, and Average|
+    |\(ECS\) VPC-Internet Outbound Bandwidth Usage|%|VPC\_PublicIP\_InternetOutRate\_Percent|userId, instanceId, and ip|Average|
     |concurrentConnections|count|concurrentConnections|userId and instanceId|Maximum|
     |EIP-Inbound Bandwidth|bit/s|eip\_InternetInRate|userId and instanceId|Value|
     |EIP-Outbound Bandwidth|bit/s|eip\_InternetOutRate|userId and instanceId|Value|
@@ -37,8 +41,12 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
 
 -   Operating system metrics
 
+    When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
+
     -   Set the **Namespace** parameter to **acs\_ecs\_dashboard**.
     -   Set the **Period** parameter to an integral multiple of 15s. The default value is 15s.
+    The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
+
     |Metric|Unit|MetricName|Dimensions|Statistics|
     |------|----|----------|----------|----------|
     |\(Agent\) Host.cpu.total\(Recommend\)|%|cpu\_total|userId and instanceId|Maximum, Minimum, and Average|
@@ -52,6 +60,7 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
     |\(Agent\) Host.disk.writebytes|byte/s|disk\_writebytes|userId, instanceId, and device|Maximum, Minimum, and Average|
     |\(Agent\) Host.disk.writeiops|count/s|disk\_writeiops|userId, instanceId, and device|Maximum, Minimum, and Average|
     |\(Agent\) Host.diskusage.free|byte|diskusage\_free|userId, instanceId, and device|Maximum, Minimum, and Average|
+    |\(Agent\) Host.diskusage.avail|byte|diskusage\_avail|userId, instanceId, and device|Maximum, Minimum, and Average|
     |\(Agent\) Host.diskussage.total|byte|diskusage\_total|userId, instanceId, and device|Maximum, Minimum, and Average|
     |\(Agent\) Host.diskusage.used|byte|diskusage\_used|userId, instanceId, and device|Maximum, Minimum, and Average|
     |\(Agent\) Host.disk.utilization|%|diskusage\_utilization|userId, instanceId, and device|Maximum, Minimum, and Average|
@@ -60,14 +69,14 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
     |\(Agent\) gpu encoder utilization|%|gpu\_encoder\_utilization|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu gpu temperature|°C|gpu\_gpu\_temperature|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu gpu usedutilization|%|gpu\_memory\_userdutilization|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
-    |\(Agent\) gpu memory freespace|byte|gpu\_memory\_freespace|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
+    |\(Agent\) gpu memory freespace|Byte|gpu\_memory\_freespace|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu memory freeutilization|%|gpu\_memory\_freeutilization|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu memory usedspace|byte|gpu\_memory\_userdspace|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu memory usedutilization|%|gpu\_memory\_usedutilization|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) gpu power readings power draw|W|gpu\_power\_readings\_power\_draw|userId, instanceId, and gpuId|Maximum, Minimum, and Average|
     |\(Agent\) group gpu decoder utilization|%|group\_gpu\_decoder\_utilization|userId and groupId|Maximum, Minimum, and Average|
     |\(Agent\) group gpu encoder utilization|%|group\_gpu\_encoder\_utilization|userId and groupId|Maximum, Minimum, and Average|
-    |\(Agent\) group gpu gpu temperature|°C|group\_gpu\_gpu\_temperature|userId and groupId|Maximum, Minimum, and Average|
+    |\(Agent\) group\_gpu\_gpu\_temperature|°C|group\_gpu\_gpu\_temperature|userId and groupId|Maximum, Minimum, and Average|
     |\(Agent\) group gpu gpu usedutilization|%|group\_gpu\_gpu\_usedutilization|userId and groupId|Maximum, Minimum, and Average|
     |\(Agent\) group gpu memory freespace|byte|group\_gpu\_memory\_freespace|userId and groupId|Maximum, Minimum, and Average|
     |\(Agent\) group gpu memory freeutilization|%|group\_gpu\_memory\_freeutilization|userId and groupId|Maximum, Minimum, and Average|
@@ -86,7 +95,7 @@ This topic describes the metrics for Elastic Compute Service \(ECS\).
     |\(Agent\) Host.load15|N/A|load\_15m|userId and instanceId|Maximum, Minimum, and Average|
     |\(Agent\) Host.load1|N/A|load\_1m|userId and instanceId|Maximum, Minimum, and Average|
     |\(Agent\) Host.load5|N/A|load\_5m|userId and instanceId|Maximum, Minimum, and Average|
-    |\(Agent\) Host.mem.total memory\_usedspace Host.mem.used|byte|memory\_actualUsedSpace|userId and instanceId|Maximum, Minimum, and Average|
+    |\(Agent\) Host.mem.actualUsedSpace|byte|memory\_actualusedspace|userId and instanceId|Maximum, Minimum, and Average|
     |\(Agent\) Host.mem.free|byte|memory\_freespace|userId and instanceId|Maximum, Minimum, and Average|
     |\(Agent\) Host.mem.freeutilization|%|memory\_freeutilization|userId and instanceId|Maximum, Minimum, and Average|
     |\(Agent\) Host.mem.total|byte|memory\_totalspace|userId and instanceId|Maximum, Minimum, and Average|
