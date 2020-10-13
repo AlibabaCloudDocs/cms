@@ -4,7 +4,7 @@ This topic describes the metrics for Object Storage Service \(OSS\).
 
 When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
 
--   Set the **Namespace** parameter to **acs\_oss**.
+-   Set the **Namespace** parameter to **acs\_oss\_dashboard**.
 -   Set the **Period** parameter to an integral multiple of 60s. The default value is 60s.
 
 The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
