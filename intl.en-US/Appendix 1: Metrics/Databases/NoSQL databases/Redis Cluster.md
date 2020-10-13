@@ -2,8 +2,6 @@
 
 This topic describes the metrics for ApsaraDB for Redis of the cluster architecture.
 
-**Note:** During the period from August 1, 2020 to September 30, 2020, Alibaba Cloud unpublished specific metrics for ApsaraDB for Redis. These metrics become unavailable after September 30, 2020. For more information, see [Deprecated alarm metrics in Cloud Monitor](/intl.en-US/Notices/Deprecated alarm metrics in Cloud Monitor.md).
-
 When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for ApsaraDB for the current service in the following way:
 
 -   Set the **Namespace** parameter to **acs\_kvstore**.
