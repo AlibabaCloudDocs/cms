@@ -1,33 +1,33 @@
-# 报警规则参数说明
+# Alarm rule parameters
 
-本文为您介绍阈值报警规则的相关参数说明。
+This topic describes parameters of a threshold alarm rule.
 
-## 参数说明
+## Parameters
 
--   **产品**：例如云服务器 ECS、云数据库 RDS 版、对象存储 OSS 等。
--   **资源范围**：报警规则的作用范围，分为**全部资源**、**实例**。
+-   **Product**: the monitored service, such as ECS, ApsaraDB for RDS, and Object Storage Service \(OSS\).
+-   **Resource Range**: the scope of the alarm rule. Valid values: **All Resources** and **Instances**.
 
-    **说明：** **资源范围**选择**全部资源**时，报警的资源最多1000个，超过1000个可能会导致达到阈值不报警的问题，建议您使用应用分组按业务划分资源后再设置报警。 如需创建分组维度规则，请前往应用分组的组内资源页面**添加阈值报警**。
+    **Note:** If you set **Resource Range** to **All Resources**, the alarm rule is applicable to 1,000 instances or fewer. If the number of monitored resources is more than 1,000, you may not receive alarms when the specified metric reaches the threshold. We recommend that you add resources to service-specific application groups before creating the alarm rule. To create a threshold alarm rule for a group, go to the Group Instances page, and click **Threshold alarm**.
 
-    -   **全部资源**：资源范围选择全部资源，则产品下任何实例满足报警规则描述时，都会发送报警通知。
-    -   **实例**：资源范围选择指定的实例，则选中的实例满足报警规则描述时，才会发送报警通知。
--   **规则名称**：报警规则的名称。
--   **规则描述**：报警规则的主体，定义在监控数据满足何种条件时，触发报警规则。
+    -   **All Resources**: specifies that the alarm rule is applicable to all your instances of the specified service. The system sends alarm notifications if any metric of these instances reaches the specified threshold.
+    -   **Instances**: specifies that the alarm rule is applicable to a specified instance. The system sends alarm notifications if any metric of the instance reaches the specified threshold.
+-   **Alarm Rule**: the name of the alarm rule.
+-   **Rule Description**: the content of the alarm rule. This parameter defines the metric conditions that cause alarms.
 
-    **报警规则举例说明**：以云服务器ECS为例，单个服务器监控指标15秒上报一个数据点，5分钟有20个数据点。
+    **Alarm rule example**: in host monitoring, a data point on the metric of a single host is reported at a 15-second interval. Therefore, 20 data points are reported in 5 minutes.
 
-    -   CPU使用率5分钟周期连续3周期平均值\>90%， 含义是报警服务会连续探测3次（连续3周期）CPU使用率5分钟的20个数据点平均值大于90%，结果都符合报警规则就发送报警通知。
-    -   CPU使用率5分钟周期连续3周期总是\>90%， 含义是报警服务会连续探测3次（连续3周期）CPU使用率 5分钟的20个数据点全部大于90%，结果都符合报警规则就发送报警通知。
-    -   CPU使用率5分钟周期连续3周期只要有一次\>90%，含义是报警服务会连续探测3次（连续3周期）CPU使用率 5分钟的20个数据点至少有1个大于90%，结果都符合报警规则就发送报警通知。
-    -   公网网络出流量5分钟周期连续3周期总计\>50Mbytes ，含义是报警服务会连续探测3次（连续3周期）公网网络出流量5分钟的20个数据点求和结果大于50Mbytes ，结果都符合报警规则就发送报警通知。
--   **通道沉默周期**：指报警发生后如果未恢复正常，间隔多久重复发送一次报警通知。最短为5分钟，最长为24小时。
--   **生效时间**：报警规则的生效时间，报警规则只在生效时间内发送报警通知，非生效时间内产生的报警只记录报警历史。
--   **通知对象**：接收报警通知的联系人组。
--   **报警级别**：分为Critical 、Warning、Info三个级别，不同级别对应不同的通知方式。
-    -   Critical：电话语音+手机短信+邮件+钉钉机器人
-    -   Warning：手机短信+邮件+钉钉机器人
-    -   Info：邮件+钉钉机器人
--   **弹性伸缩**：选择弹性伸缩规则后，会在报警发生时触发相应的弹性伸缩规则。
--   **邮件备注**：自定义报警邮件补充信息，非必填。填写邮件备注后，发送报警的邮件通知中会附带您的备注。
--   **报警回调**：云监控会将报警信息通过POST请求推送到您填写的公网URL地址，目前仅支持HTTP协议。
+    -   Average CPU usage in a 5-minute cycle greater than 90% in three consecutive cycles: specifies that the average value of the 20 data points on CPU usage reported in a 5-minute cycle is greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
+    -   CPU usage in a 5-minute cycle always greater than 90% in three consecutive cycles: specifies that the values of the 20 data points on CPU usage reported in a 5-minute cycle are greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
+    -   CPU usage in a 5-minute cycle greater than 90% for once in three consecutive cycles: specifies that the value of at least one of the 20 data points on CPU usage reported in a 5-minute cycle is greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
+    -   Total public network outbound traffic in a 5-minute cycle greater than 50 MB/s in three consecutive cycles: specifies that the sum of the values of the 20 data points on public network outbound traffic reported in a 5-minute cycle is greater than 50 MB/s in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
+-   **Mute For**: CloudMonitor sends an alarm notification only after detecting the specified exceptions consecutively for specified times. The minimum value is 5 minutes and the maximum value is 24 hours.
+-   **Effective Period**: the period when an alarm rule is effective. The system only sends alarm notifications within the effective period according to the alarm rule. The system only records alarms if the alarms occur during a non-effective period.
+-   **Notification Contact**: the contact group that CloudMonitor sends alarm notifications to.
+-   **Alarm Levels**: specifies the alarm severity level that corresponds to a specified notification method. Valid values: CRITICAL, WARN, and INFO.
+    -   CRITICAL: sends alarm notifications by means of phone calls, SMS messages, emails, and DingTalk ChatBot.
+    -   WARN: sends alarm notifications by means of SMS messages, emails, and DingTalk ChatBot.
+    -   INFO: sends alarm notifications by means of emails and DingTalk ChatBot.
+-   **Auto Scaling**: an alarm triggers the corresponding scaling rule after you select Auto Scaling and configure the rule.
+-   **Email Remark**: custom supplementary information of an alarm email. CloudMonitor sends the remarks along with the alarm email.
+-   **HTTP CallBack**: CloudMonitor uses a POST request to push an alarm to the public URL address you provided. This callback supports HTTP-based requests.
 
