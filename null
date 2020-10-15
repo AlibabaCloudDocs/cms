@@ -1,33 +1,34 @@
-# Alarm rule parameters
+# 按量付费
 
-This topic describes parameters of a threshold alarm rule.
+本文为您介绍云监控按量付费的购买指导、注意事项和价格说明。
 
-## Parameters
+## 购买页
 
--   **Product**: the monitored service, such as ECS, ApsaraDB for RDS, and Object Storage Service \(OSS\).
--   **Resource Range**: the scope of the alarm rule. Valid values: **All Resources** and **Instances**.
+云监控按量付费的购买页，请参见[按量付费](https://common-buy.aliyun.com/?commodityCode=cms_post#/open)。
 
-    **Note:** If you set **Resource Range** to **All Resources**, the alarm rule is applicable to 1,000 instances or fewer. If the number of monitored resources is more than 1,000, you may not receive alarms when the specified metric reaches the threshold. We recommend that you add resources to service-specific application groups before creating the alarm rule. To create a threshold alarm rule for a group, go to the Group Instances page, and click **Threshold alarm**.
+## 注意事项
 
-    -   **All Resources**: specifies that the alarm rule is applicable to all your instances of the specified service. The system sends alarm notifications if any metric of these instances reaches the specified threshold.
-    -   **Instances**: specifies that the alarm rule is applicable to a specified instance. The system sends alarm notifications if any metric of the instance reaches the specified threshold.
--   **Alarm Rule**: the name of the alarm rule.
--   **Rule Description**: the content of the alarm rule. This parameter defines the metric conditions that cause alarms.
+-   探测点总数等于每个任务的探测点数量之和。
+-   报警短信和报警电话需要单独购买。
 
-    **Alarm rule example**: in host monitoring, a data point on the metric of a single host is reported at a 15-second interval. Therefore, 20 data points are reported in 5 minutes.
+## 价格说明
 
-    -   Average CPU usage in a 5-minute cycle greater than 90% in three consecutive cycles: specifies that the average value of the 20 data points on CPU usage reported in a 5-minute cycle is greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
-    -   CPU usage in a 5-minute cycle always greater than 90% in three consecutive cycles: specifies that the values of the 20 data points on CPU usage reported in a 5-minute cycle are greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
-    -   CPU usage in a 5-minute cycle greater than 90% for once in three consecutive cycles: specifies that the value of at least one of the 20 data points on CPU usage reported in a 5-minute cycle is greater than 90% in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
-    -   Total public network outbound traffic in a 5-minute cycle greater than 50 MB/s in three consecutive cycles: specifies that the sum of the values of the 20 data points on public network outbound traffic reported in a 5-minute cycle is greater than 50 MB/s in three consecutive cycles. The system sends alarm notifications if the specified metric reaches the threshold.
--   **Mute For**: CloudMonitor sends an alarm notification only after detecting the specified exceptions consecutively for specified times. The minimum value is 5 minutes and the maximum value is 24 hours.
--   **Effective Period**: the period when an alarm rule is effective. The system only sends alarm notifications within the effective period according to the alarm rule. The system only records alarms if the alarms occur during a non-effective period.
--   **Notification Contact**: the contact group that CloudMonitor sends alarm notifications to.
--   **Alarm Levels**: specifies the alarm severity level that corresponds to a specified notification method. Valid values: CRITICAL, WARN, and INFO.
-    -   CRITICAL: sends alarm notifications by means of phone calls, SMS messages, emails, and DingTalk ChatBot.
-    -   WARN: sends alarm notifications by means of SMS messages, emails, and DingTalk ChatBot.
-    -   INFO: sends alarm notifications by means of emails and DingTalk ChatBot.
--   **Auto Scaling**: an alarm triggers the corresponding scaling rule after you select Auto Scaling and configure the rule.
--   **Email Remark**: custom supplementary information of an alarm email. CloudMonitor sends the remarks along with the alarm email.
--   **HTTP CallBack**: CloudMonitor uses a POST request to push an alarm to the public URL address you provided. This callback supports HTTP-based requests.
+云监控按量付费的价格说明如下表所示。
+
+|计费项|价格|
+|:--|:-|
+|查询监控数据API调用数量|免费额度3330次/小时，超出部分按0.12元/万次收费。|
+|站点监控ECS探测点总数|免费额度50个，超出部分按0.003元/个/小时收费。|
+|云解析-分析与监控ECS探测点总数|免费额度50个，超出部分按0.0015元/个/小时收费。|
+|站点监控区分运营商探测点总数|0.014元/个/小时。|
+|云解析-分析与监控区分运营商探测点总数|免费额度50个，超出部分按0.007元/个/小时收费。|
+|事件监控个数|免费额度5万个，超出部分按0.0001元/万个/小时收费。|
+|自定义监控时间序列|免费额度10个，超出部分按0.0015元/个/小时收费。|
+|日志监控数据处理量|-   \(0MB/min,50MB/min\] ，1元/小时。
+-   \(50MB/min,100MB/min\] ，2元/小时。
+-   100MB/min以上，费用=0.02（元/小时）×日志监控数据处理量（MB/min）。
+
+例如：日志监控数据处理量为200MB/min，费用计算方法：0.02×200=4元/小时。 |
+|短信数量|免费额度1000条/月，超出部分按0.045元/条收费。|
+|电话数量|0.15元/个。|
 
