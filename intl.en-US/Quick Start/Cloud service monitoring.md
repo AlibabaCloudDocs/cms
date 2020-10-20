@@ -1,42 +1,66 @@
-# Cloud service monitoring {#concept_ulr_d2v_tdb .concept}
+# Cloud service monitoring
 
-## Application scenarios {#section_vg1_j2v_tdb .section}
+Cloud Monitor automatically retrieves cloud service resources under the current Alibaba Cloud account. You can view the monitoring chart of cloud services to check the running status of resources. You can also configure alert rules to monitor the running status of resources. When an alert is triggered, Cloud Monitor automatically sends an alert notification. This allows you to obtain the running status of your resources in a timely manner.
 
-With cloud service monitoring, you can query the performance indicators of the purchased cloud service instances. This helps you analyze the resource usage, collect statistics about the business trend, and detect and diagnose system problems.
+The monitoring data that is displayed on the monitoring page varies with cloud services. For example, on the monitoring page of Server Load Balancer \(SLB\), you can view the instance list and monitoring chart. You can also configure alert rules.
 
-Currently, CloudMonitor supports the following products:
+## View monitoring data
 
--   [Host Monitoring](../../../../reseller.en-US/User Guide/Host monitoring/Host monitoring metrics.md#)
--   [ApsaraDB for RDS](../../../../reseller.en-US/User Guide/Cloud service monitoring/RDS monitoring.md#)
--   [Server Load Balancer](../../../../reseller.en-US/User Guide/Cloud service monitoring/Server Load Balancer monitoring.md#)
--   [Object Storage Service](../../../../reseller.en-US/User Guide/Cloud service monitoring/OSS monitoring.md#)
--   [Alibaba Cloud CDN](../../../../reseller.en-US/User Guide/Cloud service monitoring/CDN monitoring.md#)
--   [Elastic IP Address](../../../../reseller.en-US/User Guide/Cloud service monitoring/Elastic IP monitoring.md#)
--   [Express Connect](../../../../reseller.en-US/User Guide/Cloud service monitoring/Express Connect monitoring.md#)
--   [NAT Gateway](../../../../reseller.en-US/User Guide/Cloud service monitoring/NAT gateway monitoring.md#)
--   [ApsaraDB for Memcache](../../../../reseller.en-US/User Guide/Cloud service monitoring/ApsaraDB for Memcache.md#)
--   [ApsaraDB for MongoDB](../../../../reseller.en-US/User Guide/Cloud service monitoring/ApsaraDB for MongoDB.md#)
--   [ApsaraDB for Redis](../../../../reseller.en-US/User Guide/Cloud service monitoring/ApsaraDB for Redis monitoring.md#)
--   [Analytic DB](../../../../reseller.en-US/User Guide/Cloud service monitoring/AnalyticDB monitoring.md#)
--   [HiTSDB](../../../../reseller.en-US/User Guide/Cloud service monitoring/High performance time series database hitsdb.md#)
--   [Message Service](../../../../reseller.en-US/User Guide/Cloud service monitoring/Message Service monitoring.md#)
--   [Log Service](../../../../reseller.en-US/User Guide/Cloud service monitoring/Log service monitoring.md#)
--   [Container Service](../../../../reseller.en-US/User Guide/Cloud service monitoring/Container service monitoring.md#)
--   [API Gateway](../../../../reseller.en-US/User Guide/Cloud service monitoring/API Gateway.md#)
--   [E-MapReduce](../../../../reseller.en-US/User Guide/Cloud service monitoring/E-MapReduce monitoring.md#)
--   [Auto Scaling](../../../../reseller.en-US/User Guide/Cloud service monitoring/Auto Scaling.md#)
--   [ApsaraDB for PetaData](../../../../reseller.en-US/User Guide/Cloud service monitoring/ApsaraDB for PetaData.md#)
--   [ApsaraDB for HybridDB](../../../../reseller.en-US/User Guide/Cloud service monitoring/ApsaraDB for HybridDB.md#)
--   [Openad](../../../../reseller.en-US/User Guide/Cloud service monitoring/Open Ad monitoring.md#)
--   [Function Compute](../../../../reseller.en-US/User Guide/Cloud service monitoring/Function Compute monitoring.md#)
+On the monitoring page of a cloud service, you can view the status of resources and the usage of metrics.
 
-## Procedure {#section_iws_w2v_tdb .section}
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
-1.  Log on to the [CloudMonitor console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, select **Cloud Service Monitoring**, and click the product you want to view. To view the ECS instances, select **Host Monitoring**.
-3.  Click an instance name or click **Monitoring Charts** in the **Actions** column to access the instance monitoring details page.
+2.  In the left-side navigation pane, click **Cloud products**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6128/1543539980981_en-US.png)
+3.  On the Cloud products page, click the required cloud service.
 
-4.  View the instance monitoring details.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6128/1543539980984_en-US.png)
+4.  On the monitoring page of the cloud service, find the resource that you want to manage. Click **Monitoring Chart** in the **Actions** column.
+
+    You can view the monitoring chart of the resource.
+
+    **Note:**
+
+    -   Monitoring data is retained for up to 31 days.
+    -   You can view the monitoring data for up to 14 consecutive days.
+
+## Configure alert rules
+
+On the monitoring page of a cloud service, you can configure alert rules for resources. When an alert is triggered, Cloud Monitor automatically sends an alert notification.
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Cloud products**.
+
+3.  On the Cloud products page, click the required cloud service.
+
+4.  Create an alert rule for the cloud service.
+
+    -   Create an alert rule on the **Alert Rules** page.
+        1.  On the monitoring page of the cloud service, find the resource that you want to manage. Click **Alert Rule** in the **Actions** column.
+        2.  On the Alert Rules page, click **Create Alert Rule**.
+        3.  On the Create Alert Rule page, configure the alert rule.
+        4.  Click **Confirm**.
+    -   Create an alert rule on the monitoring page of the cloud service.
+        1.  On the monitoring page of the cloud service, click **Create Alert Rule** in the upper-right corner.
+        2.  On the Create Alert Rule page, configure the alert rule.
+        3.  Click **Confirm**.
+    **Note:** For more information about the parameters of an alert rule, see [t111649.md\#](/intl.en-US/Alarm service/Alarm rules/Create a threshold-triggered alert rule.md).
+
+
+## View alert rules
+
+On the monitoring page of a cloud service, you can view all alert rules for resources.
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Cloud products**.
+
+3.  On the Cloud products page, click the required cloud service.
+
+4.  On the monitoring page of the cloud service, click **Alert Rules** in the upper-right corner.
+
+
+## References
+
+[Monitoring metrics of cloud services](/intl.en-US/Appendix 1: Metrics/Overview.md)
 
