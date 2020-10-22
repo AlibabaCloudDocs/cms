@@ -17,9 +17,9 @@
 |ChanelType|String|否|Email|报警类型。
 
  目前只支持Email（电子邮件）和DingWebHook（钉钉机器人）。 |
-|ChanelValue|String|否|testxx\*\*\*\*@aliyun.com|报警类型的值。
+|ChanelValue|String|否|alice@example.com|报警类型的值。
 
- 当ChanelType设置为Email时，需要设置搜索的Email地址。 |
+ 当ChanelType设置为Email时，需要设置该参数。 |
 
 ## 返回数据
 
@@ -38,15 +38,17 @@
 |Contact| | | |
 |Channels|Struct| |报警通知方式。 |
 |AliIM|String|Alice|旺旺名称。 |
-|DingWebHook|String|https://oapi.dingtalk.com/robot/send?access\_token=9bf44f8189597d07dfdd7a123455ffc112\*\*\*\*|钉钉机器人的地址。 |
-|Mail|String|someone@example.com|邮件地址。 |
+|DingWebHook|String|https://oapi.dingtalk.com/robot/send?access\_token=9bf44f8189597d07dfdd7a123455ffc112\*\*\*\*|钉钉机器人地址。 |
+|Mail|String|alice@example.com|邮件地址。 |
 |SMS|String|1333333\*\*\*\*|手机号码。 |
 |ChannelsState|Struct| |报警通道的状态。
 
  因为Email需要激活以后才能使用，所以当添加或修改报警通道时，如果处于未激活状态，则为PENDING；如果处于激活状态，则为OK。 |
 |AliIM|String|OK|旺旺名称的状态正常。
 
- 目前取值只支持：OK。OK表示旺旺名状态正常，对应的报警通道正常，可正常报警。 |
+ 目前取值只支持：OK。OK表示旺旺名状态正常，对应的报警通道正常，可正常报警。
+
+ **说明：** 该参数仅适用于中国站。 |
 |DingWebHook|String|OK|钉钉机器人的状态正常。
 
  目前取值只支持：OK。OK表示钉钉机器人状态正常，对应的报警通道正常，可正常报警。 |
@@ -57,16 +59,18 @@
 |SMS|String|OK|短信的状态。取值：
 
  -   PENDING：对应报警通道未激活，激活后才能使用。
--   OK：对应报警通道正常，可正常报警。 |
+-   OK：对应报警通道正常，可正常报警。
+
+ **说明：** 该参数仅适用于中国站。 |
 |ContactGroups|List|\{ "ContactGroup": \[ "ECS\_Group", "Jim" \] \}|报警联系组列表。 |
 |CreateTime|Long|1552356159000|创建时间戳。 |
-|Desc|String|我的联系方式|描述信息。 |
+|Desc|String|ECS联系人|描述信息。 |
 |Lang|String|zh-cn|报警的语言类型。取值：
 
  -   zh-cn：简体中文。
 -   en：英文。 |
-|Name|String|Alice|联系人姓名。 |
-|UpdateTime|Long|1552356159000|更新时间戳。 |
+|Name|String|Alice|报警联系人姓名。 |
+|UpdateTime|Long|1552356159000|报警更新时间戳。 |
 |Total|Integer|15|总记录条数。 |
 
 ## 示例
@@ -99,7 +103,7 @@ http(s)://[Endpoint]/?Action=DescribeContactList
 				      <CreateTime>1583307692000</CreateTime>
 				      <UpdateTime>1589441072000</UpdateTime>
 				      <Channels>
-					        <Mail>someone@example.com</Mail>
+					        <Mail>alice@example.com</Mail>
 					        <SMS>155*******</SMS>
 				      </Channels>
 				      <Name>Alice</Name>
@@ -134,7 +138,7 @@ http(s)://[Endpoint]/?Action=DescribeContactList
 				"CreateTime": 1583307692000,
 				"UpdateTime": 1589441072000,
 				"Channels": {
-					"Mail": "someone@example.com",
+					"Mail": "alice@example.com",
 					"SMS": "155*******"
 				},
 				"Name": "Alice",
