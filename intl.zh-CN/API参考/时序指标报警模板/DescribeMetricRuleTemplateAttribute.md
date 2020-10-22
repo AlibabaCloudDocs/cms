@@ -11,8 +11,8 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|DescribeMetricRuleTemplateAttribute|要执行的操作，取值：DescribeMetricRuleTemplateAttribute。 |
-|Name|String|否|我的模板|报警模板名称。 |
-|TemplateId|String|否|123|报警模板ID。 |
+|Name|String|否|ECS\_Template1|报警模板名称。Name和TemplateId必须设置一个。 |
+|TemplateId|String|否|12345|报警模板ID。Name和TemplateId必须设置一个。 |
 
 ## 返回数据
 
@@ -91,13 +91,13 @@
 |Namespace|String|acs\_ecs\_dashboard|阿里云服务的Namespace。
 
  请您根据云服务链接查找，详情请参见[云服务监控项](~~163515~~)。 |
-|RuleName|String|我的报警规则|报警规则名称。 |
+|RuleName|String|ECS\_Rule1|报警规则名称。 |
 |Selector|String|\{"disk":"/"\}|报警维度扩展选项。 |
 |Webhook|String|https://api.aliyun.com/test.json|触发报警回调的URL地址。 |
-|Description|String|报警模板描述|报警模板描述信息。 |
-|Name|String|CPU监控模板|报警模板名称。 |
+|Description|String|ECS模板|报警模板描述信息。 |
+|Name|String|ECS\_Template1|报警模板名称。 |
 |RestVersion|String|0|报警模板版本。 |
-|TemplateId|String|123|报警模板ID。 |
+|TemplateId|String|12345|报警模板ID。 |
 |Success|Boolean|true|操作是否成功。取值：
 
  -   true：成功。
@@ -109,6 +109,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=DescribeMetricRuleTemplateAttribute
+&TemplateId=12345
 &<公共请求参数>
 ```
 
@@ -158,7 +159,7 @@ http(s)://[Endpoint]/?Action=DescribeMetricRuleTemplateAttribute
 					        </Escalations>
 				      </AlertTemplate>
 			    </AlertTemplates>
-			    <TemplateId>45</TemplateId>
+			    <TemplateId>12345</TemplateId>
 		  </Resource>
 		  <RequestId>C14F2566-B4AC-4C3E-AC7D-0A1D16CF33DE</RequestId>
 		  <Success>true</Success>
@@ -212,7 +213,7 @@ http(s)://[Endpoint]/?Action=DescribeMetricRuleTemplateAttribute
         }
       ]
     },
-    "TemplateId": 45
+    "TemplateId": 12345
   },
   "RequestId": "C14F2566-B4AC-4C3E-AC7D-0A1D16CF33DE",
   "Success": true,
