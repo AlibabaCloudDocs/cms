@@ -29,6 +29,9 @@
  -   critical（默认值）：故障。
 -   warn：警告。
 -   info：信息。 |
+|AlertConfig.N.Statistics|String|是|Average|报警统计方式。
+
+ **说明：** 目前仅支持Average。 |
 |AlertConfig.N.Threshold|String|是|5|报警阈值。 |
 |AlertConfig.N.Times|String|是|3|报警级别连续出现次数。默认：3次。
 
@@ -42,7 +45,7 @@
 -   or：或。 |
 |MatchExpress.N.Name|String|否|name1|匹配条件的类型。
 
- **说明：** 目前仅支持name，即实例名称。 |
+ **说明：** 目前仅支持Name，即实例名称。 |
 |MatchExpress.N.Function|String|否|startWith|匹配条件。取值：
 
  -   all（默认值）：全部。
@@ -51,16 +54,13 @@
 -   contains：包含。
 -   notContains：不包含。
 -   equals：相等。 |
-|MatchExpress.N.Value|String|否|portalHost|匹配实例名。 |
+|MatchExpress.N.Value|String|否|portalHost|匹配实例名称。 |
 |AlertConfig.N.EffectiveInterval|String|否|00:00-23:59|报警规则的生效时间段。 |
 |AlertConfig.N.NoEffectiveInterval|String|否|00:00-23:59|报警规则不生效时间段。 |
 |AlertConfig.N.SilenceTime|String|否|86400|通道沉默周期。单位：秒。最小值：3600秒（1小时），默认值：86400秒（1天）。
 
  **说明：** 当监控数据持续超过报警规则阈值时，每个沉默周期内只发送一次报警通知。 |
 |AlertConfig.N.Webhook|String|否|http://www.aliyun.com|报警回调URL地址。 |
-|AlertConfig.N.Statistics|String|否|Average|报警统计方式。
-
- **说明：** 目前仅支持Average。 |
 
 ## 返回数据
 
@@ -84,6 +84,7 @@
 http(s)://[Endpoint]/?Action=CreateGroupMonitoringAgentProcess
 &AlertConfig.1.ComparisonOperator=GreaterThanOrEqualToThreshold
 &AlertConfig.1.EscalationsLevel=warn
+&AlertConfig.1.Statistics=Average
 &AlertConfig.1.Threshold=5
 &AlertConfig.1.Times=3
 &GroupId=123456
@@ -97,9 +98,9 @@ http(s)://[Endpoint]/?Action=CreateGroupMonitoringAgentProcess
 
 ```
 <CreateGroupMonitoringAgentProcessResponse>
-		  <RequestId>7985D471-3FA8-4EE9-8F4B-45C19DF3D36F</RequestId>
-		  <Success>true</Success>
-		  <Code>200</Code>
+	  <RequestId>718FEA81-64C3-4F23-8F90-0531F7489FC1</RequestId>
+	  <Code>200</Code>
+	  <Success>true</Success>
 </CreateGroupMonitoringAgentProcessResponse>
 ```
 
@@ -107,9 +108,9 @@ http(s)://[Endpoint]/?Action=CreateGroupMonitoringAgentProcess
 
 ```
 {
-	"RequestId": "7985D471-3FA8-4EE9-8F4B-45C19DF3D36F",
-	"Success": true,
-	"Code": 200
+	"RequestId": "718FEA81-64C3-4F23-8F90-0531F7489FC1",
+	"Code": 200,
+	"Success": true
 }
 ```
 
