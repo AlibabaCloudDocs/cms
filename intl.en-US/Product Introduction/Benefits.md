@@ -1,20 +1,22 @@
-# Benefits {#concept_hns_nm4_tdb .concept}
+# Benefits
 
-After years of profound research in server monitoring, CloudMonitor now integrates powerful data analysis capabilities. CloudMonitor offers services like cloud service monitoring, site monitoring and custom monitoring \(to safeguard your products and business\).
+Cloud Monitor, integrated with the strong data analysis capabilities of the Alibaba Cloud computing platform, is an achievement of Alibaba Group after many years of research on server monitoring technologies. Cloud Monitor provides cloud service monitoring, site monitoring, and custom monitoring to safeguard your products and business.
 
-## Seamless integration {#section_ncw_f44_tdb .section}
+Cloud Monitor provides the following benefits:
 
-You can access the CloudMonitor service after you sign up for an Alibaba Cloud account. When you buy or use Alibaba cloud products, you can view their operation status and set alarms.
+## Seamless integration
 
-## Data visualization {#section_ykz_m44_tdb .section}
+You can use Cloud Monitor immediately after you create an Alibaba Cloud account, without the need to activate Cloud Monitor. Cloud Monitor is seamlessly integrated with other Alibaba Cloud services. You can view the running status of your Alibaba Cloud services and configure alert rules for the services in the Cloud Monitor console after you activate and use the services.
 
-CloudMonitor offers a rich array of diagrams and presentation formats through Dashboard. It supports full-screen presentation and automatic data refresh. This activity satisfies the metric data visualization in various cases.
+## Data visualization
 
-## Metric data processing {#section_pgy_w44_tdb .section}
+Cloud Monitor uses dashboards to provide a rich array of monitoring charts. Cloud Monitor allows you to view dashboards in full screen and can automatically refresh monitoring data. This meets the need of monitoring data visualization in various scenarios.
 
-CloudMonitor helps to process metric data through Dashboard. It is generally based on a combination of temporal and spatial dimensions.
+## Monitoring data processing
 
-## Flexible alarms {#section_vf3_y44_tdb .section}
+Cloud Monitor allows you to use dashboards to aggregate monitoring data by time or space.
 
-CloudMonitor offers Alarm Rules service.  By using this service, you can receive an alarm immediately when any exception occurs. You can set reasonable alarm rules and notification methods for metrics. This helps to identify and fix the service exceptions without any delay. Moreover, it increases the availability of your products.
+## Flexible alerting
+
+Cloud Monitor provides the alert service. You can configure alert rules and alert notification methods for metrics. Cloud Monitor sends an alert notification immediately after a service exception occurs. This helps you detect and fix service exceptions and improves service availability.
 
