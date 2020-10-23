@@ -1,73 +1,45 @@
-# 如何创建容器服务Kubernetes版的Pod报警规则 {#concept_hr3_hhx_bgb .concept}
+# 如何创建容器服务Kubernetes版的Pod报警规则
 
-本文为您介绍如何对容器服务Kubernetes的Pod及一组Pod的聚合指标设置报警规则。
+云监控通过监控容器服务Kubernetes版的CPU、内存、网络等监控项，帮助您监控其使用情况。您创建容器服务Kubernetes版后，云监控自动对其进行监控，您可以查看其监控详情。您可以对容器服务Kubernetes版的监控项设置报警规则，当监控项超过设定阈值时，云监控自动给您发送报警通知。
 
-## 背景信息 {#section_mbj_wf2_qgb .section}
-
-云监控新增容器服务Kubernetes版报警功能，通过监控容器服务的 CPU 使用率、入带宽等监控项，帮助您获取容器服务的使用情况。在您创建容器服务后，云监控自动开始对其监控，您登录云监控的容器服务Kubernetes版页面即可查看监控详情。当您对监控项设置报警规则后，即可在数据异常时收到报警通知。
-
-## 创建容器服务Kubernetes版报警规则的准备工作 {#section_grl_pj2_qgb .section}
-
-在创建容器服务Kubernetes版报警规则之前，建议您先创建好容器服务，然后在云监控中创建应用分组和报警联系人\\报警联系组。
-
-## 创建容器服务Kubernetes版报警规则的实施步骤 {#section_ehp_vqx_bgb .section}
-
-**注意事项**
+-   请确保您已创建容器服务Kubernetes版，操作方法请参见[快速创建Kubernetes托管版集群](/intl.zh-CN/快速入门/基础入门/快速创建Kubernetes托管版集群.md)。
+-   请确保您已创建容器服务Kubernetes版所需的应用分组，操作方法请参见[创建应用分组](/intl.zh-CN/应用分组/创建应用分组.md)。
+-   请确保您已创建容器服务Kubernetes版的报警联系人或报警联系组，操作方法请参见[创建报警联系人或报警联系组](/intl.zh-CN/报警服务/报警联系人/创建报警联系人或报警联系组.md)。
 
 -   监控数据最多保存31天。
--   最多可连续查看14天的监控数据。
+-   您最多可连续查看14天的监控数据。
 
-**创建容器服务Kubernetes版报警模板**
+1.  创建容器服务Kubernetes版的报警模板。
 
-1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
-2.  单击左侧导航栏中**报警服务**下的**报警模板**，进入**报警模板**页面。
-3.  单击右上角的**创建报警模板**按钮，进入创建报警模板页面。
+    1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78698/154892884034067_zh-CN.png)
+    2.  在左侧导航栏，单击**报警服务** \> **报警模板**。
 
-4.  配置模板信息：产品名称选择**容器服务-Kubernetes版**，并配置相关监控项。
-5.  单击**添加**按钮，完成创建报警模板。
+    3.  在报警模板页面，单击**创建报警模板**。
 
-**将模板应用在Kubernetes分组上**
+    4.  在创建/修改报警模板页面，输入模板名称，产品选择**容器服务-Kubernetes版**，设置容器服务Kubernetes版的报警规则。
 
-1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
-2.  单击左侧导航栏中**报警服务**下的**报警模板**，进入**报警模板**页面。
-3.  选择上面创建的容器服务Kubernetes版报警模板，单击操作栏中的**应用到分组**。
+    5.  单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78698/154892884134071_zh-CN.png)
+2.  应用容器服务Kubernetes版的报警模板到应用分组。
 
-4.  选择需要创建报警规则的分组，单击**确认**按钮即可。
+    1.  在创建/修改报警模板完成对话框中，单击**确定**。
 
-## 后续操作 {#section_ezq_fyy_bgb .section}
+    2.  在应用模板到分组页面，选择应用分组、通道沉默周期、生效时间、报警回调和模板应用方式。
 
-Kubernetes应用分组的报警通知会默认发送给“云账号报警联系人”分组，如果您所有的Kubernetes应用报警通知只需要发送给同一个联系人组，则直接修改“云账号联系人”分组中的接收人即可。
+    3.  单击**确认**。
 
-**直接修改联系人组的操作步骤：** 
+    4.  在应用模板到分组对话框中，单击**确认**。
 
-1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
-2.  单击左侧导航栏中**报警服务**下的**报警联系人**，进入**报警联系人**页面。
-3.  单击**报警联系组**页签，切换到报警联系组页面。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78698/154892884134072_zh-CN.png)
+-   如果您不同的容器服务Kubernetes版的报警通知，需要发送给不同联系人组，则需要修改应用分组关联的报警联系人组。
 
-4.  单击修改图标，进入编辑组页面，修改联系人后，单击**确定**按钮即可。
+    修改应用分组中报警联系人组的操作方法，请参见[修改应用分组](/intl.zh-CN/应用分组/修改应用分组.md)。
 
-如果您不同的Kubernetes应用的报警通知，需要发送给不同联系人组，则需要进入应用分组，修改应用分组关联的报警联系人组。
+-   如果您需要修改多个容器服务Kubernetes版的应用分组的联系人组，可以通过OpenAPI工具进行修改。
 
-**通过应用分组修改关联联系人组的操作步骤：** 
+    登录[OpenAPI Explorer](https://api.aliyun.com)，调用PutContactGroup接口修改报警联系人组。
 
-1.  登录[云监控控制台](https://cms-intl.console.aliyun.com)。
-2.  单击左侧导航栏中**应用分组**，进入**应用分组**页面。
-3.  通过搜索找到Kubernetes的分组，单击分组名称，进入分组详情页。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78698/154892884134079_zh-CN.png)
-4.  单击修改图标，修改联系人组后，单击**确定**即可，该分组中的所有报警通知，将发送给新的报警联系人组。
+    PutContactGroup接口中参数的设置方法，请参见[PutContactGroup](/intl.zh-CN/API参考/报警联系人组/PutContactGroup.md)。
 
-如果您需要修改多个Kubernetes应用分组的联系人组，可以通过OpenAPI工具进行修改。
-
-**通过OpenAPI工具修改联系人组的操作步骤：** 
-
-1.  登录[OpenAPI Explorer](https://api.aliyun.com)。
-2.  在左侧云产品列表中，单击**云监控**，在搜索框中输入UpdateMyGroups，在搜索结果中单击该API，进入修改应用分组的API调用页面。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78698/154892884134114_zh-CN.png)
-3.  在GroupId输入框中，输入需要修改的分组ID。
-4.  在ContactGroups输入框中，输入需要接收报警通知的联系人组。
-5.  单击**发起调用**按钮即可。
 
