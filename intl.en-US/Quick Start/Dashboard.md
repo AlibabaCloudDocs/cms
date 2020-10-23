@@ -1,75 +1,66 @@
-# Dashboard {#concept_kfq_5nv_tdb .concept}
+# Dashboard
 
-CloudMonitor dashboards are customizable pages that can be used to monitor data from multiple products and instances in all one area.
+Cloud Monitor provides the dashboard feature. You can customize the monitoring data that a dashboard displays and view the monitoring data on the dashboard.
 
-## View a dashboard {#section_fqv_sqv_tdb .section}
+## Scenario
 
-You can quickly view the resources used by each cloud product on its corresponding dashboard.
+On a dashboard, you can aggregate monitoring data of different instances that run the same workloads. These instances can belong to different services.
 
-**Note:** 
+## View monitoring data on a dashboard
 
--   By default, CloudMonitor displays the ECS global dashboard and part of your ECS monitoring data.
--   You can add the monitoring data of other cloud products as needed.
+You can use a dashboard to display the resource usage of Alibaba Cloud services.
 
-**Procedure**
+**Note:**
 
-1.  Log on to the [CloudMonitor Console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, select **Dashboard** and click **Custom Dashboard**. The Dashboards page is displayed.
-3.  Select the target dashboard from the **Dashboards** drop-down list. You can switch the dashboard view by selecting different dashboards.
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6124/1567568625994_en-US.png)
-
-
-## Create a dashboard {#section_fw2_htv_tdb .section}
-
-You can create a dashboard and customize the view to meet your specific requirements in complex service scenarios.
+-   Cloud Monitor provides a default dashboard that displays specific monitoring data for Elastic Compute Service \(ECS\).
+-   You can add monitoring data of other Alibaba Cloud services to the dashboard.
 
 **Procedure**
 
-1.  Log on to the [CloudMonitor Console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, select **Dashboard** and click **Custom Dashboard**. The Dashboards page is displayed.
-3.  In the upper-right corner of the page, click **Create Dashboard**.
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+2.  In the left-side navigation pane, choose **Dashboard** \> **Custom Dashboard**.
+3.  On the **Dashboards** page, select the dashboard that you want to view from the drop-down list. You can switch to another dashboard by selecting the dashboard from the drop-down list.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6124/1567568625996_en-US.png)
+## Create a dashboard
 
-4.  Enter the dashboard name and click **Create**.
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6124/1567568625997_en-US.png)
-
-5.  On the displayed page, add charts as needed.
-
-## Add a monitoring chart {#section_xzb_rwv_tdb .section}
-
-You can add major cloud product metrics and your service metrics to the dashboard.
-
-If you use multiple cloud products for your application, you can add the cloud product metrics to the same dashboard by adding a chart, so that you can view the global cloud product monitoring data.
-
-When you report your service monitoring data by using the CloudMonitor API, you can add a chart to display the monitoring data.
+If the default dashboard for ECS cannot meet your requirements on service monitoring, you can create dashboards and add monitoring charts as needed.
 
 **Procedure**
 
-For details, see [Add charts](../../../../reseller.en-US/User Guide/Visual reports/Use dashboards/Add charts.md#).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+2.  In the left-side navigation pane, choose **Dashboard** \> **Custom Dashboard**.
+3.  On the Dashboards page, click **Create Dashboard** in the upper-right corner.
+4.  In the Create Dashboard dialog box, enter a name for the dashboard and click **Create**. The Dashboards page displays the created dashboard. You can add monitoring charts to the dashboard as needed.
 
-## Delete a dashboard {#section_lw1_z1w_tdb .section}
+## Add a monitoring chart
 
-**Note:** 
+You can add monitoring charts for metrics of your Alibaba Cloud services and custom metrics.
 
--   When you delete a dashboard, all charts added to it are deleted.
--   Monitoring data cannot be restored after you delete it.
--   We recommend that you not delete a dashboard unless necessary.
+If you use multiple Alibaba Cloud services, you can add monitoring charts for metrics of these services to a dashboard. Then, you can view the monitoring data of the services on the dashboard.
+
+After you report custom monitoring data to Cloud Monitor by using the Cloud Monitor API, you can add monitoring charts for the custom metrics to a dashboard to display the monitoring data.
 
 **Procedure**
 
-1.  Log on to the [CloudMonitor Console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, select **Dashboard** and click **Custom Dashboard**. The Dashboards page is displayed.
-3.  In the upper-right corner of the page, click **Delete Dashboard**.
+For more information, see [Add a monitoring chart](/intl.en-US/Dashboard/Use dashboards/Add charts.md).
 
-## Modify a dashboard {#section_nn5_ydw_tdb .section}
+## Delete a dashboard
 
-1.  Log on to the [CloudMonitor Console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, select **Dashboard** and click **Custom Dashboard**. The Dashboards page is displayed.
-3.  Rest the pointer on a dashboard until the **Edit** button is displayed. Click **Edit**, enter the new dashboard name, and click **OK**.
+**Note:**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6124/15675686251019_en-US.png)
+-   If you delete a dashboard, all monitoring charts that are added to the dashboard are deleted.
+-   You cannot restore a dashboard after you delete it.
+-   Exercise caution when you delete a dashboard.
 
+**Procedure**
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+2.  In the left-side navigation pane, choose **Dashboard** \> **Custom Dashboard**.
+3.  On the Dashboards page, click **Delete Dashboard** in the upper-right corner to delete the current dashboard.
+
+## Change the name of a dashboard
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+2.  In the left-side navigation pane, choose **Dashboard** \> **Custom Dashboard**.
+3.  On the **Dashboards** page, move the pointer over the dashboard name and click **Edit** that appears. Enter a new name and click **OK**.
 
