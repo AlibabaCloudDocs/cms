@@ -11,13 +11,10 @@
 
 |监控项|单位|MetricName|Dimensions|Statistics|
 |---|--|----------|----------|----------|
-|CPU利用率|%|CPUUtilization|userId、instanceId|Average|
 |连接数|Count|ConnectionCount|userId、instanceId|Average|
 |逻辑QPS|Count|LogicQPS|userId、instanceId|Average|
 |逻辑RT|ms|LogicRT|userId、instanceId|Average|
 |内存利用率|%|MemoryUtilization|userId、instanceId|Average|
-|网络输入带宽|bit/s|NetworkInputTraffic|userId、instanceId|Average|
-|网络输出带宽|bit/s|NetworkOutputTraffic|userId、instanceId|Average|
 |物理QPS|Count|PhysicsQPS|userId、instanceId|Average|
 |物理RT|ms|PhysicsRT|userId、instanceId|Average|
 |活跃线程数|Count|ThreadCount|userId、instanceId|Average|
