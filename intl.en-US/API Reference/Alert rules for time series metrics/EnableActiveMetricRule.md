@@ -1,89 +1,77 @@
-# EnableActiveMetricRule {#doc_api_Cms_EnableActiveMetricRule .reference}
+# EnableActiveMetricRule
 
-You can call this operation to enable one-click alert for a service.
+Enables one-click alert for a service.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=EnableActiveMetricRule) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=EnableActiveMetricRule&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|EnableActiveMetricRule|The operation that you want to perform. Set the value to EnableActiveMetricRule.
+|Action|String|Yes|EnableActiveMetricRule|The operation that you want to perform. Set the value to EnableActiveMetricRule. |
+|Product|String|Yes|ecs|The service for which you want to enable one-click alert. Valid values:
 
- |
-|Product|String|Yes|ecs|The name of the service that supports one-click alert. Valid values:
+ -   ecs: Elastic Compute Service \(ECS\)
+-   rds: ApsaraDB RDS
+-   slb: Server Load Balancer \(SLB\)
+-   redis\_standard: ApsaraDB for Redis of the standard architecture
+-   redis\_sharding: ApsaraDB for Redis of the cluster architecture
+-   redis\_splitrw: ApsaraDB for Redis of the read/write splitting architecture
+-   mongodb: ApsaraDB for MongoDB of the replica set architecture
+-   mongodb\_sharding: ApsaraDB for MongoDB of the sharded cluster architecture
+-   hbase: ApsaraDB for HBase
+-   elasticsearch: Elasticsearch
+-   opensearch: Open Search |
 
- -   ecs \(Elastic Compute Service\)
--   rds \(ApsaraDB for RDS\)
--   slb \(Server Load Balancer\)
--   redis\_standard \(ApsaraDB RDS for Redis standard version\)
--   redis\_sharding \(ApsaraDB RDS for Redis cluster version\)
--   redis\_splitrw \(ApsaraDB RDS for Redis read/write splitting version\)
--   mongodb \(ApsaraDB RDS for MongoDB replica set instances\)
--   mongodb\_sharding \(ApsaraDB RDS for MongoDB sharded clusters\)
--   hbase \(ApsaraDB for HBase\)
--   elasticsearch \(Elasticsearch\)
--   opensearch \(Open Search\)
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|success|The error message.
+ **Note:** The status code 200 indicates that the call was successful. |
+|Message|String|The Request is not authorization.|The returned message. |
+|RequestId|String|F82E6667-7811-4BA0-842F-5B2DC42BBAAD|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|RequestId|String|F82E6667-7811-4BA0-842F-5B2DC42BBAAD|The request ID for troubleshooting.
+ -   true: The call was successful.
+-   false: The call failed. |
 
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=EnableActiveMetricRule
 &Product=ecs
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <EnableActiveMetricRuleResponse>
-  <Code>200</Code>
-  <Success>true</Success> 
-  <Message>success</Message>
-  <RequestId>55850888-9CCE-4FD5-B949-5F8947D63929</RequestId>
+      <Code>200</Code>
+      <Success>true</Success>
+      <RequestId>55850888-9CCE-4FD5-B949-5F8947D63929</RequestId>
 </EnableActiveMetricRuleResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"success",
-	"RequestId":"55850888-9CCE-4FD5-B949-5F8947D63929",
-	"Success":true,
-	"Code":"200"
+  "Code": "200",
+  "Success": true,
+  "RequestId": "55850888-9CCE-4FD5-B949-5F8947D63929"
 }
 ```
 
-## Error code { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
