@@ -12,12 +12,12 @@ Queries alert contacts.
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|DescribeContactList|The operation that you want to perform. Set the value to DescribeContactList. |
 |PageSize|Integer|No|10|The number of entries to return on each page. Default value: 100. |
-|PageNumber|Integer|No|1|The number of the page to return. Default value: 1 |
+|PageNumber|Integer|No|1|The number of the page to return. Default value: 1. |
 |ContactName|String|No|Alice|The name of the alert contact. |
 |ChanelType|String|No|Email|The alert notification method.
 
 Alert notifications can be sent by using emails or DingTalk chatbots. |
-|ChanelValue|String|No|testxx\*\*\*\*@aliyun.com|The alert notification target.
+|ChanelValue|String|No|alice@example.com|The alert notification target.
 
 If you set the ChanelType parameter to Email, set the value of the ChanelValue parameter to an email address of the alert contact that you want to query. |
 
@@ -39,14 +39,16 @@ If you set the ChanelType parameter to Email, set the value of the ChanelValue p
 |Channels|Struct|N/A|The alert notification targets. |
 |AliIM|String|Alice|The TradeManager ID of the alert contact. |
 |DingWebHook|String|https://oapi.dingtalk.com/robot/send?access\_token=9bf44f8189597d07dfdd7a123455ffc112\*\*\*\*|The webhook URL of the DingTalk chatbot. |
-|Mail|String|someone@example.com|The email address of the alert contact. |
+|Mail|String|alice@example.com|The email address of the alert contact. |
 |SMS|String|1333333\*\*\*\*|The phone number of the alert contact. |
 |ChannelsState|Struct|N/A|The status of the alert notification target. Valid values: PENDING and OK.
 
 The email address must be activated after it is added as an alert notification target. The value PENDING indicates that the email address is not activated. The value OK indicates that the email address is activated. |
 |AliIM|String|OK|The status of the TradeManager ID.
 
-The value is fixed to OK. The value OK indicates that the TradeManager ID is valid and can receive alert notifications. |
+The value is fixed to OK. The value OK indicates that the TradeManager ID is valid and can receive alert notifications.
+
+**Note:** This parameter can be returned only on the China site \(aliyun.com\). |
 |DingWebHook|String|OK|The status of the DingTalk chatbot.
 
 The value is fixed to OK. The value OK indicates that the DingTalk chatbot is normal and alert notifications can be received in a DingTalk group. |
@@ -57,10 +59,12 @@ The value is fixed to OK. The value OK indicates that the DingTalk chatbot is no
 |SMS|String|OK|The status of the phone number. Valid values:
 
 -   PENDING: The phone number is not activated. Alert notifications can be sent to the phone number by using text messages only after the phone number is activated.
--   OK: The phone number is activated and can receive alert notifications. |
+-   OK: The phone number is activated and can receive alert notifications.
+
+**Note:** This parameter can be returned only on the China site \(aliyun.com\). |
 |ContactGroups|List|\{ "ContactGroup": \[ "ECS\_Group", "Jim" \] \}|The alert groups to which the alert contact is added. |
 |CreateTime|Long|1552356159000|The time when the alert contact was created. |
-|Desc|String|My alert notification method|The description of the alert contact. |
+|Desc|String|ECS alert contact|The description of the alert contact. |
 |Lang|String|zh-cn|The language in which the alert information is displayed. Valid values:
 
 -   zh-cn: simplified Chinese
@@ -74,7 +78,7 @@ The value is fixed to OK. The value OK indicates that the DingTalk chatbot is no
 Sample requests
 
 ```
-http(s)://[Endpoint]/?Action=DescribeContactList
+http(s)://[Endpoint]/? Action=DescribeContactList
 &<Common request parameters>
 ```
 
@@ -99,7 +103,7 @@ Sample success responses
                       <CreateTime>1583307692000</CreateTime>
                       <UpdateTime>1589441072000</UpdateTime>
                       <Channels>
-                            <Mail>someone@example.com</Mail>
+                            <Mail>alice@example.com</Mail>
                             <SMS>155*******</SMS>
                       </Channels>
                       <Name>Alice</Name>
@@ -134,7 +138,7 @@ Sample success responses
                 "CreateTime": 1583307692000,
                 "UpdateTime": 1589441072000,
                 "Channels": {
-                    "Mail": "someone@example.com",
+                    "Mail": "alice@example.com",
                     "SMS": "155*******"
                 },
                 "Name": "Alice",
