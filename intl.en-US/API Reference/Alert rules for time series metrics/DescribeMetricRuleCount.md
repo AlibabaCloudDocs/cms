@@ -11,8 +11,8 @@ Queries the number of alert rules in each state.
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|DescribeMetricRuleCount|The operation that you want to perform. Set the value to DescribeMetricRuleCount. |
-|Namespace|String|No|acs\_ecs\_dashboard|The namespace of the service. For more information, see [DescribeMetricMetaList](~~98846~~). |
-|MetricName|String|No|cpu\_total|The name of the metric. For more information, see [DescribeMetricMetaList](~~98846~~). |
+|Namespace|String|No|acs\_ecs\_dashboard|The namespace of the service. For more information, see [Appendix 1: Metrics](~~163515~~). |
+|MetricName|String|No|cpu\_total|The name of the metric. For more information, see [Appendix 1: Metrics](~~163515~~). |
 
 ## Response parameters
 
@@ -25,18 +25,21 @@ Queries the number of alert rules in each state.
 |MetricRuleCount|Struct|N/A|The number of alert rules in each state. |
 |Alarm|Integer|5|The number of alert rules with active alerts. |
 |Disable|Integer|0|The number of disabled alert rules. |
-|Nodata|Integer|0|The number of alert rules with no data. |
-|Ok|Integer|40|The number of alert rules with no active alerts. |
+|Nodata|Integer|0|The number of alert rules without data. |
+|Ok|Integer|40|The number of alert rules without active alerts. |
 |Total|Integer|45|The total number of alert rules. |
 |RequestId|String|FF38D33A-67C1-40EB-AB65-FAEE51EDB644|The ID of the request. |
-|Success|Boolean|true|Indicates whether the call was successful. The value true indicates a success. The value false indicates a failure. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
+
+-   true: The call was successful.
+-   false: The call failed. |
 
 ## Examples
 
 Sample requests
 
 ```
-http(s)://[Endpoint]/?Action=DescribeMetricRuleCount
+http(s)://[Endpoint]/? Action=DescribeMetricRuleCount
 &<Common request parameters>
 ```
 
