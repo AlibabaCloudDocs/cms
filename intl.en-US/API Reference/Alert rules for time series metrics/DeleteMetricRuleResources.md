@@ -1,87 +1,67 @@
-# DeleteMetricRuleResources {#doc_api_Cms_DeleteMetricRuleResources .reference}
+# DeleteMetricRuleResources
 
-You can call this operation to delete resources associated with an alert rule.
+Disassociates resources from an alert rule.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-Alibaba Cloud provides [OpenAPI Explorer](https://api.aliyun.com/#product=Cms&api=DeleteMetricRuleResources) to simplify API usage. You can use OpenAPI Explorer to search for APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DeleteMetricRuleResources&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DeleteMetricRuleResources|The operation that you want to perform. Set the value to DeleteMetricRuleResources.
+|Action|String|Yes|DeleteMetricRuleResources|The operation that you want to perform. Set the value to DeleteMetricRuleResources. |
+|Resources|String|Yes|\[\{"instanceId":"i-uf6hm9lnlzsarrc7\*\*\*\*"\}\]|The resources to be disassociated from the alert rule. |
+|RuleId|String|Yes|rr-bp18017n6iolv\*\*\*\*|The ID of the alert rule. |
 
- |
-|Resources|String|Yes|\[\{"instanceId":"\*\*\*\*\*ixxxId1"\}\]|The resources to associate with the alert rule. Specify the value as a JSON array, such as
-
- ```
-
-[{"instanceId":"*****ixxxId1"}].
-
-```
-
- |
-|RuleId|String|Yes|i-2ze3w55tr2rcpejpcfap\_59\*\*\*\*\*\*1|The ID of the alert rule.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the operation is successful.
+|RequestId|String|D8A35882-90C6-4F03-BBEB-153C180398EA|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|Message|String|success|The error message.
+ -   true: The call was successful.
+-   false: The call failed. |
+|Code|String|200|The HTTP status code.
 
- |
-|RequestId|String|D8A35882-90C6-4F03-BBEB-153C180398EA|The ID of the request, which can be used for troubleshooting.
+ **Note:** The status code 200 indicates that the call was successful. |
+|Message|String|The alert does not exist.|The returned message. |
 
- |
-|Success|Boolean|true|Indicates whether the operation is successful.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=DeleteMetricRuleResources
-&Resources=[{"instanceId":"*****ixxxId1"}]
-&RuleId=i-2ze3w55tr2rcpejpcfap_59******1
+&Resources=[{"instanceId":"i-uf6hm9lnlzsarrc7****"}]
+&RuleId=rr-bp18017n6iolv****
 &<Common request parameters>
-
 ```
 
-Sample successful responses
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
-<CreateMetricRuleResourcesResponse>
-  <RequestId>0671A721-0D7A-4F11-BB77-2416325D65AB</RequestId>
-  <Success>true</Success>
-  <Code>200</Code>
-  <Message>success</Message>
-</CreateMetricRuleResourcesResponse>
-
+```
+<DeleteMetricRuleResourcesResponse>
+		  <RequestId>0671A721-0D7A-4F11-BB77-2416325D65AB</RequestId>
+		  <Success>true</Success>
+		  <Code>200</Code>
+</DeleteMetricRuleResourcesResponse>
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"success",
-	"RequestId":"0671A721-0D7A-4F11-BB77-2416325D65AB",
-	"Success":true,
-	"Code":"200"
+    "RequestId": "0671A721-0D7A-4F11-BB77-2416325D65AB",
+    "Success": true,
+    "Code": "200"
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
