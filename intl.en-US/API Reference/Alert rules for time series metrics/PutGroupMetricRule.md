@@ -1,226 +1,182 @@
-# PutGroupMetricRule {#doc_api_Cms_PutGroupMetricRule .reference}
+# PutGroupMetricRule
 
-You can call this operation to create or modify a group alert rule.
+Creates or modifies an alert rule for an application group.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=PutGroupMetricRule) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=PutGroupMetricRule&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
-|Parameter|Type|Required|Example|Description |
-|---------|----|--------|-------|------------|
+|Parameter|Type|Required|Example|Description|
+|---------|----|--------|-------|-----------|
+|Action|String|Yes|PutGroupMetricRule|The operation that you want to perform. Set the value to PutGroupMetricRule. |
 |Category|String|Yes|ecs|The abbreviation of the service name. Valid values:
 
- -   ECS \(including Alibaba Cloud and non-Alibaba Cloud hosts\)
--   RDS \(ApsaraDB for RDS\)
--   ADS \(AnalyticDB\)
--   SLB \(Server Load Balancer\)
--   VPC \(Virtual Private Cloud\)
--   APIGATEWAY \(API Gateway\)
--   CDN
--   CS \(Container Service for Swarm\)
--   DCDN \(Dynamic Route for CDN\)
--   DDOS \(distributed denial of service\)
--   EIP \(Elastic IP\)
--   ELASTICSEARCH \(Elasticsearch\)
--   EMR \(E-MapReduce\)
--   ESS \(Auto Scaling\)
--   HBASE \(ApsaraDB for HBase\)
--   IOT\_EDGE \(IoT Edge\)
--   K8S\_POD \(k8s pod\)
--   KVSTORE\_SHARDING \(ApsaraDB RDS for Redis cluster version\)
--   KVSTORE\_SPLITRW \(ApsaraDB RDS for Redis read/write splitting version\)
--   KVSTORE\_STANDARD \(ApsaraDB RDS for Redis standard version\)
--   MEMCACHE \(ApsaraDB RDS for Memcache\)
--   MNS \(Message Service\)
--   MONGODB \(ApsaraDB RDS for MongoDB replica set instances\)
--   MONGODB\_CLUSTER \(ApsaraDB RDS for MongoDB cluster version\)
--   MONGODB\_SHARDING \(ApsaraDB RDS for MongoDB sharded clusters\)
--   MQ\_TOPIC \(Message Service topic\)
--   OCS \(original version of ApsaraDB RDS for Memcache\)
--   OPENSEARCH \(Open Search\)
--   OSS \(Object Storage Service\)
--   POLARDB \(ApsaraDB for POLARDB\)
--   PETADATA \(HybridDB for MySQL\)
--   SCDN \(Secure Content Delivery Network\)
--   SHAREBANDWIDTHPACKAGES \(shared bandwidth package\)
--   SLS \(Log Service\)
--   VPN \(VPN Gateway\)
+-   ecs: Elastic Compute Service \(ECS\) instances that are provided by Alibaba Cloud and hosts that are not provided by Alibaba Cloud
+-   rds: ApsaraDB RDS
+-   ads: AnalyticDB
+-   slb: Server Load Balancer \(SLB\)
+-   vpc: Virtual Private Cloud \(VPC\)
+-   apigateway: API Gateway
+-   cdn: Alibaba Cloud CDN
+-   cs: Container Service for Swarm
+-   dcdn: Dynamic Route for CDN \(DCDN\)
+-   ddos: Anti-DDoS
+-   eip: Elastic IP Address \(EIP\)
+-   elasticsearch: Elasticsearch
+-   emr: E-MapReduce
+-   ess: Auto Scaling
+-   hbase: ApsaraDB for HBase
+-   iot\_edge: IoT Edge
+-   k8s\_pod: pods in Container Service for Kubernetes
+-   kvstore\_sharding: ApsaraDB for Redis of the cluster master-replica architecture
+-   kvstore\_splitrw: ApsaraDB for Redis of the read/write splitting architecture
+-   kvstore\_standard: ApsaraDB for Redis of the standard master-replica architecture
+-   memcache: ApsaraDB for Memcache
+-   mns: Message Service \(MNS\)
+-   mongodb: ApsaraDB for MongoDB of the replica set architecture
+-   mongodb\_cluster: ApsaraDB for MongoDB of the standalone architecture
+-   mongodb\_sharding: ApsaraDB for MongoDB of the sharded cluster architecture
+-   mq\_topic: MNS topics
+-   ocs: ApsaraDB for Memcache of earlier versions
+-   opensearch: Open Search
+-   oss: Object Storage Service \(OSS\)
+-   polardb: PolarDB
+-   petadata: HybridDB for MySQL
+-   scdn: Secure CDN \(SCDN\)
+-   sharebandwidthpackages: EIP Bandwidth Plan
+-   sls: Log Service
+-   vpn: VPN Gateway |
+|GroupId|String|Yes|123456|The ID of the application group. |
+|MetricName|String|Yes|cpu\_total|The name of the metric. For more information, see [Appendix 1: Metrics](~~163515~~). |
+|Namespace|String|Yes|acs\_ecs\_dashboard|The namespace of the service. For more information, see [Appendix 1: Metrics](~~163515~~). |
+|RuleId|String|Yes|bfae2ca5b4e07d2c7278772eccda169808c7b\*\*\*\*|The ID of the alert rule. |
+|RuleName|String|No|rule1|The name of the alert rule. |
+|Dimensions|String|No|\[\{"instanceId":"xxxxxx"\}\]|The dimensions that specify the resources to be associated with the alert rule.
 
- |
-|GroupId|String|Yes|123456|The ID of application group.
+Set the value to a collection of key-value pairs. A typical key-value pair is `instanceId:XXXXXX`.
 
- |
-|MetricName|String|Yes|cpu\_total|The name of the metric. For more information, call DescribeMetricMetaList or see [Preset metrics reference](~~28619~~).
+The key and value can be 1 to 64 bytes in length. Excessive characters are truncated.
 
- |
-|Namespace|String|Yes|acs\_ecs\_dashboard|The data namespace of the service. For more information, call DescribeMetricMetaList or see [Preset metrics reference](~~28619~~).
+The key and value can contain letters, digits, periods \(.\), hyphens \(-\), underscores \(\_\), forward slashes \(/\), and backslashes \(\\\).
 
- |
-|RuleId|String|Yes|bfae2ca5b4e07d2c7278772eccda169808c7b\*\*\*\*|The ID of the alert rule. The IDs of alert rules are generated by callers to ensure uniqueness.
+**Note:** Dimensions must be organized in a JSON string and follow the required order. |
+|EffectiveInterval|String|No|00:00-23:59|The time period during which the alert rule is effective. |
+|NoEffectiveInterval|String|No|00:00-05:30|The time period during which the alert rule is ineffective. |
+|SilenceTime|Integer|No|86400|The mute period during which new alerts are not reported even if the alert trigger conditions are met. Unit: seconds. Default value: 86400, which is equivalent to one day. |
+|Period|String|No|60|The aggregation period of the monitoring data. Unit: seconds. The value is an integral multiple of 60. Default value: 300. |
+|Interval|String|No|60|The interval at which Cloud Monitor checks whether the alert rule is triggered. Unit: seconds.
 
- |
-|Action|String|No|PutGroupMetricRule|The operation that you want to perform. Set the value to PutGroupMetricRule.
+**Note:** We recommend that you set this interval to the data aggregation period. If this interval is shorter than the data aggregation period, alerts cannot be triggered due to insufficient data. |
+|Webhook|String|No|http://www.aliyun.com|The callback URL. |
+|EmailSubject|String|No|ECS instance|The subject of the alert notification email. |
+|Escalations.Critical.Statistics|String|No|Average|The statistical aggregation method for critical-level alerts.
 
- |
-|Dimensions|String|No|\[\{"instanceId":"xxxxxx"\}\]|The expended resource dimensions.
+**Note:** For more information, see [DescribeMetricMetaList](~~98846~~). |
+|Escalations.Critical.ComparisonOperator|String|No|GreaterThanOrEqualToThreshold|The comparison operator of the threshold for critical-level alerts. Valid values:
 
- |
-|EffectiveInterval|String|No|00:00-23:59|The period when the alert rule is effective.
+-   GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+-   GreaterThanThreshold: greater than the threshold
+-   LessThanOrEqualToThreshold: less than or equal to the threshold
+-   LessThanThreshold: less than the threshold
+-   NotEqualToThreshold: not equal to the threshold
+-   GreaterThanYesterday: greater than the metric value at the same time yesterday
+-   LessThanYesterday: less than the metric value at the same time yesterday
+-   GreaterThanLastWeek: greater than the metric value at the same time last week
+-   LessThanLastWeek: less than the metric value at the same time last week
+-   GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+-   LessThanLastPeriod: less than the metric value in the last monitoring cycle |
+|Escalations.Critical.Threshold|String|No|90|The threshold for critical-level alerts. |
+|Escalations.Critical.Times|Integer|No|3|The consecutive number of times for which the metric value is measured before a critical-level alert is triggered. |
+|Escalations.Warn.Statistics|String|No|Average|The statistical aggregation method for warn-level alerts.
 
- |
-|EmailSubject|String|No|An alert occurs|The subject of the alert notification email.
-
- |
-|Escalations.Critical.ComparisonOperator|String| No|GreaterThanOrEqualToThreshold|The comparison operator of the threshold for critical-level alerts. Valid values:
-
- -   GreaterThanOrEqualToThreshold
--   GreaterThanThreshold
--   LessThanOrEqualToThreshold
--   LessThanThreshold
--   NotEqualToThreshold
--   GreaterThanYesterday
--   LessThanYesterday
--   GreaterThanLastWeek
--   LessThanLastWeek
--   GreaterThanLastPeriod
--   LessThanLastPeriod
-
- |
-|Escalations.Critical.Statistics|String|No|Average|The statistical method for critical-level alerts. The statistical method varies with metric.
-
- |
-|Escalations.Critical.Threshold|String|No|90|The threshold for critical-level alerts.
-
- |
-|Escalations.Critical.Times|Integer|No|3|The consecutive number of times for which the metric value exceeds the threshold for critical-level alerts before an alert is triggered.
-
- |
-|Escalations.Info.ComparisonOperator|String|No|GreaterThanOrEqualToThreshold|The comparison operator of the threshold for info-level alerts. Valid values:
-
- -   GreaterThanOrEqualToThreshold
--   GreaterThanThreshold
--   LessThanOrEqualToThreshold
--   LessThanThreshold
--   NotEqualToThreshold
--   GreaterThanYesterday
--   LessThanYesterday
--   GreaterThanLastWeek
--   LessThanLastWeek
--   GreaterThanLastPeriod
--   LessThanLastPeriod
-
- |
-|Escalations.Info.Statistics|String|No|Average|The statistical method for info-level alerts.
-
- |
-|Escalations.Info.Threshold|String|No|90|The threshold for info-level alerts.
-
- |
-|Escalations.Info.Times|Integer|No|3|The consecutive number of times for which the metric value exceeds the threshold for info-level alerts before an alert is triggered.
-
- |
+**Note:** For more information, see [DescribeMetricMetaList](~~98846~~). |
 |Escalations.Warn.ComparisonOperator|String|No|GreaterThanOrEqualToThreshold|The comparison operator of the threshold for warn-level alerts. Valid values:
 
- -   GreaterThanOrEqualToThreshold
--   GreaterThanThreshold
--   LessThanOrEqualToThreshold
--   LessThanThreshold
--   NotEqualToThreshold
--   GreaterThanYesterday
--   LessThanYesterday
--   GreaterThanLastWeek
--   LessThanLastWeek
--   GreaterThanLastPeriod
--   LessThanLastPeriod
+-   GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+-   GreaterThanThreshold: greater than the threshold
+-   LessThanOrEqualToThreshold: less than or equal to the threshold
+-   LessThanThreshold: less than the threshold
+-   NotEqualToThreshold: not equal to the threshold
+-   GreaterThanYesterday: greater than the metric value at the same time yesterday
+-   LessThanYesterday: less than the metric value at the same time yesterday
+-   GreaterThanLastWeek: greater than the metric value at the same time last week
+-   LessThanLastWeek: less than the metric value at the same time last week
+-   GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+-   LessThanLastPeriod: less than the metric value in the last monitoring cycle |
+|Escalations.Warn.Threshold|String|No|90|The threshold for warn-level alerts. |
+|Escalations.Warn.Times|Integer|No|3|The consecutive number of times for which the metric value is measured before a warn-level alert is triggered. |
+|Escalations.Info.Statistics|String|No|Average|The statistical aggregation method for info-level alerts.
 
- |
-|Escalations.Warn.Statistics|String|No|Average|The statistical method for warn-level alerts.
+**Note:** For more information, see [DescribeMetricMetaList](~~98846~~). |
+|Escalations.Info.ComparisonOperator|String|No|GreaterThanOrEqualToThreshold|The comparison operator of the threshold for info-level alerts. Valid values:
 
- |
-|Escalations.Warn.Threshold|String|No|90|The threshold for warn-level alerts.
+-   GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+-   GreaterThanThreshold: greater than the threshold
+-   LessThanOrEqualToThreshold: less than or equal to the threshold
+-   LessThanThreshold: less than the threshold
+-   NotEqualToThreshold: not equal to the threshold
+-   GreaterThanYesterday: greater than the metric value at the same time yesterday
+-   LessThanYesterday: less than the metric value at the same time yesterday
+-   GreaterThanLastWeek: greater than the metric value at the same time last week
+-   LessThanLastWeek: less than the metric value at the same time last week
+-   GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+-   LessThanLastPeriod: less than the metric value in the last monitoring cycle |
+|Escalations.Info.Threshold|String|No|90|The threshold for info-level alerts. |
+|Escalations.Info.Times|Integer|No|3|The consecutive number of times for which the metric value is measured before an info-level alert is triggered. |
 
- |
-|Escalations.Warn.Times|Integer|No|3|The consecutive number of times for which the metric value exceeds the threshold for warn-level alerts before an alert is triggered.
+## Response parameters
 
- |
-|Interval|String|No|60|The detection period of alerts.
+|Parameter|Type|Example|Description|
+|---------|----|-------|-----------|
+|RequestId|String|461CF2CD-2FC3-4B26-8645-7BD27E7D0F1D|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|NoEffectiveInterval|String|No|00:00-05:30|The period when the alert rule is ineffective.
+-   true: The call was successful.
+-   false: The call failed. |
+|Code|String|200|The HTTP status code.
 
- |
-|Period|String|No|60|The aggregation period. Unite: second.
+**Note:** The status code 200 indicates that the call was successful. |
+|Message|String|The Request is not authorization.|The returned message. |
 
- |
-|RuleName|String|No|Alert rule 1|The name of the alert rule.
-
- |
-|SilenceTime|Integer|No|86400|The duration of the mute period during which new alerts are not sent even if the trigger conditions are met. Unit: second. Default value: 86400. Minimum value: 3600.
-
- |
-|Webhook|String|No|http://www.aliyun.com|The URL of the callback triggered when an alert occurs.
-
- |
-
-## Response parameters {#resultMapping .section}
-
-|Parameter|Type|Example|Description |
-|---------|----|-------|------------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful. A value other than 200 indicates that the call has failed.
-
- |
-|Message|String|success|The error message.
-
- |
-|RequestId|String|461CF2CD-2FC3-4B26-8645-7BD27E7D0F1D|The request ID for troubleshooting.
-
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=PutGroupMetricRule
 &Category=ecs
 &GroupId=123456
 &MetricName=cpu_total
-&Namespace=acs_ecs_dashboard 
+&Namespace=acs_ecs_dashboard
 &RuleId=bfae2ca5b4e07d2c7278772eccda169808c7b****
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <PutGroupMetricRuleResponse>
-  <RequestId>26C766DE-E759-4B38-8B23-28589C491CEF</RequestId>
-  <Code>200</Code>
-  <Success>true</Success> 
+      <RequestId>26C766DE-E759-4B38-8B23-28589C491CEF</RequestId>
+      <Code>200</Code>
+      <Success>true</Success>
 </PutGroupMetricRuleResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"26C766DE-E759-4B38-8B23-28589C491CEF",
-	"Success":true,
-	"Code":200
+    "RequestId":"26C766DE-E759-4B38-8B23-28589C491CEF",
+    "Code":200,
+    "Success":true
 }
 ```
 
-## Error code { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
