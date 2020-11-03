@@ -35,7 +35,6 @@
 |BlockChecksumOpAvgTime|无|BlockChecksumOpAvgTime|userId、clusterId、role|Average|
 |BlockChecksumOpNumOps|无|BlockChecksumOpNumOps|userId、clusterId、role|Average|
 |BlockReportsAvgTime|无|BlockReportsAvgTime|userId、clusterId、role|Average|
-|BlockReportsNumOps|无|BlockReportsNumOps|userId、clusterId、role|Average|
 |BlockVerificationFailures|无|BlockVerificationFailures|userId、clusterId、role|Average|
 |BlocksRead|无|BlocksRead|userId、clusterId、role|Average|
 |BlocksRemoved|无|BlocksRemoved|userId、clusterId、role|Average|
@@ -60,7 +59,6 @@
 |DeleteRequestLatency\_mean|无|DeleteRequestLatency\_mean|userId、clusterId、role|Average|
 |DeleteRequestLatency\_num\_ops|无|DeleteRequestLatency\_num\_ops|userId、clusterId、role|Average|
 |ExcessBlocks|无|ExcessBlocks|userId、clusterId、role|Average|
-|ExpiredHeartbeats|无|ExpiredHeartbeats|userId、clusterId、role|Average|
 |FailedSanityCheckEXception|无|FailedSanityCheckEXception|userId、clusterId、role|Average|
 |FlushNanosAvgTime|无|FlushNanosAvgTime|userId、clusterId、role|Average|
 |FlushNanosNumOps|无|FlushNanosNumOps|userId、clusterId、role|Average|
@@ -186,7 +184,6 @@
 |创建的进程/线程数目|无|procs\_created|userId、clusterId、role|Average|
 |RegionServer Put请求平均延迟|无|putRequestLatency\_mean|userId、clusterId、role|Average|
 |ritCount|无|ritCount|userId、clusterId、role|Average|
-|rs\_fullGC\_avg\_time|无|rs\_fullGC\_avg\_time|userId、clusterId、role|Average|
 |rs\_fullGC\_max\_time|无|rs\_fullGC\_max\_time|userId、clusterId、role|Average|
 |rs\_fullGC\_num\_ops|无|rs\_fullGC\_num\_ops|userId、clusterId、role|Average|
 |RegionServer RegionServer RPC请求队列长度|无|rs\_handlerQueueSize|userId、clusterId、role|Average|
