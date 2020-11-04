@@ -55,14 +55,15 @@ User-Agent:cms-java-sdk-v-1.0
 
     |Header|类型|描述|
     |:-----|:-|:-|
-    |Authorization|String|内容：`AccessKeyId:SignString`。AccessKey ID的获取方法请参见[获取AccessKey]()。 |
+    |Authorization|String|内容：`AccessKeyId:SignString`。    -   AccessKey ID的获取方法，请参见[获取AccessKey]()。
+    -   SignString的签名方法，请参见[签名算法：HMAC-SHA1](/intl.zh-CN/常见问题/产品使用问题/签名算法：HMAC-SHA1.md)。 |
     |Content-Length|Long|RFC 2616中定义的HTTP请求的Body长度。如果请求无Body部分，则无需提供该请求头。|
     |Content-MD5|String|请求Body经过MD5计算后的字符串，计算结果为大写字母和数字字符串。如果请求无Body部分，则无需提供该请求头。|
     |Content-Type|String|发送端发送的实体数据的数据类型。只支持`application/json`。|
     |Date|String|HTTP请求中的标准时间戳头（遵循RFC 1123格式，使用GMT标准时间）。 示例：`Mon, 3 Jan 2010 08:33:47 GMT` |
     |Host|String|HTTP请求的完整Host名称（不包括如https://这样的协议头）。 示例：`metrichub-cms-cn-hangzhou.aliyuncs.com`。 |
     |x-cms-api-version|String|API版本。当前版本1.0。|
-    |x-cms-signature|String|签名算法。目前，云监控只支持数字签名算法HMAC-SHA1，请参见[签名算法：HMAC-SHA1](/intl.zh-CN/常见问题/产品使用问题/签名算法：HMAC-SHA1.md)。|
+    |x-cms-signature|String|签名算法。目前，云监控只支持数字签名算法HMAC-SHA1。|
     |x-cms-ip|String|上报事件的服务器IP地址。|
     |User-Agent|String|客户端说明。|
 
