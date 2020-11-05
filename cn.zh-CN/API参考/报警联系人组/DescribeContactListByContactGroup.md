@@ -1,130 +1,104 @@
-# DescribeContactListByContactGroup {#doc_api_Cms_DescribeContactListByContactGroup .reference}
+# DescribeContactListByContactGroup
 
-查询一个报警联系人组下的报警联系人列表。
+调用DescribeContactListByContactGroup接口查询报警联系组中的报警联系人列表。
 
-## 调试 {#api_explorer .section}
+## 调试
 
 [您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cms&api=DescribeContactListByContactGroup&type=RPC&version=2019-01-01)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeContactListByContactGroup|系统规定参数。取值：DescribeContactListByContactGroup。
+|Action|String|是|DescribeContactListByContactGroup|要执行的操作，取值：DescribeContactListByContactGroup。 |
+|ContactGroupName|String|是|CloudMonitor|报警联系组名称。 |
 
- |
-|ContactGroupName|String|是|我的组名|报警联系组名。
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|状态码， 200表示成功。
+|Code|String|200|状态码。
 
- |
-|Contacts| | |报警联系人。
+ **说明：** 200表示成功。 |
+|Contacts|Array of Contact| |报警联系人。 |
+|Contact| | | |
+|Channels|Struct| |报警通道。 |
+|AliIM|String|Alice|报警联系人的旺旺名称。
 
- |
-|Channels| | |报警通道。
+ **说明：** 该参数仅适用于中国站。 |
+|DingWebHook|String|https://oapi.dingtalk.com/robot/send?access\_token=9bf44f8189597d07dfdd7a123455ffc112\*\*\*\*|报警联系人的钉钉机器人地址。 |
+|Mail|String|alice@example.com|报警联系人的Email地址。 |
+|SMS|String|1333333\*\*\*\*|报警联系人的手机号码。
 
- |
-|AliIM|String|我的旺旺|旺旺。
+ **说明：** 该参数仅适用于中国站。 |
+|CreateTime|Long|1552314252000|创建报警联系人的时间戳。 |
+|Desc|String|ECS|报警联系组的描述。 |
+|Name|String|Alice|报警联系人的姓名。 |
+|UpdateTime|Long|1552314252000|报警联系人的更新时间。 |
+|Message|String|The group is not exists.|错误信息。 |
+|RequestId|String|06D5ECC2-B9BE-42A4-8FA3-1A610FB08B83|请求ID。 |
+|Success|Boolean|true|操作是否成功。取值：
 
- |
-|DingWebHook|String|钉钉机器人地址|钉钉机器人地址。
+ -   true：成功。
+-   false：失败。 |
 
- |
-|Mail|String|test@aliyun.com|Email地址。
-
- |
-|SMS|String|1333333\*\*\*\*|手机号码。
-
- |
-|CreateTime|Long|1552314252000|创建时间。
-
- |
-|Desc|String|描述|报警联系组的描述。
-
- |
-|Name|String|关某|报警联系人姓名。
-
- |
-|UpdateTime|Long|1552314252000|更新时间。
-
- |
-|Message|String|success|错误信息。
-
- |
-|RequestId|String|06D5ECC2-B9BE-42A4-8FA3-1A610FB08B83|请求ID，用于排查问题。
-
- |
-|Success|Boolean|true|是否成功。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/?Action=DescribeContactListByContactGroup
-&ContactGroupName=我的组名
+&ContactGroupName=CloudMonitor
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <DescribeContactListByContactGroupResponse>
-      <RequestId>81A6C995-D1A8-4627-B2E6-4B651446DDF9</RequestId>
-      <Contacts>
-            <Contact>
-              <Channels>
-                <AliIM>关某</AliIM>
-                <Mail>test***@aliyun.com</Mail>
-              </Channels>
-              <Name>关某</Name>
-              <CreateTime>1552355864000</CreateTime>
-              <UpdateTime>1552356159000</UpdateTime>
-              <Desc>xxxx</Desc>
-            </Contact>
-      </Contacts>
-      <Success>true</Success>
-      <Code>200</Code>
+	  <RequestId>96B41DE5-6DC9-4FAF-A790-3D4AA17C1F09</RequestId>
+	  <Contacts>
+		    <Contact>
+			      <Desc></Desc>
+			      <CreateTime>1604024233000</CreateTime>
+			      <UpdateTime>1604024233000</UpdateTime>
+			      <Channels>
+				        <SMS></SMS>
+			      </Channels>
+			      <Name>Alice</Name>
+		    </Contact>
+	  </Contacts>
+	  <Code>200</Code>
+	  <Success>true</Success>
 </DescribeContactListByContactGroupResponse>
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"81A6C995-D1A8-4627-B2E6-4B651446DDF9",
-	"Contacts":{
-		"Contact":[
-			{
-				"Name":"关某",
-				"Channels":{
-					"Mail":"test***@aliyun.com",
-					"AliIM":"关某"
-				},
-				"CreateTime":1552355864000,
-				"UpdateTime":1552356159000,
-				"Desc":"xxxx"
-			}
-		]
-	},
-	"Success":true,
-	"Code":"200"
+  "RequestId": "96B41DE5-6DC9-4FAF-A790-3D4AA17C1F09",
+  "Contacts": {
+    "Contact": [
+      {
+        "Desc": "",
+        "CreateTime": 1604024233000,
+        "UpdateTime": 1604024233000,
+        "Channels": {
+          "SMS": ""
+        },
+        "Name": "Alice"
+      }
+    ]
+  },
+  "Code": "200",
+  "Success": true
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 访问[错误中心](https://error-center.aliyun.com/status/product/Cms)查看更多错误码。
 
