@@ -1,158 +1,142 @@
-# DescribeMetricTop {#doc_api_Cms_DescribeMetricTop .reference}
+# DescribeMetricTop
 
-查询指定时间段内排序后的云产品时序指标监控数据。
+调用DescribeMetricTop接口查询排序后的指定云服务时序指标的监控数据。
 
-## 参数说明 {#description .section}
+**说明：** 云服务Namespace、Orderby、Project、Metric、Period、Dimensions等参数的取值，请参见[DescribeMetricMetaList](~~98846~~)或[云服务监控项](~~163515~~)。
 
--   各云产品的Project、Metric、Period、Dimensions等入参如何赋值，可查询DescribeMetricMetaList接口或请参考[预设监控项参考](~~28619~~)。
--   开始和结束时间执行的是左开右闭的模式，startTime不能等于或者大于endTime。
--   Cursor是分页模式下的参数，只要存在就说明还有下一页，返回为null则说明没有下一页。
--   Period一般包含60（一分钟）、300（五分钟）、900（十五分钟）。请根据文档以及查询场景的需要考虑Period。比如查询一天范围使用Period为60，则返回1000条数据（实际存在1440，因为最大返回值不超过1000，则只返回前1000条）。如果使用Period为300，则返回288条数据。
+## 调试
 
-## 调试 {#apiExplorer .section}
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cms&api=DescribeMetricTop&type=RPC&version=2019-01-01)
 
-前往【[API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeMetricTop)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
-
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeMetricTop|系统规定参数。取值：DescribeMetricTop。
+|Action|String|是|DescribeMetricTop|要执行的操作，取值：DescribeMetricTop。 |
+|MetricName|String|是|cpu\_idle|监控项名称。 |
+|Namespace|String|是|acs\_ecs\_dashboard|云服务的数据命名空间。命名方式：acs\_产品名。 |
+|Orderby|String|是|Average|排序字段，即按该排序字段进行排序。 |
+|Period|String|否|60|时间间隔，单位：秒。取值：60、300、900。
 
- |
-|MetricName|String|是|cpu\_idle|监控项名称。
+ 请根据您的实际需求设置该参数。例如：
 
- |
-|Namespace|String|是|acs\_ecs\_dashboard|命名空间，表明监控数据所属产品，例如 “acs\_ecs\_dashboard”,“acs\_rds\_dashboard”等。
+ -   当Period设置为60时，如果实际存在1440条数据，则只返回1000条数据。
+-   当Period设置为300时，如果实际存在288条数据，则返回288条数据。
 
- |
-|Dimensions|String|否|\[\{"instanceId": "i-abcdefgh12\*\*\*\*"\}\]|用于查询指定资源的监控数据，是 key-value 形式的集合。常用的key-value集合为“instanceId：XXXXXX”。需要使用 JSON 字符串表示该 Map 对象，传入时请使用字符串，Dimensions字段必须按顺序传入。
+ **说明：** 由于最大返回值不超过1000条数据，因此当其超过1000条数据时，只返回前1000条。 |
+|StartTime|String|否|2019-01-30 00:00:00|开始时间。支持的格式：
 
- |
-|EndTime|String|否|2019-01-30 00:10:00|结束时间，可以传入距离1970年1月1日 0点的毫秒数，也可以传入format时间格式数据，如2015-10-20 00:00:00。
+ -   Unix时间戳：从1970年1月1日开始所经过的毫秒数。
+-   Format格式：YYYY-MM-DDThh:mm:ssZ。
 
- |
-|Express|String|否|\{"groupby":\["userId","instanceId"\]\}|对查询出的现有结果进行时时计算的表达式，例如`{"groupby":["instanceId"]}`
+ **说明：** 开始和结束时间执行的是左开右闭的模式，StartTime不能等于或大于EndTime。 |
+|EndTime|String|否|2019-01-30 00:10:00|结束时间。支持的格式：
 
- |
-|Length|String|否|1000|每次查询大小，用于分页查询，默认值为1000。
+ -   Unix时间戳：从1970年1月1日开始所经过的毫秒数。
+-   Format格式：YYYY-MM-DDThh:mm:ssZ。 |
+|Dimensions|String|否|\[\{"instanceId": "i-abcdefgh12\*\*\*\*"\}\]|维度Map，用于查询指定资源的监控数据。
 
- |
-|OrderDesc|String|否|False|排序方式，可选值：
+ 格式：key-value键值对形式的集合，常用的key-value集合为`instanceId:i-2ze2d6j5uhg20x47****`。
 
- -   False，由大到小排序。
--   True，由小到大排序。
+ **说明：** Dimensions传入时需要使用JSON字符串表示该Map对象，必须按顺序传入。 |
+|OrderDesc|String|否|False|排序方式。取值：
 
- |
-|Orderby|String|否|Average|排序字段，即按所填字段进行排序，必填项。
+ -   True：由小到大排序。
+-   False：由大到小排序。 |
+|Length|String|否|1000|每页显示的记录条数。用于分页查询，默认值：1000。 |
+|Express|String|否|\{"groupby":\["userId","instanceId"\]\}|对查询出的现有结果进行实时计算的表达式。
 
- |
-|Period|String|否|60|时间间隔，统一用秒数来计算，例如 60, 300, 900。 如果不填写,则按照注册监控项时申明的上报周期来查询原始数据。如果填写统计周期，则查询对应的统计数据 。
+ 目前仅支持`groupby`（类似数据库的groupby语句）。 |
 
- |
-|StartTime|String|否|2019-01-30 00:00:00|开始时间，可以传入距离1970年1月1日0点的毫秒数，也可以传入format时间格式数据，如2015-10-20 00:00:00。
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|状态码，200表示成功。
+|RequestId|String|3121AE7D-4AFF-4C25-8F1D-C8226EBB1F42|请求ID。 |
+|Code|String|200|状态码。
 
- |
-|Datapoints|String|\[\{"timestamp":1548777660000,"userId":"123","instanceId":"i-abc","Minimum":9.92,"Average":9.92,"Maximum":9.92\}\]|监控数据列表，内容格式例如：`{ “timestamp”: 1490164200000, “Maximum”: 100, “userId”: “123456789876****”, “Minimum”: 4.55, “instanceId”: “i-bp18abl200xk9599****”, “Average”: 93.84 }`
+ **说明：** 200表示成功。 |
+|Datapoints|String|\[\{"timestamp":1548777660000,"userId":"123","instanceId":"i-abc","Minimum":9.92,"Average":9.92,"Maximum":9.92,"\_count":1\}\]|监控数据列表。 |
+|Period|String|60|时间间隔。单位：秒。取值：60、300、900。 |
+|Message|String|The Request is not authorization.|错误信息。 |
 
- |
-|Message|String|Success|错误信息，Code为”200”时，Message一般为空。
-
- |
-|Period|String|60|时间间隔，统一用秒数来计算,例如 60, 300, 900。
-
- |
-|RequestId|String|3121AE7D-4AFF-4C25-8F1D-C8226EBB1F42|请求ID，用于排查问题。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/?Action=DescribeMetricTop
 &MetricName=cpu_idle
 &Namespace=acs_ecs_dashboard
+&Orderby=Average
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <DescribeMetricTopResponse>
-  <Period>60</Period>
-  <Datapoints>
-    <order>1</order>
-    <timestamp>1551687360000</timestamp>
-    <userId>12345****</userId>
-    <instanceId>i-2zeehst1****</instanceId>
-    <Maximum>16.41</Maximum>
-    <Minimum>4.66</Minimum>
-    <Average>7.74</Average>
-    <_count>1</_count>
-  </Datapoints>
-  <Datapoints>
-    <order>2</order>
-    <timestamp>1551687360000</timestamp>
-    <userId>12345****</userId>
-    <instanceId>i-2zefxdy2****</instanceId>
-    <Maximum>15.74</Maximum>
-    <Minimum>5.03</Minimum>
-    <Average>7.14</Average>
-    <_count>1</_count>
-  </Datapoints>
-  <RequestId>1F68A4E8-4488-48E7-9189-3E1F5165E64E</RequestId>
-  <Code>200</Code>
+	  <Period>60</Period>
+	  <Datapoints>
+		    <order>1</order>
+		    <timestamp>1551687360000</timestamp>
+		    <userId>12345****</userId>
+		    <instanceId>i-2zeehst1****</instanceId>
+		    <Maximum>16.41</Maximum>
+		    <Minimum>4.66</Minimum>
+		    <Average>7.74</Average>
+		    <_count>1</_count>
+	  </Datapoints>
+	  <Datapoints>
+		    <order>2</order>
+		    <timestamp>1551687360000</timestamp>
+		    <userId>12345****</userId>
+		    <instanceId>i-2zefxdy2****</instanceId>
+		    <Maximum>15.74</Maximum>
+		    <Minimum>5.03</Minimum>
+		    <Average>7.14</Average>
+		    <_count>1</_count>
+	  </Datapoints>
+	  <RequestId>1F68A4E8-4488-48E7-9189-3E1F5165E64E</RequestId>
+	  <Code>200</Code>
 </DescribeMetricTopResponse>
-
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
-	"Period":"60",
-	"Datapoints":[
-		{
-			"timestamp":1551687360000,
-			"order":1,
-			"_count":1,
-			"Maximum":16.41,
-			"userId":"12345****",
-			"Minimum":4.66,
-			"instanceId":"i-2zeehst1****",
-			"Average":7.74
-		},
-		{
-			"timestamp":1551687360000,
-			"order":2,
-			"_count":1,
-			"Maximum":15.74,
-			"userId":"12345****",
-			"Minimum":5.03,
-			"instanceId":"i-2zefxdy2****",
-			"Average":7.14
-		}
-	],
-	"RequestId":"1F68A4E8-4488-48E7-9189-3E1F5165E64E",
-	"Code":"200"
+    "Period": "60",
+    "Datapoints": [
+        {
+            "order": 1,
+            "timestamp": 1551687360000,
+            "userId": "12345****",
+            "instanceId": "i-2zeehst1****",
+            "Maximum": 16.41,
+            "Minimum": 4.66,
+            "Average": 7.74,
+            "_count": 1
+        },
+        {
+            "order": 2,
+            "timestamp": 1551687360000,
+            "userId": "12345****",
+            "instanceId": "i-2zefxdy2****",
+            "Maximum": 15.74,
+            "Minimum": 5.03,
+            "Average": 7.14,
+            "_count": 1
+        }
+    ],
+    "RequestId": "1F68A4E8-4488-48E7-9189-3E1F5165E64E",
+    "Code": "200"
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 访问[错误中心](https://error-center.alibabacloud.com/status/product/Cms)查看更多错误码。
 
