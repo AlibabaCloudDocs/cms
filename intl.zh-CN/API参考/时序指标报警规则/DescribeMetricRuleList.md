@@ -11,32 +11,26 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|DescribeMetricRuleList|要执行的操作，取值：DescribeMetricRuleList。 |
-|Namespace|String|否|acs\_ecs\_dashboard|服务的数据命名空间。
+|Namespace|String|否|acs\_ecs\_dashboard|云服务的数据命名空间。
 
- **说明：** 详情请参见[DescribeSystemEventMetaList](~~114972~~)或[云服务监控项](~~163515~~)。 |
+ **说明：** 更多信息，请参见[DescribeSystemEventMetaList](~~114972~~)或[云服务监控项](~~163515~~)。 |
 |MetricName|String|否|cpu\_total|监控项名称。
 
- **说明：** 详情请参见[DescribeSystemEventMetaList](~~114972~~)或[云服务监控项](~~163515~~)。 |
+ **说明：** 更多信息，请参见[DescribeSystemEventMetaList](~~114972~~)或[云服务监控项](~~163515~~)。 |
 |EnableState|Boolean|否|true|启用状态。取值：
 
  -   true：启用。
--   false：禁用。
-
- 默认为空，表示查询所有状态（包含启用和禁用）的规则。 |
-|Page|String|否|1|分页码。默认值：1。 |
-|PageSize|String|否|10|每页显示记录条数。默认值：10。 |
+-   false：禁用。 |
+|Page|Integer|否|1|分页码。默认值：1。 |
+|PageSize|Integer|否|10|每页显示记录条数。默认值：10。 |
 |AlertState|String|否|ALARM|报警规则状态。取值：
 
  -   OK：正常。
 -   ALARM：报警。
 -   INSUFFICIENT\_DATA：无数据。 |
-|Dimensions|String|否|\{"instanceId":"i-xy123\*\*\*\*"\}|维度Map，用于查询指定资源的监控数据。
+|Dimensions|String|否|\{"instanceId":"i-2ze2d6j5uhg20x47\*\*\*\*"\}|维度Map，用于查询指定资源的监控数据。
 
- 格式为：key-value键值对形式的集合。常用的key-value集合为：`instanceId:XXXXXX`。
-
- Key和Value的长度为1~64个字节，超过64个字节时截取前64字节。
-
- Key和Value的取值可包含英文字母、数字、英文句点（.）、短划线（-）、下划线（\_）、正斜线（/）和反斜线（\\）。
+ 格式：key-value键值对形式的集合。常用的key-value集合为`instanceId:i-2ze2d6j5uhg20x47****`。
 
  **说明：** Dimensions传入时需要使用JSON字符串表示该Map对象，必须按顺序传入。 |
 |RuleName|String|否|rule1|报警规则名称。
@@ -70,20 +64,14 @@
 |ContactGroups|String|Alice|报警联系人。 |
 |Dimensions|String|\[\{\}\]|维度Map，用于查询指定资源的监控数据。
 
- 格式为：key-value键值对形式的集合。常用的key-value集合为：`instanceId:XXXXXX`。
-
- Key和Value的长度为1~64个字节，超过64个字节时截取前64字节。
-
- Key和Value的取值可包含英文字母、数字、英文句点（.）、短划线（-）、下划线（\_）、正斜线（/）和反斜线（\\）。
+ 格式：key-value键值对形式的集合。常用的key-value集合为`instanceId:i-2ze2d6j5uhg20x47****`。
 
  **说明：** Dimensions传入时需要使用JSON字符串表示该Map对象，必须按顺序传入。 |
 |EffectiveInterval|String|00:00-23:59|报警规则的生效时间段。 |
 |EnableState|Boolean|true|启用状态。取值：
 
  -   true：启用。
--   false：禁用。
-
- 默认为空，表示查询所有状态（包含启用和禁用）的规则。 |
+-   false：禁用。 |
 |Escalations|Struct| |报警分级别触发条件。 |
 |Critical|Struct| |Critical级别报警触发条件。 |
 |ComparisonOperator|String|GreaterThanOrEqualToThreshold|Critical级别阈值比较符。取值：
@@ -106,7 +94,7 @@
  **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Critical级别报警统计方法。 |
 |Threshold|String|90|Critical级别阈值。 |
-|Times|String|3|Critical级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
+|Times|Integer|3|Critical级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
 |Info|Struct| |Info级别报警触发条件。 |
 |ComparisonOperator|String|GreaterThanOrEqualToThreshold|Info级别阈值比较符。取值：
 
@@ -128,7 +116,7 @@
  **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Info级别报警统计方法。 |
 |Threshold|String|90|Info级别阈值。 |
-|Times|String|1|Info级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
+|Times|Integer|1|Info级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
 |Warn|Struct| |Warn级别报警触发条件。 |
 |ComparisonOperator|String|GreaterThanOrEqualToThreshold|Warn级别阈值比较符。取值：
 
@@ -150,7 +138,7 @@
  **说明：** $Average\>0中的$Average为一个占位符，格式为`$监控结果字段值`，云监控会将其替换为对应的统计值或原始的监控值。 |
 |Statistics|String|Average|Warn级别报警统计方法。 |
 |Threshold|String|90|Warn级别阈值。 |
-|Times|String|3|Warn级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
+|Times|Integer|3|Warn级别连续出现次数。连续出现这个次数并且超过阈值才会触发报警。 |
 |GroupId|String|123456|应用分组ID。 |
 |GroupName|String|ECS\_Group|应用分组名称。
 
@@ -159,13 +147,13 @@
 |MetricName|String|cpu\_total|监控项名称。 |
 |Namespace|String|acs\_ecs\_dashboard|服务的数据命名空间，用于区分不同的产品。
 
- **说明：** 详情请参见[云服务监控项](~~163515~~)。 |
+ **说明：** 更多信息，请参见[云服务监控项](~~163515~~)。 |
 |NoEffectiveInterval|String|00:00-23:59|报警规则不生效的时间段。 |
 |Period|String|60|统计周期。 |
 |Resources|String|\[\{\\"instanceId\\":\\"i-a2d5q7pm3f9yr29e\*\*\*\*\\"\},\{\\"instanceId\\":\\"i-a2d5q7pm3f9yr29e\*\*\*\*\\"\}|报警规则关联的资源。 |
 |RuleId|String|a151cd6023eacee2f0978e03863cc1697c895012\*\*\*\*|报警规则ID。 |
 |RuleName|String|ECS\_CPU|报警规则名称。 |
-|SilenceTime|String|86400|通道沉默周期。单位：秒。默认值：86400秒，最小值：3600秒。
+|SilenceTime|Integer|86400|通道沉默周期。单位：秒。默认值：86400，最小值：3600。
 
  监控数据持续超过报警规则阈值时，每个沉默周期内只发送一次报警通知。 |
 |SourceType|String|METRIC|报警规则类型。取值：METRIC，表示时序指标报警规则。 |
