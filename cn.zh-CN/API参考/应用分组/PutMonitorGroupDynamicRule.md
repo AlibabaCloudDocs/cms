@@ -1,106 +1,88 @@
-# PutMonitorGroupDynamicRule {#doc_api_Cms_PutMonitorGroupDynamicRule .reference}
+# PutMonitorGroupDynamicRule
 
-创建或者修改一个应用分组的动态规则，满足规则描述的资源会自动添加到应用分组中。
+调用PutMonitorGroupDynamicRule接口为应用分组创建或修改动态报警规则。满足报警规则的资源自动添加到该应用分组中。
 
-## 调试 {#api_explorer .section}
+## 调试
 
 [您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cms&api=PutMonitorGroupDynamicRule&type=RPC&version=2019-01-01)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|PutMonitorGroupDynamicRule|系统规定参数。取值：PutMonitorGroupDynamicRule。
+|Action|String|是|PutMonitorGroupDynamicRule|要执行的操作，取值：PutMonitorGroupDynamicRule。 |
+|GroupId|Long|是|123456|应用分组ID。 |
+|GroupRules.N.Category|String|是|ecs|动态报警规则的云服务类型。N的取值范围：1~3。取值：
 
- |
-|GroupId|Long|是|1234|应用分组ID。
+ -   ecs：云服务器。
+-   rds：关系型数据库。
+-   slb：负载均衡。 |
+|GroupRules.N.FilterRelation|String|是|and|动态报警规则的组合条件。N的取值范围：1~3。取值：
 
- |
-|GroupRules.N.Category|String|否|ecs|动态规则的产品类型，目前支持的动态规则产品类型为ecs，rds，slb。N的取值为大于等于1的整数
+ -   and：满足所有报警规则的实例才会自动添加到应用分组。
+-   or：满足任意报警规则的实例都会自动添加到应用分组。 |
+|GroupRules.N.Filters.N.Function|String|是|contains|实例的过滤条件。N的取值范围：1~3。取值：
 
- |
-|GroupRules.N.FilterRelation|String|否|and|动态规则的组合条件，可选值：
+ -   contains：包含关系。
+-   startWith：前缀。
+-   endWith：后缀。 |
+|GroupRules.N.Filters.N.Name|String|是|hostName|实例名称。N的取值范围：1~3。
 
- -   and 满足设置所有规则才会自动添加到分组、
--   or 表示满足任意规则的实例都会被添加到分组
+ 实例匹配的字段名称目前仅支持主机名：hostName。 |
+|GroupRules.N.Filters.N.Value|String|是|nginx|满足报警条件的值。N的取值范围：1~3。 |
 
-N的取值为大于等于1的整数
-
-
- |
-|GroupRules.N.Filters.N.Function|String|否|contains|实例过滤条件，可选值：
-
- -   contains：包含关系
--   startWith：前缀
--   endWith：后缀
-
- N的取值范围为 1~3
-
- |
-|GroupRules.N.Filters.N.Name|String|否|hostName|实例名称，匹配的字段名称，目前仅支持主机名：hostName。N的取值范围为 1~3.
-
- |
-|GroupRules.N.Filters.N.Value|String|否|nginx|满足的条件值。N的取值范围为 1~3.
-
- |
-
-## 返回数据 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|Integer|200|状态码，200表示成功。
+|RequestId|String|3E73F1AB-D195-438A-BCA7-2F4355789C58|请求ID。 |
+|Success|Boolean|true|操作是否成功。取值：
 
- |
-|Message|String|success|错误信息。
+ -   true：成功。
+-   false：失败。 |
+|Code|Integer|200|状态码。
 
- |
-|RequestId|String|3E73F1AB-D195-438A-BCA7-2F4355789C58|请求ID，用于排查问题。
+ **说明：** 200表示成功。 |
+|Message|String|The X.509 certificate or cms access key ID provided does not exist in our records.|错误信息。 |
 
- |
-|Success|Boolean|true|是否成功。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/?Action=PutMonitorGroupDynamicRule
-&GroupId=1234
+&GroupId=123456
 &GroupRules.1.Category=ecs
 &GroupRules.1.FilterRelation=and
 &GroupRules.1.Filters.1.Function=contains
 &GroupRules.1.Filters.1.1ame=hostName
 &GroupRules.1.Filters.1.Value=nginx
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <PutMonitorGroupDynamicRuleResponse>
-      <RequestId>3E73F1AB-D195-438A-BCA7-2F4355789C58</RequestId>
-      <Success>true</Success>
-      <Code>200</Code>
+	  <RequestId>3E73F1AB-D195-438A-BCA7-2F4355789C58</RequestId>
+	  <Success>true</Success>
+	  <Code>200</Code>
 </PutMonitorGroupDynamicRuleResponse>
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"3E73F1AB-D195-438A-BCA7-2F4355789C58",
-	"Success":true,
-	"Code":200
+  "RequestId": "3E73F1AB-D195-438A-BCA7-2F4355789C58",
+  "Success": true,
+  "Code": 200
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
 访问[错误中心](https://error-center.aliyun.com/status/product/Cms)查看更多错误码。
 
