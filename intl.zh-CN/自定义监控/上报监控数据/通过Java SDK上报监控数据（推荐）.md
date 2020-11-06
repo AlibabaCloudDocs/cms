@@ -75,7 +75,7 @@
     ```
 
 
-**说明：** endpoint是云服务的接入地址，云监控的接入地址为`metrics.aliyuncs.com`。云监控各地域的接入地址，请参见[云监控接入地址](/intl.zh-CN/API参考/调用API.md)。
+**说明：** endpoint是云服务的接入地址，云监控的接入地址为`metrics.aliyuncs.com`。云监控各地域的接入地址，请参见[服务地址](/intl.zh-CN/自定义监控/上报监控数据/通过HTTP上报监控数据.md)。
 
 ## 返回示例
 
