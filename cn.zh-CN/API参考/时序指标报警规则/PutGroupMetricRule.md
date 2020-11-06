@@ -11,7 +11,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|PutGroupMetricRule|要执行的操作，取值：PutGroupMetricRule。 |
-|Category|String|是|ecs|云服务名称缩写。N的取值范围：1~200。取值：
+|Category|String|是|ecs|云服务名称。取值：
 
  -   ecs：包括阿里云和非阿里云主机。
 -   rds：云数据库RDS版。
@@ -49,13 +49,17 @@
 -   sls：日志服务。
 -   vpn：VPN网关。 |
 |GroupId|String|是|123456|应用分组ID。 |
-|MetricName|String|是|cpu\_total|监控项名称。详情请参见[云服务监控项](~~163515~~)。 |
-|Namespace|String|是|acs\_ecs\_dashboard|产品的数据命名空间。详情请参见[云服务监控项](~~163515~~)。 |
-|RuleId|String|是|bfae2ca5b4e07d2c7278772eccda169808c7b\*\*\*\*|报警规则ID。 |
-|RuleName|String|否|rule1|报警规则名称。 |
-|Dimensions|String|否|\[\{"instanceId":"xxxxxx"\}\]|维度Map，用于查询指定资源的监控数据。
+|MetricName|String|是|cpu\_total|监控项名称。
 
- 格式为：key-value键值对形式的集合，常用的key-value集合为：`instanceId:XXXXXX`。
+ **说明：** 详细信息请参见[云服务监控项](~~163515~~)。 |
+|Namespace|String|是|acs\_ecs\_dashboard|云服务的数据命名空间。
+
+ **说明：** 详细信息请参见[云服务监控项](~~163515~~)。 |
+|RuleId|String|是|bfae2ca5b4e07d2c7278772eccda169808c7b\*\*\*\*|报警规则ID。 |
+|RuleName|String|是|rule1|报警规则名称。 |
+|Dimensions|String|否|\[\{"instanceId":"i-m5e1qg6uo38rztr4\*\*\*\*"\}\]|维度Map，用于查询指定资源的监控数据。
+
+ 格式：key-value键值对形式的集合，常用的key-value集合为`instanceId:i-m5e1qg6uo38rztr4****`。
 
  Key和Value的长度为1~64个字节，超过64个字节时截取前64字节。
 
@@ -64,16 +68,17 @@
  **说明：** Dimensions传入时需要使用JSON字符串表示该Map对象，必须按顺序传入。 |
 |EffectiveInterval|String|否|00:00-23:59|报警规则的生效时间范围。 |
 |NoEffectiveInterval|String|否|00:00-05:30|报警规则的非生效时间范围。 |
-|SilenceTime|Integer|否|86400|通道沉默周期，单位：秒，默认值：86400秒（1天）。 |
-|Period|String|否|60|监控数据的聚合周期。单位：秒。取值为60或60的整数倍。默认值：300秒。 |
+|SilenceTime|Integer|否|86400|通道沉默周期，单位：秒，默认值：86400。 |
+|Period|String|否|60|监控数据的聚合周期。单位：秒。取值为60或60的整数倍。默认值：300。 |
 |Interval|String|否|60|报警规则的探测周期。单位：秒。
 
  **说明：** 建议报警的探测周期和数据上报周期保持一致。如果报警规则的探测周期小于数据上报周期，会因为数据不足而不能触发报警。 |
-|Webhook|String|否|http://www.aliyun.com|报警发生回调时指定的URL地址。 |
+|Webhook|String|否|https://www.aliyun.com|报警发生回调时指定的URL地址。 |
 |EmailSubject|String|否|ECS实例|报警邮件主题。 |
+|ContactGroups|String|否|ECS\_Group1|报警联系组。 |
 |Escalations.Critical.Statistics|String|否|Average|Critical级别报警统计方法。
 
- **说明：** 详情请参见[DescribeMetricMetaList](~~98846~~)。 |
+ **说明：** 详细信息请参见[DescribeMetricMetaList](~~98846~~)。 |
 |Escalations.Critical.ComparisonOperator|String|否|GreaterThanOrEqualToThreshold|Critical级别阈值比较符。取值：
 
  -   GreaterThanOrEqualToThreshold：大于等于。
@@ -91,7 +96,7 @@
 |Escalations.Critical.Times|Integer|否|3|Critical级别报警重试次数。 |
 |Escalations.Warn.Statistics|String|否|Average|Warn级别报警统计方法。
 
- **说明：** 详情请参见[DescribeMetricMetaList](~~98846~~)。 |
+ **说明：** 详细信息请参见[DescribeMetricMetaList](~~98846~~)。 |
 |Escalations.Warn.ComparisonOperator|String|否|GreaterThanOrEqualToThreshold|Warn级别阈值比较符。取值：
 
  -   GreaterThanOrEqualToThreshold：大于等于。
@@ -109,7 +114,7 @@
 |Escalations.Warn.Times|Integer|否|3|Warn级别报警重试次数。 |
 |Escalations.Info.Statistics|String|否|Average|Info级别报警统计方法。
 
- **说明：** 详情请参见[DescribeMetricMetaList](~~98846~~)。 |
+ **说明：** 详细信息请参见[DescribeMetricMetaList](~~98846~~)。 |
 |Escalations.Info.ComparisonOperator|String|否|GreaterThanOrEqualToThreshold|Info级别阈值比较符。取值：
 
  -   GreaterThanOrEqualToThreshold：大于等于。
@@ -151,6 +156,7 @@ http(s)://[Endpoint]/?Action=PutGroupMetricRule
 &MetricName=cpu_total
 &Namespace=acs_ecs_dashboard
 &RuleId=bfae2ca5b4e07d2c7278772eccda169808c7b****
+&RuleName=rule1
 &<公共请求参数>
 ```
 
