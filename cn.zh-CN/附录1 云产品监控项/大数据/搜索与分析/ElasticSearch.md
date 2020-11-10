@@ -11,15 +11,15 @@
 
 |监控项|单位|MetricName|Dimensions|Statistics|
 |---|--|----------|----------|----------|
-|节点网络流出包|count|NodeStatsNetworkoutPackages|userId、clusterId、nodeIP|Maximum|
+|节点网络流出包|Count|NodeStatsNetworkoutPackages|userId、clusterId、nodeIP|Maximum|
 |快照状态|无|ClusterAutoSnapshotLatestStatus|userId、clusterId|Maximum|
-|集群写入QPS|次/秒|ClusterIndexQPS|userId、clusterId|Average|
-|集群查询QPS|次/秒|ClusterQueryQPS|userId、clusterId|Average|
+|集群写入QPS|Count/Second|ClusterIndexQPS|userId、clusterId|Average|
+|集群查询QPS|Count/Second|ClusterQueryQPS|userId、clusterId|Average|
 |集群状态|无|ClusterStatus|userId、clusterId|Value|
 |节点CPU使用率|%|NodeCPUUtilization|userId、clusterId、nodeIP|Average|
 |节点磁盘使用率|%|NodeDiskUtilization|userId、clusterId、nodeIP|Average|
 |节点HeapMemory使用率|%|NodeHeapMemoryUtilization|userId、clusterId、nodeIP|Average|
 |节点Load\_1m|无|NodeLoad\_1m|userId、clusterId、nodeIP|Average|
-|Exception次数|个|NodeStatsExceptionLogCount|userId、clusterId、nodeIP|Maximum|
-|FullGc次数|个|NodeStatsFullGcCollectionCount|userId、clusterId、nodeIP|Maximum|
+|Exception次数|Count|NodeStatsExceptionLogCount|userId、clusterId、nodeIP|Maximum|
+|FullGc次数|Count|NodeStatsFullGcCollectionCount|userId、clusterId、nodeIP|Maximum|
 
