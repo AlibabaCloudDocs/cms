@@ -26,8 +26,8 @@
 |磁盘写流量|Bytes/s|disk\_writebytes|userId、instanceId、host|Average、Maximum、Minimum|
 |失败任务数|Count|failed\_job\_count|userId、instanceId、host|Average、Maximum、Minimum|
 |Get请求量|CountS|get\_num\_ops|userId、instanceId、host|Average、Maximum、Minimum|
-|Get平均RT|MilliSeconds|get\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
-|Get操作P99延迟|MilliSeconds|get\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
+|Get平均RT|Milliseconds|get\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
+|Get操作P99延迟|Milliseconds|get\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
 |HandlerQueue长度|Count|handler\_queue\_size|userId、instanceId、host|Average、Maximum、Minimum|
 |每5分钟平均负载|Load|load\_five|userId、instanceId、host|Average、Maximum、Minimum|
 |每分钟平均负载|Load|load\_one|userId、instanceId、host|Average、Maximum、Minimum|
@@ -37,15 +37,15 @@
 |内存总量（Total）|Bytes|mem\_total|userId、instanceId、host|Average、Maximum、Minimum|
 |内存使用比例|%|mem\_used\_percent|userId、instanceId、host|Average、Maximum、Minimum|
 |Put请求量|CountS|put\_num\_ops|userId、instanceId、host|Average、Maximum、Minimum|
-|Put平均RT|MilliSeconds|put\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
-|Put P99延迟|MilliSeconds|put\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
+|Put平均RT|Milliseconds|put\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
+|Put P99延迟|Milliseconds|put\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
 |读流量|KB/s|read\_data\_kb|userId、instanceId、host|Average、Maximum、Minimum|
 |读请求量|CountS|read\_ops|userId、instanceId、host|Average、Maximum、Minimum|
-|读平均RT|MilliSeconds|read\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|读平均RT|Milliseconds|read\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |RegionServer管理Region个数|Count|regions\_per\_ldserver|userId、instanceId、host|Average、Maximum、Minimum|
 |Scan请求量|CountS|scan\_num\_ops|userId、instanceId、host|Average、Maximum、Minimum|
-|Scan平均延迟|MilliSeconds|scan\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
-|Scan P99延迟|MilliSeconds|scan\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
+|Scan平均延迟|Milliseconds|scan\_rt\_avg|userId、instanceId、host|Average、Maximum、Minimum|
+|Scan P99延迟|Milliseconds|scan\_rt\_p99|userId、instanceId、host|Average、Maximum、Minimum|
 |搜索每秒网络流入量|Bytes/s|search\_bytes\_in|userId、instanceId、host|Average、Maximum、Minimum|
 |搜索每秒网络流出量|Bytes/s|search\_bytes\_out|userId、instanceId、host|Average、Maximum、Minimum|
 |搜索CPU空闲率|%|search\_cpu\_idle|userId、instanceId、host|Average、Maximum、Minimum|
@@ -65,24 +65,24 @@
 |最近1分钟Select ops|CountS|search\_select\_1minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |最近5分钟Select ops|CountS|search\_select\_5minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |Select次数总计|Count|search\_select\_count|userId、instanceId、host|Average、Maximum、Minimum|
-|Select最大RT|MilliSeconds|search\_select\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select最大RT|Milliseconds|search\_select\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Select平均ops|CountS|search\_select\_meanRate|userId、instanceId、host|Average、Maximum、Minimum|
-|Select平均RT|MilliSeconds|search\_select\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select p75 RT|MilliSeconds|search\_select\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select p95 RT|MilliSeconds|search\_select\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select p999 RT|MilliSeconds|search\_select\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select p99 RT|MilliSeconds|search\_select\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select平均RT|Milliseconds|search\_select\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select p75 RT|Milliseconds|search\_select\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select p95 RT|Milliseconds|search\_select\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select p999 RT|Milliseconds|search\_select\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select p99 RT|Milliseconds|search\_select\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |最近15分钟Update ops|CountS|search\_update\_15minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |最近1分钟Update ops|CountS|search\_update\_1minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |最近5分钟Update ops|CountS|search\_update\_5minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |Update次数总计|Count|search\_update\_count|userId、instanceId、host|Average、Maximum、Minimum|
-|Update最大RT|MilliSeconds|search\_update\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update最大RT|Milliseconds|search\_update\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Update平均ops|CountS|search\_update\_meanRate|userId、instanceId、host|Average、Maximum、Minimum|
-|Update平均RT|MilliSeconds|search\_update\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update P75 RT|MilliSeconds|search\_update\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update P95 RT|MilliSeconds|search\_update\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update P999 RT|MilliSeconds|search\_update\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update P99 RT|MilliSeconds|search\_update\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update平均RT|Milliseconds|search\_update\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update P75 RT|Milliseconds|search\_update\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update P95 RT|Milliseconds|search\_update\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update P999 RT|Milliseconds|search\_update\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update P99 RT|Milliseconds|search\_update\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr每秒网络流入量|Bytes/s|solr\_bytes\_in|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr每秒网络流出量|Bytes/s|solr\_bytes\_out|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr CPU空闲率|%|solr\_cpu\_idle|userId、instanceId、host|Average、Maximum、Minimum|
@@ -102,13 +102,13 @@
 |最近1分钟Select ops|CountS|solr\_select\_1minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |最近5分钟Select ops|CountS|solr\_select\_5minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |Select次数总计|Count|solr\_select\_count|userId、instanceId、host|Average、Maximum、Minimum|
-|Select最大RT|MilliSeconds|solr\_select\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select最大RT|Milliseconds|solr\_select\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Select平均ops|CountS|solr\_select\_meanRate|userId、instanceId、host|Average、Maximum、Minimum|
-|Select平均RT|MilliSeconds|solr\_select\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select P75 RT|MilliSeconds|solr\_select\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select P95 RT|MilliSeconds|solr\_select\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select P999 RT|MilliSeconds|solr\_select\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Select P99 RT|MilliSeconds|solr\_select\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select平均RT|Milliseconds|solr\_select\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select P75 RT|Milliseconds|solr\_select\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select P95 RT|Milliseconds|solr\_select\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select P999 RT|Milliseconds|solr\_select\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Select P99 RT|Milliseconds|solr\_select\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr存储空间总量|Bytes|solr\_storage\_total\_bytes|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr存储空间使用量|Bytes|solr\_storage\_used\_bytes|userId、instanceId、host|Average、Maximum、Minimum|
 |Solr存储空间使用比例|%|solr\_storage\_used\_percent|userId、instanceId、host|Average、Maximum、Minimum|
@@ -116,13 +116,13 @@
 |最近1分钟Update ops|CountS|solr\_update\_1minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |最近5分钟Update ops|CountS|solr\_update\_5minRate|userId、instanceId、host|Average、Maximum、Minimum|
 |Update次数总计|Count|solr\_update\_count|userId、instanceId、host|Average、Maximum、Minimum|
-|Update最大RT|MilliSeconds|solr\_update\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update最大RT|Milliseconds|solr\_update\_max\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |Update平均ops|CountS|solr\_update\_meanRate|userId、instanceId、host|Average、Maximum、Minimum|
-|Update平均RT|MilliSeconds|solr\_update\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update p75 RT|MilliSeconds|solr\_update\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update p95 RT|MilliSeconds|solr\_update\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update p999 RT|MilliSeconds|solr\_update\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
-|Update p99 RT|MilliSeconds|solr\_update\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update平均RT|Milliseconds|solr\_update\_mean\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update p75 RT|Milliseconds|solr\_update\_p75\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update p95 RT|Milliseconds|solr\_update\_p95\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update p999 RT|Milliseconds|solr\_update\_p999\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|Update p99 RT|Milliseconds|solr\_update\_p99\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 |存储空间总量|Bytes|storage\_total\_bytes|userId、instanceId、host|Average、Maximum、Minimum|
 |存储空间使用量|Bytes|storage\_used\_bytes|userId、instanceId、host|Average、Maximum、Minimum|
 |存储空间使用比例|%|storage\_used\_percent|userId、instanceId、host|Average、Maximum、Minimum|
@@ -135,5 +135,5 @@
 |工作节点数量|Count|worker\_count|userId、instanceId、host|Average、Maximum、Minimum|
 |写流量|KB/s|write\_data\_kb|userId、instanceId、host|Average、Maximum、Minimum|
 |写请求量|CountS|write\_ops|userId、instanceId、host|Average、Maximum、Minimum|
-|写平均RT|milliseconds|write\_rt|userId、instanceId、host|Average、Maximum、Minimum|
+|写平均RT|Milliseconds|write\_rt|userId、instanceId、host|Average、Maximum、Minimum|
 
