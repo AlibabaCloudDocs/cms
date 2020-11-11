@@ -15,7 +15,7 @@
 |数据块读取数|Count|blks\_read\_delta|userId、clusterId、instanceId|Value|
 |连接使用率|%|conn\_usage|userId、clusterId、instanceId|Average|
 |CPU使用率|%|cpu\_total|userId、clusterId、instanceId|Average|
-|数据库最大年龄|xids|db\_age|userId、clusterId、instanceId|Value|
+|数据库最大年龄|xids|db\_age|userId、clusterId、instanceId|Average|
 |内存使用率|%|mem\_usage|userId、clusterId、instanceId|Average|
 |数据盘大小|Mbyte|pls\_data\_size|userId、clusterId、instanceId|Value|
 |IOPS|Frequency|pls\_iops|userId、clusterId、instanceId|Average|
@@ -27,4 +27,5 @@
 |写IO吞吐|Mbyte/s|pls\_throughput\_write|userId、clusterId、instanceId|Average|
 |膨胀点|s|swell\_time|userId、clusterId、instanceId|Average|
 |TPS|Frequency|tps|userId、clusterId、instanceId|Average|
+|事务回滚率|%|rollback\_ratio|userId、clusterId、instanceId|userId、clusterId、instanceId|
 
