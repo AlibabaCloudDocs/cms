@@ -14,16 +14,10 @@
 |Maintenance|EnsRegion:NetworkMigration:Executed|边缘节点网络割接完成|Executed|Info|
 |Maintenance|EnsRegion:NetworkMigration:Executing|边缘节点网络割接执行|Executing|Critical|
 |Maintenance|EnsRegion:NetworkMigration:Scheduled|边缘节点网络割接计划|Scheduled|Warn|
+|Executed|EnsRegion:NetworkWaterLevel:Executed|ENS节点带宽水位恢复|Executed|Warn|
+|Executing|EnsRegion:NetworkWaterLevel:Executing|ENS节点带宽水位异常|Executing|Warn|
 |Exception|EnsRegion:PortError:Executed|节点端口恢复|Executed|Critical|
 |Exception|EnsRegion:PortError:Executing|节点端口异常|Executing|Critical|
 |Exception|Instance:SystemFailure.Reboot:Executed|实例重启完成（系统问题导致）|Executed|Critical|
 |Exception|Instance:SystemFailure.Reboot:Executing|实例重启执行中（系统问题导致）|Executing|Critical|
-|StatusNotification|AUTOSCALING:SCALE\_IN\_ERROR|弹性伸缩组缩容伸缩活动失败|unNormal|Critical|
-|StatusNotification|AUTOSCALING:SCALE\_IN\_START|弹性伸缩组缩容伸缩活动开始|Normal|Info|
-|StatusNotification|AUTOSCALING:SCALE\_IN\_SUCCESS|弹性伸缩组缩容伸缩活动成功|Normal|Info|
-|StatusNotification|AUTOSCALING:SCALE\_OUT\_ERROR|弹性伸缩组扩容伸缩活动失败|unNormal|Critical|
-|StatusNotification|AUTOSCALING:SCALE\_OUT\_START|弹性伸缩组扩容伸缩活动开始|Normal|Info|
-|StatusNotification|AUTOSCALING:SCALE\_OUT\_SUCCESS|弹性伸缩组扩容伸缩活动成功|Normal|Info|
-|StatusNotification|AUTOSCALING:SCALE\_REJECT|弹性伸缩组伸缩活动执行被拒绝|Warn|Warn|
-|Maintenance|AUTOSCALING:SCHEDULE\_TASK\_EXPIRING|定时任务到期提醒|Warn|Warn|
 
