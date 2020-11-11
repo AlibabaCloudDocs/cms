@@ -108,7 +108,7 @@
     |（Agent）Host.netout.errorpackages|Count/s|networkout\_errorpackages|userId、instanceId、device|Maximum、Minimum、Average|
     |（Agent）Host.netout.packages|Count/s|networkout\_packages|userId、instanceId、device|Maximum、Minimum、Average|
     |（Agent）Host.netout.rate|bit/s|networkout\_rate|userId、instanceId、device|Maximum、Minimum、Average|
-    |进程数|Count/Min|process.number|userId、instanceId、processName|Maximum、Minimum、Average|
+    |进程数|Count/Min|process.number|userId、instanceId、processName|Average|
     |（旧版Agent）CPU使用率|%|vm.CPUUtilization|userId、instanceId|Maximum、Minimum、Average|
     |（旧版Agent）磁盘IO读|Byte/s|vm.DiskIORead|userId、instanceId、diskname|Maximum、Minimum、Average|
     |（旧版Agent）磁盘IO写|Byte/s|vm.DiskIOWrite|userId、instanceId、diskname|Maximum、Minimum、Average|
