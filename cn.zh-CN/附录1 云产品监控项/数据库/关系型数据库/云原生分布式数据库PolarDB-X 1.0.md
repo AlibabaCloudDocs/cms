@@ -11,13 +11,19 @@
 
 |监控项|单位|MetricName|Dimensions|Statistics|
 |---|--|----------|----------|----------|
-|连接数|Count|ConnectionCount|userId、instanceId|Average|
-|逻辑QPS|Count|LogicQPS|userId、instanceId|Average|
-|逻辑RT|ms|LogicRT|userId、instanceId|Average|
-|内存利用率|%|MemoryUtilization|userId、instanceId|Average|
-|物理QPS|Count|PhysicsQPS|userId、instanceId|Average|
-|物理RT|ms|PhysicsRT|userId、instanceId|Average|
-|活跃线程数|Count|ThreadCount|userId、instanceId|Average|
+|DRDS\_连接数|Count|ConnectionCount|userId、instanceId|Average|
+|DRDS\_逻辑QPS|Count|LogicQPS|userId、instanceId|Average|
+|DRDS\_逻辑RT|ms|LogicRT|userId、instanceId|Average|
+|DRDS\_内存利用率|%|MemoryUtilization|userId、instanceId|Average|
+|DRDS\_物理QPS|Count|PhysicsQPS|userId、instanceId|Average|
+|DRDS\_物理RT|ms|PhysicsRT|userId、instanceId|Average|
+|DRDS\_活跃线程数|Count|ThreadCount|userId、instanceId|Average|
+|DRDS\_CPU利用率|%|CPUUtilization|userId、instanceId|Average|
+|DRDS\_网络输入带宽|bit/s|NetworkInputTraffic|userId、instanceId|Average|
+|DRDS\_网络输出带宽|bit/s|NetworkOutputTraffic|userId、instanceId|Average|
+|私有RDS\_MySQL\_ActiveSessions|Count|active\_session|userId、instanceId、rdsInstId|Average|
+|私有RDS\_MySQL每秒Delete量|Count|com\_delete|userId、instanceId、rdsInstId|Average|
+|私有RDS\_MySQL每秒Insert量|Count|com\_insert|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒InsertSelect量|Count|com\_insert\_select|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒Replace量|Count|com\_replace|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒ReplaceSelect量|Count|com\_replace\_select|userId、instanceId、rdsInstId|Average|
@@ -46,11 +52,8 @@
 |私有RDS\_MySQL内存利用率|%|mem\_usage|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL网络流出带宽|bits/s|output\_traffic\_ps|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒查询量|Count|qps|userId、instanceId、rdsInstId|Average|
-|私有RDS\_MySQL只读实例延迟|seconds|slave\_lag|userId、instanceId、rdsInstId|Average|
+|私有RDS\_MySQL只读实例延迟|Seconds|slave\_lag|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒慢查询量|Count|slow\_queries|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒创建临时表数量|Count|tb\_tmp\_disk|userId、instanceId、rdsInstId|Average|
 |私有RDS\_MySQL每秒事务数|Count|tps|userId、instanceId、rdsInstId|Average|
-|DRDS\_CPU利用率|%|CPUUtilization|userId、instanceId|Average|
-|DRDS\_网络输入带宽|bit/s|NetworkInputTraffic|userId、instanceId|Average|
-|DRDS\_网络输出带宽|bit/s|NetworkOutputTraffic|userId、instanceId|Average|
 
