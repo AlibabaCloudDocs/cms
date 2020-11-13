@@ -248,7 +248,7 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
  **说明：** 200表示成功。 |
 |CreateResultList|Array of CreateResultList| |创建任务的返回结果。当创建任务成功时，会有返回结果。 |
 |CreateResultList| | | |
-|TaskId|String|df1f48e3-f814-491a-ad5f-\*\*\*\*|任务ID。 |
+|TaskId|String|2c8dbdf9-a3ab-46a1-85a4-f094965e\*\*\*\*|监控任务ID。 |
 |TaskName|String|HanZhou\_ECS1|监控任务名称。 |
 |Data|Struct| |创建监控任务结果详情。 |
 |AttachAlertResult|Array of Contact| |关联已有报警规则的状态。 |
@@ -304,7 +304,7 @@ http(s)://[Endpoint]/?Action=CreateSiteMonitor
 	  <Code>200</Code>
 	  <CreateResultList>
 		    <CreateResultList>
-			      <TaskId>2c8dbdf9-a3ab-46a1-85a4-f094965ebef9</TaskId>
+			      <TaskId>2c8dbdf9-a3ab-46a1-85a4-f094965e****</TaskId>
 			      <TaskName>HanZhou_ECS1</TaskName>
 		    </CreateResultList>
 	  </CreateResultList>
@@ -335,7 +335,7 @@ http(s)://[Endpoint]/?Action=CreateSiteMonitor
 	"CreateResultList": {
 		"CreateResultList": [
 			{
-				"TaskId": "2c8dbdf9-a3ab-46a1-85a4-f094965ebef9",
+				"TaskId": "2c8dbdf9-a3ab-46a1-85a4-f094965e****",
 				"TaskName": "HanZhou_ECS1"
 			}
 		]
