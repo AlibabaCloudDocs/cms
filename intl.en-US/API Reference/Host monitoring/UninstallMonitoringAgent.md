@@ -1,77 +1,67 @@
-# UninstallMonitoringAgent {#doc_api_Cms_UninstallMonitoringAgent .reference}
+# UninstallMonitoringAgent
 
-You can call this operation to uninstall the CloudMonitor agent.
+Uninstalls the Cloud Monitor agent from a host that is not provided by Alibaba Cloud.
 
-This operation is not applicable to Alibaba Cloud ECS servers.
+**Note:** This API operation is not applicable to ECS instances. To uninstall the agent from an ECS instance, see [Install and uninstall the Cloud Monitor agent](~~183482~~).
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=UninstallMonitoringAgent) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer automatically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=UninstallMonitoringAgent&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|InstanceId|String|Yes|i-xx12\*\*\*\*| The ID of the ECS instance.
+|Action|String|Yes|UninstallMonitoringAgent|The operation that you want to perform. Set the value to UninstallMonitoringAgent. |
+|InstanceId|String|Yes|host-\*\*\*\*|The ID of the host. |
 
- |
-|Action|String|No|UninstallMonitoringAgent| The operation that you want to perform. Set the value to UninstallMonitoringAgent.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200| The status code. A value of 200 indicates that the call is successful.
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|Successfully| The error message.
+ **Note:** The HTTP status code 200 indicates that the call was successful. |
+|Message|String|Successfully|The returned message. |
+|RequestId|String|466902B9-2842-40B0-B796-00FE772B6EF3|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|RequestId|String|466902B9-2842-40B0-B796-00FE772B6EF3| The request ID for troubleshooting.
+ -   true: The call was successful.
+-   false: The call failed. |
 
- |
-|Success|Boolean|true| Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=UninstallMonitoringAgent
-&InstanceId=i-xx12****
+&InstanceId=host-****
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <UninstallMonitoringAgentResponse>
-  <RequestId>466902B9-2842-40B0-B796-00FE772B6EF3</RequestId>
-  <Code>200</Code>
-  <Message>Successfully</Message>
+    <RequestId>466902B9-2842-40B0-B796-00FE772B6EF3</RequestId>
+    <Code>200</Code>
+    <Message>Successfully</Message>
 </UninstallMonitoringAgentResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"Successfully",
-	"RequestId":"466902B9-2842-40B0-B796-00FE772B6EF3",
-	"Code":"200"
+    "RequestId": "466902B9-2842-40B0-B796-00FE772B6EF3",
+    "Code": "200",
+    "Message": "Successfully"
 }
 ```
 
-## Error code {#section_mmi_ub7_e6k .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
