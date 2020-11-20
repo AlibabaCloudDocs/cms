@@ -1,75 +1,65 @@
-# DisableHostAvailability {#doc_api_Cms_DisableHostAvailability .reference}
+# DisableHostAvailability
 
-禁用一个可用性监控任务。
+调用DisableHostAvailability接口禁用指定可用性监控任务。
 
-## 调试 {#apiExplorer .section}
+## 调试
 
-前往【[API Explorer](https://api.aliyun.com/#product=Cms&api=DisableHostAvailability)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cms&api=DisableHostAvailability&type=RPC&version=2019-01-01)
 
-## 请求参数 {#parameters .section}
+## 请求参数
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DisableHostAvailability|系统规定参数。取值：DisableHostAvailability。
+|Action|String|是|DisableHostAvailability|要执行的操作，取值：DisableHostAvailability。 |
+|Id.N|RepeatList|是|12345|可用性监控任务ID。N的取值范围：1~20。 |
 
- |
-|Id.N|RepeatList|是|12345|任务ID。N 的取值范围为 1~20。
-
- |
-
-## 返回参数 {#resultMapping .section}
+## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|200表示成功。
+|Code|String|200|状态码。
 
- |
-|Message|String|success|错误信息。
+ **说明：** 200表示成功。 |
+|Message|String|User not authorized to operate on the specified resource.|错误信息。 |
+|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|请求ID。 |
+|Success|Boolean|true|操作是否成功。取值：
 
- |
-|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|请求ID，用于排查问题。
+ -   true：成功。
+-   false：失败。 |
 
- |
-|Success|Boolean|true|是否成功。
-
- |
-
-## 示例 {#demo .section}
+## 示例
 
 请求示例
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/?Action=DisableHostAvailability
 &Id.1=12345
 &<公共请求参数>
-
 ```
 
 正常返回示例
 
 `XML` 格式
 
-``` {#xml_return_success_demo}
+```
 <DisableHostAvailabilityResponse>
-  <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
-  <Success>true</Success>
-  <Code>200</Code>
+      <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
+      <Success>true</Success>
+      <Code>200</Code>
 </DisableHostAvailabilityResponse>
-
 ```
 
 `JSON` 格式
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
-	"Success":true,
-	"Code":200
+  "RequestId": "ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
+  "Success": true,
+  "Code": 200
 }
 ```
 
-## 错误码 { .section}
+## 错误码
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Cms)
+访问[错误中心](https://error-center.aliyun.com/status/product/Cms)查看更多错误码。
 
