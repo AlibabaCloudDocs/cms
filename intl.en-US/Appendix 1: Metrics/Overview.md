@@ -1,10 +1,10 @@
 # Overview
 
-This topic describes how to use metrics in CloudMonitor and provides links for you to view metrics for different services.
+This topic describes how to use metrics in Cloud Monitor and provides links that you can use to view metrics of different services.
 
-## Instructions
+## Usage notes
 
-If you need to call CloudMonitor API operations, you can click the links in the following table to view the parameters of metrics for different services. The parameters include **Namespace**, **MetricName**, **Dimensions**, and **Period**.
+If you need to call Cloud Monitor API operations, you can click the links in the following table to view the metrics of different services. The parameters of each metric include **Namespace**, **MetricName**, **Dimensions**, and **Period**.
 
 ## Alibaba Cloud service metrics
 
@@ -18,7 +18,8 @@ If you need to call CloudMonitor API operations, you can click the links in the 
 -   [Serverless Workflow](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Serverless Workflow.md)
 -   [Dedicated Host](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Dedicated Host.md)
 -   [Servers protected by Hybrid Disaster Recovery](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Servers protected by Hybrid Disaster Recovery.md)
--   [Gateway of Hybrid Disaster Recovery](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Gateway of Hybrid Disaster Recovery.md) |
+-   [Gateway of Hybrid Disaster Recovery](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Gateway of Hybrid Disaster Recovery.md)
+-   [Serverless App Engine](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Elastic computing/Serverless App Engine.md) |
 |Storage|-   [Object Storage Service](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Object Storage Service.md)
 -   [NAS](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/NAS.md)
 -   [Apsara File Storage for HDFS](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Apsara File Storage for HDFS.md)
@@ -52,9 +53,9 @@ If you need to call CloudMonitor API operations, you can click the links in the 
 -   [ApsaraDB for RDS-Disaster Recovery](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for RDS-Disaster Recovery.md)
 -   [ApsaraDB RDS for PostgreSQL](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB RDS for PostgreSQL.md)
 -   [Cloud-Native Distributed Database PolarDB-X 1.0](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/Cloud-Native Distributed Database PolarDB-X 1.0.md)
--   [polarDB](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/polarDB.md)
+-   [PolarDB](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/PolarDB.md)
 -   [POLARDB MYSQL CLUSTER](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/POLARDB MYSQL CLUSTER.md)
--   [ApsaraDB for POLARDB PostgreSQL/Oracle](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for POLARDB PostgreSQL/Oracle.md)
+-   [ApsaraDB for PolarDB PostgreSQL/Oracle](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for PolarDB PostgreSQL/Oracle.md)
 -   [ApsaraDB Exclusive Host Group](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB Exclusive Host Group.md) |
 |NoSQL databases|-   [ApsaraDB for MongoDB-Instance Copy](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Instance Copy.md)
 -   [ApsaraDB for MongoDB-Single Node Instance](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Single Node Instance.md)
