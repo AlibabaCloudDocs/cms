@@ -25,12 +25,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   HTTP
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |http\_method
 
 |String
@@ -92,12 +92,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   PING
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |failure\_rate
 
 |int
@@ -115,12 +115,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   DNS
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |dns\_server
 
 |string
@@ -152,12 +152,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   FTP
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |port
 
 |int
@@ -176,12 +176,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   POP3/SMTP
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |port
 
 |int
@@ -200,12 +200,12 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 -   TCP/UDP
 
-|参数名
+|参数
 
 |类型
 
 |描述 |
-|-----|----|----|
+|----|----|----|
 |port
 
 |int
@@ -235,18 +235,10 @@ TaskType中HTTP（s）、PING、TCP、UDP、DNS、SMTP、POP3和FTP的高级参�
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|AlertRule|String|\[\{"alarmActions":\["默认报警联系人组"\],"metricName":"Availability","expression":"$Availability<96"\}\]|创建或修改监控任务时设置报警规则，为一个JSONArray。
-
- 格式：`[{"alarmActions":["xxx"],"metricName":"Availability","expression":"$Availability<96"}]`。
-
- -   alarmActions：对应报警联系组。
--   metricName：对应监控项。取值：
-    -   Availability：可用探测点百分比。
-    -   AvailableNumber：可用探测点数。 |
 |Code|String|200|状态码。
 
  **说明：** 200表示成功。 |
-|CreateResultList|Array of CreateResultList| |创建任务的返回结果。当创建任务成功时，会有返回结果。 |
+|CreateResultList|Array of CreateResultList| |创建任务的返回结果。当创建任务成功时，有返回结果；当创建任务失败时，无返回结果。 |
 |CreateResultList| | | |
 |TaskId|String|2c8dbdf9-a3ab-46a1-85a4-f094965e\*\*\*\*|监控任务ID。 |
 |TaskName|String|HanZhou\_ECS1|监控任务名称。 |
