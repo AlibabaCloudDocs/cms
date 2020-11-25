@@ -17,9 +17,9 @@ This topic describes the metrics for Function Compute.
 |FunctionMaxMemoryUsage|MB|FunctionMaxMemoryUsage|userId, region, serviceName, and functionName|Value|
 |FunctionServerErrors|count|FunctionServerErrors|userId, region, serviceName, and functionName|Value|
 |ServerErrorsRate|%|FunctionServerErrorsRate|userId, region, serviceName, and functionName|Value|
-|Throttles|count|FuntionThrottles|userId, region, serviceName, and functionName|Value|
-|ThrottlesRate|%|FuntionThrottlesRate|userId, region, serviceName, and functionName|Value|
-|TotalInvocations|count|FuntionTotalInvocations|userId, region, serviceName, and functionName|Value|
+|Throttles|count|FunctionThrottles|userId, region, serviceName, and functionName|Value|
+|ThrottlesRate|%|FunctionThrottlesRate|userId, region, serviceName, and functionName|Value|
+|TotalInvocations|count|FunctionTotalInvocations|userId, region, serviceName, and functionName|Value|
 |RegionBillableInvocations|count|RegionBillableInvocations|userId and region|Value|
 |RegionbillableInvocationsRate|%|RegionbillableInvocationsRate|userId and region|Value|
 |RegionClientErrors|count|RegionClientErrors|userId and region|Value|
