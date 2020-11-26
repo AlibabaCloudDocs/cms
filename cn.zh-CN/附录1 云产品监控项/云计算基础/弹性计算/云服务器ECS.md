@@ -19,14 +19,10 @@
     |（ECS）ECS.SystemDiskReadOps|Count/Second|DiskReadIOPS|userId、instanceId|Maximum、Minimum、Average|
     |（ECS）系统盘总写BPS|Byte/s|DiskWriteBPS|userId、instanceId|Maximum、Minimum、Average|
     |（ECS）系统写IOPS|Count/Second|DiskWriteIOPS|userId、instanceId|Maximum、Minimum、Average|
-    |（ECS）经典网络-公网网络入流量|Byte|InternetIn|userId、instanceId|Maximum、Minimum、Average、Sum|
     |（ECS）经典网络-公网流入带宽|bit/s|InternetInRate|userId、instanceId|Maximum、Minimum、Average|
-    |（ECS）下行流量|Byte|InternetOut|userId、instanceId|Maximum、Minimum、Average、Sum|
     |（ECS）经典网络-公网流出带宽|bit/s|InternetOutRate|userId、instanceId|Maximum、Minimum、Average|
     |（ECS）经典网络-公网流出带宽使用率|%|InternetOutRate\_Percent|userId、instanceId|Average|
-    |（ECS）内网流入流量|Byte|IntranetIn|userId、instanceId|Maximum、Minimum、Average、Sum|
     |（ECS）内网流入带宽|bit/s|IntranetInRate|userId、instanceId|Maximum、Minimum、Average|
-    |（ECS）内网流出流量|Byte|IntranetOut|userId、instanceId|Maximum、Minimum、Average、Sum|
     |（ECS）内网流出带宽|bit/s|IntranetOutRate|userId、instanceId|Maximum、Minimum、Average|
     |突发性能实例-超额CPU积分|Count|NotpaidSurplusCredit|userId、instanceId|Maximum、Minimum、Average|
     |突发性能实例-累积CPU积分|Count|TotlCredit|userId、instanceId|Maximum、Minimum、Average|
@@ -34,8 +30,6 @@
     |（ECS）专有网络-公网流出带宽|bit/s|VPC\_PublicIP\_InternetOutRate|userId、instanceId、ip|Maximum、Minimum、Average|
     |（ECS）专有网络-公网流出带宽使用率|%|VPC\_PublicIP\_InternetOutRate\_Percent|userId、instanceId、ip|Average|
     |ECS同时连接数|Count|concurrentConnections|userId、instanceId|Maximum|
-    |EIP-网络流入带宽|bit/s|eip\_InternetInRate|userId、instanceId|Value|
-    |EIP-网络流出带宽|bit/s|eip\_InternetOutRate|userId、instanceId|Value|
     |入方向前后端丢包率|%|packetInDropRates|userId、instanceId|Maximum|
     |出方向前后端丢包率|%|packetOutDropRates|userId、instanceId|Maximum|
 
