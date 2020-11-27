@@ -1,156 +1,142 @@
-# DescribeMetricTop {#doc_api_Cms_DescribeMetricTop .reference}
+# DescribeMetricTop
 
-You can call this operation to query the monitoring data on time series metrics of cloud services sorted by specified fields within a specified time.
+Queries the sorted data of a time series metric that belongs to a cloud service.
 
-## Parameters {#description .section}
+**Note:** For information about how to assign values to the Namespace, Project, Metric, Period, and Dimensions parameters for cloud services, see [DescribeMetricMetaList](~~98846~~) or [Metrics](~~163515~~).
 
--   For more information about how to assign values to the parameters such as Project, Metric, Period, and Dimensions for cloud services, you can call the DescribeMetricMetaList operation or see [Preset metric reference](~~28619~~).
--   The period specified by StartTime and EndTime includes the time point specified by StartTime but does not include the time point specified by EndTime. StartTime must be earlier than EndTime.
--   Cursor is the parameter for pagination. If this parameter is null, the returned page is the last page. Otherwise, the returned page is not the last page.
--   The typical values of the Period parameter are 60 \(1 minute\), 300 \(5 minutes\), and 900 \(15 minutes\). You can set this parameter based on related documents or your specific requirements. For example, if you set the Period parameter to 60, only 1,000 records will be returned, though a total of 1,440 records will be generated. This is because the maximum number of records that can be returned for each query is 1,000. If you set Period to 300, then 288 data records will be returned.
+## Debugging
 
-## Debugging {#apiExplorer .section}
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeMetricTop&type=RPC&version=2019-01-01)
 
-Alibaba Cloud provides [OpenAPI Explorer](https://api.aliyun.com/#product=Cms&api=DescribeMetricTop) to simplify API usage. You can use OpenAPI Explorer to search for APIs, call APIs, and dynamically generate SDK example code.
-
-## Request Parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DescribeMetricTop|The operation that you want to perform. Set this parameter to DescribeMetricTop.
+|Action|String|Yes|DescribeMetricTop|The operation that you want to perform. Set the value to DescribeMetricTop. |
+|MetricName|String|Yes|cpu\_idle|The name of the metric. |
+|Namespace|String|Yes|acs\_ecs\_dashboard|The namespace of the cloud service. Specify the value in the acs\_service name format. |
+|Orderby|String|Yes|Average|The field by which the metric data is sorted. |
+|Period|String|No|60|The time interval at which metric data is queried. Unit: seconds. Valid values: 60, 300, and 900.
 
- |
-|MetricName|String|Yes|cpu\_idle|The name of the metric.
+ Set this parameter as needed. Examples:
 
- |
-|Namespace|String|Yes|acs\_ecs\_dashboard|The namespace of the monitored service, for example, "acs\_ecs\_dashboard" and "acs\_rds\_dashboard".
+ -   If you set this parameter to 60 and 1,440 metric data entries exist, only the first 1,000 entries are returned.
+-   If you set this parameter to 300 and 288 metric data entries exist, all of the entries are returned.
 
- |
-|Dimensions|String|No|\[\{"instanceId": "i-abcdefgh12\*\*\*\*"\}\]|The dimensions of the monitored metrics to filter the records. Each dimension is a key-value pair. The common key-value pair is instanceId: XXXXXX. Dimensions must be organized in a JSON array string, and follow the required order.
+ **Note:** The maximum number of returned metric data entries is 1,000. If the number exceeds 1,000, only the first 1,000 entries are returned. |
+|StartTime|String|No|2019-01-30 00:00:00|The start of the time range to query. Supported formats:
 
- |
-|EndTime|String|No|2019-01-30 00:10:00|The end time of the records. You can set this parameter to the number of milliseconds that have elapsed since 00:00:00 January 1, 1970, or to a timestamp such as 2015-10-20 00:00:00.
+ -   UNIX timestamp: the number of milliseconds that have elapsed since 00:00:00 Thursday, January 1, 1970.
+-   Time format: YYYY-MM-DDThh:mm:ssZ.
 
- |
-|Express|String|No|\{"groupby":\["userId","instanceId"\]\}|The expression for real-time computation on the query results, such as `{"groupby":["instanceId"]}`
+ **Note:** The period specified by StartTime and EndTime includes the time specified by EndTime and excludes the time specified by StartTime. StartTime must be earlier than EndTime. |
+|EndTime|String|No|2019-01-30 00:10:00|The end of the time range to query. Supported formats:
 
- |
-|Length|String|No|1000|The number of records returned by each query. Default value: 1000.
+ -   UNIX timestamp: the number of milliseconds that have elapsed since 00:00:00 Thursday, January 1, 1970.
+-   Time format: YYYY-MM-DDThh:mm:ssZ. |
+|Dimensions|String|No|\[\{"instanceId": "i-abcdefgh12\*\*\*\*"\}\]|The dimensions that specify the resources for which you want to query metric data.
 
- |
-|OrderDesc|String|No|False|The sorting order of records. You must specify either this parameter or the Orderby parameter. Valid values:
+ Set the value to a set of key-value pairs. A typical pair is `instanceId:i-2ze2d6j5uhg20x47****`.
 
- -   False: sorts values in descending order.
--   True: sorts values in ascending order.
+ **Note:** Dimensions must be formatted as a JSON string in a specified order. |
+|OrderDesc|String|No|False|The method that is used to sort the metric data. Valid values:
 
- |
-|Orderby|String|No|Average|The field by which the records are sorted. You must specify either this parameter or the OrderDesc parameter.
+ -   True: sorts values in ascending order.
+-   False: sorts values in descending order. |
+|Length|String|No|1000|The number of entries to return on each page. Default value: 1000. |
+|Express|String|No|\{"groupby":\["userId","instanceId"\]\}|The expression for real-time computation on the query results.
 
- |
-|Period|String|No|60|The time interval of the records in seconds. Typical values are 60, 300, and 900. If this parameter is not specified, the default period of the metric is used to query the raw data. If this parameter is specified, only data of the specified period is queried.
+ Only the `groupby` expression is supported. This expression is similar to the GROUP BY statement used in databases. |
 
- |
-|StartTime|String|No|2019-01-30 00:00:00|The start time of the records. You can set this parameter to the number of milliseconds that have elapsed since 00:00:00 January 1, 1970, or to a timestamp such as 2015-10-20 00:00:00.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|RequestId|String|3121AE7D-4AFF-4C25-8F1D-C8226EBB1F42|The ID of the request. |
+|Code|String|200|The HTTP status code.
 
- |
-|Datapoints|String|\[\{"timestamp":1548777660000,"userId":"123","instanceId":"i-abc","Minimum":9.92,"Average":9.92,"Maximum":9.92\}\]|The list of monitoring data in the following format:`{ "timestamp": 1490164200000, "Maximum": 100, "userId": "123456789876****", "Minimum": 4.55, "instanceId": "i-bp18abl200xk9599****", "Average": 93.84 }`
+ **Note:** The status code 200 indicates that the call was successful. |
+|Datapoints|String|\[\{"timestamp":1548777660000,"userId":"123","instanceId":"i-abc","Minimum":9.92,"Average":9.92,"Maximum":9.92,"\_count":1\}\]|The data of the metric. |
+|Period|String|60|The time interval at which metric data was queried. Unit: seconds. Valid values: 60, 300, and 900. |
+|Message|String|The Request is not authorization.|The error message. |
 
- |
-|Message|String|Success|The error message. No message is returned when the status code is 200.
+## Examples
 
- |
-|Period|String|60|The time interval of the records in seconds. Typical values are 60, 300, and 900.
+Sample requests
 
- |
-|RequestId|String|3121AE7D-4AFF-4C25-8F1D-C8226EBB1F42|The ID of the request, which can be used for troubleshooting.
-
- |
-
-## Examples {#demo .section}
-
-Sample request
-
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=DescribeMetricTop
 &MetricName=cpu_idle
 &Namespace=acs_ecs_dashboard
+&Orderby=Average
 &<Common request parameters>
-
 ```
 
-Sample success response
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeMetricTopResponse>
-  <Period>60</Period>
-  <Datapoints>
-    <order>1</order>
-    <timestamp>1551687360000</timestamp>
-    <userId>12345****</userId>
-    <instanceId>i-2zeehst1****</instanceId>
-    <Maximum>16.41</Maximum>
-    <Minimum>4.66</Minimum>
-    <Average>7.74</Average>
-    <_count>1</_count>
-  </Datapoints>
-  <Datapoints>
-    <order>2</order>
-    <timestamp>1551687360000</timestamp>
-    <userId>12345****</userId>
-    <instanceId>i-2zefxdy2****</instanceId>
-    <Maximum>15.74</Maximum>
-    <Minimum>5.03</Minimum>
-    <Average>7.14</Average>
-    <_count>1</_count>
-  </Datapoints>
-  <RequestId>1F68A4E8-4488-48E7-9189-3E1F5165E64E</RequestId>
-  <Code>200</Code>
+	  <Period>60</Period>
+	  <Datapoints>
+		    <order>1</order>
+		    <timestamp>1551687360000</timestamp>
+		    <userId>12345****</userId>
+		    <instanceId>i-2zeehst1****</instanceId>
+		    <Maximum>16.41</Maximum>
+		    <Minimum>4.66</Minimum>
+		    <Average>7.74</Average>
+		    <_count>1</_count>
+	  </Datapoints>
+	  <Datapoints>
+		    <order>2</order>
+		    <timestamp>1551687360000</timestamp>
+		    <userId>12345****</userId>
+		    <instanceId>i-2zefxdy2****</instanceId>
+		    <Maximum>15.74</Maximum>
+		    <Minimum>5.03</Minimum>
+		    <Average>7.14</Average>
+		    <_count>1</_count>
+	  </Datapoints>
+	  <RequestId>1F68A4E8-4488-48E7-9189-3E1F5165E64E</RequestId>
+	  <Code>200</Code>
 </DescribeMetricTopResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Period":"60",
-	"Datapoints":[
-		{
-			"timestamp":1551687360000,
-			"order":1,
-			"_count":1,
-			"Maximum":16.41,
-			"userId":"12345****",
-			"Minimum":4.66,
-			"instanceId":"i-2zeehst1****",
-			"Average":7.74
-		},
-		{
-			"timestamp":1551687360000,
-			"order":2,
-			"_count":1,
-			"Maximum":15.74,
-			"userId":"12345****",
-			"Minimum":5.03,
-			"instanceId":"i-2zefxdy2****",
-			"Average":7.14
-		}
-	],
-	"RequestId":"1F68A4E8-4488-48E7-9189-3E1F5165E64E",
-	"Code":"200"
+    "Period": "60",
+    "Datapoints": [
+        {
+            "order": 1,
+            "timestamp": 1551687360000,
+            "userId": "12345****",
+            "instanceId": "i-2zeehst1****",
+            "Maximum": 16.41,
+            "Minimum": 4.66,
+            "Average": 7.74,
+            "_count": 1
+        },
+        {
+            "order": 2,
+            "timestamp": 1551687360000,
+            "userId": "12345****",
+            "instanceId": "i-2zefxdy2****",
+            "Maximum": 15.74,
+            "Minimum": 5.03,
+            "Average": 7.14,
+            "_count": 1
+        }
+    ],
+    "RequestId": "1F68A4E8-4488-48E7-9189-3E1F5165E64E",
+    "Code": "200"
 }
 ```
 
-## Error codes { .section}
+## Error codes
+
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
