@@ -1,86 +1,78 @@
-# DescribeMonitoringAgentConfig {#doc_api_Cms_DescribeMonitoringAgentConfig .reference}
+# DescribeMonitoringAgentConfig
 
-You can call this operation to query the configuration of the CloudMonitor agent.
+Queries the configuration of the Cloud Monitor agent.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=DescribeMonitoringAgentConfig) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DescribeMonitoringAgentConfig&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DescribeMonitoringAgentConfig| The operation that you want to perform. Set the value to DescribeMonitoringAgentConfig.
+|Action|String|Yes|DescribeMonitoringAgentConfig|The operation that you want to perform. Set the value to DescribeMonitoringAgentConfig. |
 
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|RequestId|String|E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D| The request ID for troubleshooting.
+|RequestId|String|E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D|The ID of the request. |
+|AutoInstall|Boolean|true|Indicates whether the Cloud Monitor agent is automatically installed on existing Elastic Compute Service \(ECS\) instances. Valid values:
 
- |
-|AutoInstall|Boolean|true| Indicates whether to enable automatic installation of the CloudMonitor agent.
+ -   true
+-   false |
+|EnableInstallAgentNewECS|Boolean|true|Indicates whether the Cloud Monitor agent is automatically installed on new ECS instances. Valid values:
 
- |
-|EnableInstallAgentNewECS|Boolean|false| Indicates whether to automatically install the CloudMonitor agent for new ECS instances.
+ -   true
+-   false |
+|Message|String|Successfully|The error message. |
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|Successfully| The error message.
+ **Note:** The status code 200 indicates that the call was successful. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|Code|String|200| The status code. A value of 200 indicates that the call is successful.
+ -   true: The call was successful.
+-   false: The call failed. |
+|EnableActiveAlert|String|redis,rds,ecs|The service for which one-click alert is enabled. |
 
- |
-|Success|Boolean|true| Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-|EnableActiveAlert|String|redis,rds,ecs| The name of the service for which one-click alert is enabled.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=DescribeMonitoringAgentConfig
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DescribeMonitoringAgentConfigResponse>
-  <UserId>12345****</UserId>
-  <EnableInstallAgentNewECS>false</EnableInstallAgentNewECS>
-  <Success>true</Success> 
-  <ErrorCode>200</ErrorCode> 
-  <EnableActiveAlert>redisa,rds,ecs</EnableActiveAlert>
-  <AutoInstall>true</AutoInstall>
+	  <AutoInstall>true</AutoInstall>
+	  <EnableActiveAlert></EnableActiveAlert>
+	  <EnableInstallAgentNewECS>true</EnableInstallAgentNewECS>
+	  <RequestId>B4EB0F95-3181-4E8F-B32E-8C3734E8F88E</RequestId>
+	  <Code>200</Code>
+	  <Success>true</Success>
 </DescribeMonitoringAgentConfigResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"UserId":"12345****",
-	"ErrorCode":200,
-	"Success":true,
-	"EnableInstallAgentNewECS":false,
-	"AutoInstall":true,
-	"EnableActiveAlert":"redis,rds,ecs"
+  "AutoInstall": true,
+  "EnableActiveAlert": "",
+  "EnableInstallAgentNewECS": true,
+  "RequestId": "B4EB0F95-3181-4E8F-B32E-8C3734E8F88E",
+  "Code": 200,
+  "Success": true
 }
 ```
 
-## Error code {#section_hkk_jhy_2za .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
