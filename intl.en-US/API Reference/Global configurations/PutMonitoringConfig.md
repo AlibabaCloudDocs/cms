@@ -1,77 +1,71 @@
-# PutMonitoringConfig {#doc_api_Cms_PutMonitoringConfig .reference}
+# PutMonitoringConfig
 
-You can call this operation to make global configurations for the CloudMonitor agent. For example, you can enable automatic agent installation or one-click alert.
+Performs global configurations for the Cloud Monitor agent.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=PutMonitoringConfig) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can call APIs, dynamically generate SDK example code, and retrieve APIs.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=PutMonitoringConfig&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|PutMonitoringConfig|The operation that you want to perform. Set the value to PutMonitoringConfig.
+|Action|String|Yes|PutMonitoringConfig|The operation that you want to perform. Set the value to PutMonitoringConfig. |
+|AutoInstall|Boolean|No|true|Specifies whether to automatically install the Cloud Monitor agent on existing Elastic Compute Service \(ECS\) instances. Valid values:
 
- |
-|AutoInstall|Boolean|No|true|Indicates whether to automatically install the agent for existing ECS instances.
+ -   true
+-   false |
+|EnableInstallAgentNewECS|Boolean|No|true|Specifies whether to automatically install the Cloud Monitor agent on new ECS instances. Valid values:
 
- |
-|EnableInstallAgentNewECS|Boolean|No|true|Indicates whether to enable automatic agent installation for newly-purchased ECS instances.
+ -   true
+-   false |
 
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|Integer|200|The status code. A value of 200 indicates that the call is successful.
+|Code|Integer|200|The HTTP status code.
 
- |
-|Message|String|success|The error message.
+ **Note:** The status code 200 indicates that the call was successful. |
+|Message|String|Specified parameter EnableInstallAgentNewECS is not valid.|The error message. |
+|RequestId|String|109C8095-6FAD-4DBB-B013-6ED18CE4C0B1|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|RequestId|String|E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D|The request ID for troubleshooting.
+ -   true: The call was successful.
+-   false: The call failed. |
 
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=PutMonitoringConfig
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <PutMonitoringConfigResponse>
-  <RequestId>E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D</RequestId>
-  <Success>true</Success> 
-  <Code>200</Code>
+      <RequestId>109C8095-6FAD-4DBB-B013-6ED18CE4C0B1</RequestId>
+      <Success>true</Success>
+      <Code>200</Code>
 </PutMonitoringConfigResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"E9F4FA2A-54BE-4EF9-9D1D-1A0B1DC86B8D",
-	"Success":true,
-	"Code":200
+  "RequestId": "109C8095-6FAD-4DBB-B013-6ED18CE4C0B1",
+  "Code": 200,
+  "Success": true
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
