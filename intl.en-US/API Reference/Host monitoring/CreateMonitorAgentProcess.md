@@ -1,86 +1,71 @@
-# CreateMonitorAgentProcess {#doc_api_Cms_CreateMonitorAgentProcess .reference}
+# CreateMonitorAgentProcess
 
-You can call this operation to enable monitoring on a process.
+Creates a task to monitor a process.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=CreateMonitorAgentProcess) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can retrieve APIs, call APIs, and dynamically generate SDK example code.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=CreateMonitorAgentProcess&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
-|Parameter|Type|Required|Example|Description |
-|---------|----|--------|-------|------------|
-|Action|String|Yes|CreateMonitorAgentProcess|The operation that you want to perform. Set the value to CreateMonitorAgentProcess.
+|Parameter|Type|Required|Example|Description|
+|---------|----|--------|-------|-----------|
+|Action|String|Yes|CreateMonitorAgentProcess|The operation that you want to perform. Set the value to CreateMonitorAgentProcess. |
+|InstanceId|String|Yes|i-2ze2d6j5uhg20x47\*\*\*\*|The ID of the instance. |
+|ProcessName|String|Yes|AliYunDun|The name of the process. |
+|ProcessUser|String|No|admin|The user who launches the process. |
 
- |
-|InstanceId|String|Yes|i-123\*\*\*\*|The ID of the instance.
+## Response parameters
 
- |
-|ProcessName|String|Yes|java|The name of the process.
+|Parameter|Type|Example|Description|
+|---------|----|-------|-----------|
+|Code|String|200|The HTTP status code.
 
- |
-|ProcessUser|String|No|admin|The user who started the process.
+ **Note:** The status code 200 indicates that the call was successful. |
+|Id|Long|123456|The ID of the process. |
+|Message|String|User not authorized to operate on the specified resource.|The error message. |
+|RequestId|String|971CC023-5A96-452A-BB7C-2483F948BCFD|The ID of the request. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
+ -   true: The call was successful.
+-   false: The call failed. |
 
-## Response parameters {#resultMapping .section}
-
-|Parameter|Type|Example|Description |
-|---------|----|-------|------------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
-
- |
-|Id|Long|123456|The ID of the process.
-
- |
-|Message|String|Successfully|The error message.
-
- |
-|RequestId|String|971CC023-5A96-452A-BB7C-2483F948BCFD|The request ID for troubleshooting.
-
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=CreateMonitorAgentProcess
-&InstanceId=i-123****
+&InstanceId=i-2ze2d6j5uhg20x47****
+&ProcessName=AliYunDun
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <CreateMonitorAgentProcessResponse>
-  <RequestId>971CC023-5A96-452A-BB7C-2483F948BCFD</RequestId>
-  <Id>17****</Id>
-  <Success>true</Success> 
-  <Code>200</Code>
+      <RequestId>971CC023-5A96-452A-BB7C-2483F948BCFD</RequestId>
+      <Id>123456</Id>
+      <Success>true</Success>
+      <Code>200</Code>
 </CreateMonitorAgentProcessResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"971CC023-5A96-452A-BB7C-2483F948BCFD",
-	"Id":"17****",
-	"Success":true,
-	"Code":200
+  "RequestId": "CA9CE1FD-E546-4D44-B1DE-5D22496553E1",
+  "Id": 123456,
+  "Code": 200,
+  "Success": true
 }
 ```
 
-## Error code { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
