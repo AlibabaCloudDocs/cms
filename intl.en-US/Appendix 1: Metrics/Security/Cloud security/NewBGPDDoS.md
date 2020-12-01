@@ -1,22 +1,22 @@
 # NewBGPDDoS
 
-This topic describes the metrics of Anti-DDoS Premium.
+This topic describes the metrics of Anti-DDoS Pro.
 
 When you call an API operation provided by Cloud Monitor, you may need to set the **Namespace** and **Period** parameters. Set the parameters for the current service in the following way:
 
--   Set the **Namespace** parameter to **acs\_ddosdip**.
+-   Set the **Namespace** parameter to **acs\_newbgpddos**.
 -   Set the **Period** parameter to an integral multiple of 60s. The default value is 60s.
 
 The following table describes the valid values of the **MetricName** and **Dimensions** parameters for the current service.
 
 |Metric|Unit|MetricName|Dimensions|Statistics|
 |------|----|----------|----------|----------|
-|Active\_connection|Count|Active\_connection|userId, instanceId, and ip|Maximum|
-|AttackTraffic|bit/s|AttackTraffic|userId, instanceId, and ip|Maximum|
+|Active\_Connection|Count|Active\_connection|userId, instanceId, and ip|Maximum|
+|Attack\_Traffic|bit/s|AttackTraffic|userId, instanceId, and ip|Maximum|
 |Back\_Traffic|bit/s|Back\_Traffic|userId, instanceId, and ip|Maximum|
 |In\_Traffic|bit/s|In\_Traffic|userId, instanceId, and ip|Maximum|
-|Inactive\_connection|Count|Inactive\_connection|userId, instanceId, and ip|Maximum|
-|New\_connection|Count|New\_connection|userId, instanceId, and ip|Maximum|
+|Inactive\_Connection|Count|Inactive\_connection|userId, instanceId, and ip|Maximum|
+|New\_Connection|Count|New\_connection|userId, instanceId, and ip|Maximum|
 |Out\_Traffic|bit/s|Out\_Traffic|userId, instanceId, and ip|Maximum|
 |QPS|CountS|qps|userId, instanceId, and domain|Maximum|
 |qps\_ratio\_down|%|qps\_ratio\_down|userId, instanceId, and domain|Maximum|
