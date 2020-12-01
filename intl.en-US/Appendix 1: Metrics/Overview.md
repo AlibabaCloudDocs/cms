@@ -1,12 +1,12 @@
 # Overview
 
-This topic describes how to use metrics in Cloud Monitor and provides links that you can use to view metrics of different services.
+This topic describes how to use the metrics in Cloud Monitor and provides links for you to view the metrics of different Alibaba Cloud services.
 
-## Usage notes
+## Instructions
 
-If you need to call Cloud Monitor API operations, you can click the links in the following table to view the metrics of different services. The parameters of each metric include **Namespace**, **MetricName**, **Dimensions**, and **Period**.
+When you need to call CloudMonitor API, you can follow the links in the following table to obtain **Namespace**, **MetricName**, **Dimensions**or **Period**.
 
-## Alibaba Cloud service metrics
+## Metrics of Alibaba Cloud services
 
 |Level 1 category|Level 2 category|Alibaba Cloud service|
 |----------------|----------------|---------------------|
@@ -23,14 +23,14 @@ If you need to call Cloud Monitor API operations, you can click the links in the
 |Storage|-   [Object Storage Service](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Object Storage Service.md)
 -   [NAS](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/NAS.md)
 -   [Apsara File Storage for HDFS](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Apsara File Storage for HDFS.md)
--   [Hybrid Backup Recovery](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Hybrid Backup Recovery.md)
+-   [Hybrid Backup Recovery \(HBR\)](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Hybrid Backup Recovery (HBR).md)
 -   [Cloud Storage Gateway](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Storage/Cloud Storage Gateway.md) |
 |CDN and edge computing|-   [CDN](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Media services and CDN/CDN.md)
 -   [PCDN](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Media services and CDN/PCDN.md)
 -   [Sec-MCA](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Media services and CDN/Sec-MCA.md)
 -   [DCDN](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Media services and CDN/DCDN.md)
 -   [Edge Node Service](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Media services and CDN/Edge Node Service.md) |
-|Networking|-   [Server Load Balancer](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/Server Load Balancer.md)
+|Networking|-   [SLB](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/SLB.md)
 -   [Elastic IP address](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/Elastic IP address.md)
 -   [Express Connect](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/Express Connect.md)
 -   [Express Connect-VBR](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/Express Connect-VBR.md)
@@ -48,16 +48,19 @@ If you need to call Cloud Monitor API operations, you can click the links in the
 -   [PrivateLink](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/PrivateLink.md)
 -   [enhanced\_nat\_gateway](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/enhanced_nat_gateway.md)
 -   [smart access gateway\(hardware\)](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/smart access gateway(hardware).md)
--   [smart access gateway\(APP\)](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/smart access gateway(APP).md) |
-|Databases|Relational databases|-   [RDS-DB](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/RDS-DB.md)
+-   [smart access gateway\(APP\)](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/smart access gateway(APP).md)
+-   [PrivateLink-Endpoint](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/PrivateLink-Endpoint.md)
+-   [PrivateLink-Endpoint service](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/PrivateLink-Endpoint service.md)
+-   [Elastic IP Address](/intl.en-US/Appendix 1: Metrics/Cloud essentials/Networking/Elastic IP Address.md) |
+|Database|Relational database|-   [ApsaraDB RDS](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB RDS.md)
 -   [ApsaraDB for RDS-Disaster Recovery](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for RDS-Disaster Recovery.md)
 -   [ApsaraDB RDS for PostgreSQL](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB RDS for PostgreSQL.md)
--   [Cloud-Native Distributed Database PolarDB-X 1.0](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/Cloud-Native Distributed Database PolarDB-X 1.0.md)
+-   [Cloud-native distributed database PolarDB-X 1.0](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/Cloud-native distributed database PolarDB-X 1.0.md)
 -   [PolarDB](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/PolarDB.md)
 -   [POLARDB MYSQL CLUSTER](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/POLARDB MYSQL CLUSTER.md)
--   [ApsaraDB for PolarDB PostgreSQL/Oracle](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for PolarDB PostgreSQL/Oracle.md)
+-   [ApsaraDB for POLARDB PostgreSQL/Oracle](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB for POLARDB PostgreSQL/Oracle.md)
 -   [ApsaraDB Exclusive Host Group](/intl.en-US/Appendix 1: Metrics/Databases/Relational databases/ApsaraDB Exclusive Host Group.md) |
-|NoSQL databases|-   [ApsaraDB for MongoDB-Instance Copy](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Instance Copy.md)
+|NoSQL database|-   [ApsaraDB for MongoDB-Instance Copy](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Instance Copy.md)
 -   [ApsaraDB for MongoDB-Single Node Instance](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Single Node Instance.md)
 -   [ApsaraDB for MongoDB-Cluster Instance](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for MongoDB-Cluster Instance.md)
 -   [ApsaraDB for Memcache](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for Memcache.md)
@@ -71,22 +74,22 @@ If you need to call Cloud Monitor API operations, you can click the links in the
 -   [Redis Read-Write](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/Redis Read-Write.md)
 -   [Cloud HBase Ultimate Edition](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/Cloud HBase Ultimate Edition.md)
 -   [ApsaraDB for Cassandra](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for Cassandra.md)
--   [ApsaraDB for HBase Serverless Edition](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/ApsaraDB for HBase Serverless Edition.md)
+-   [Cloud HBase Serverless Edition](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/Cloud HBase Serverless Edition.md)
 -   [HBase Big Datahub Service](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/HBase Big Datahub Service.md)
 -   [HybridDB for MySQL](/intl.en-US/Appendix 1: Metrics/Databases/NoSQL databases/HybridDB for MySQL.md) |
-|Data warehouses|-   [AnalyticDB for PostgreSQL](/intl.en-US/Appendix 1: Metrics/Databases/Data warehouses/AnalyticDB for PostgreSQL.md)
+|Data warehouse|-   [AnalyticDB for PostgreSQL](/intl.en-US/Appendix 1: Metrics/Databases/Data warehouses/AnalyticDB for PostgreSQL.md)
 -   [AnalyticDB for mysql 3.0](/intl.en-US/Appendix 1: Metrics/Databases/Data warehouses/AnalyticDB for mysql 3.0.md)
 -   [AnalyticDB for PostgreSQL](/intl.en-US/Appendix 1: Metrics/Databases/Data warehouses/AnalyticDB for PostgreSQL.md)
 -   [Clickhouse](/intl.en-US/Appendix 1: Metrics/Databases/Data warehouses/Clickhouse.md) |
-|Database tools|-   [DTS\(Change\_tracking\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS(Change_tracking).md)
--   [DTS\(Migration\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS(Migration).md)
--   [DTS\(Synchronization\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS(Synchronization).md) |
-|Security|Cloud security|-   [ddosdip](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/ddosdip.md)
--   [DDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDoS.md)
+|Database tools|-   [DTS \(Change\_tracking\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS (Change_tracking).md)
+-   [DTS \(Migration\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS (Migration).md)
+-   [DTS \(Synchronization\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS (Synchronization).md) |
+|Security|Cloud security|-   [NewBGPDDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/NewBGPDDoS.md)
+-   [DDOSIP](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDOSIP.md)
 -   [NewBGPDDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/NewBGPDDoS.md)
 -   [WAF](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/WAF.md) |
-|Big data|Cloud-native data warehouses|-   [Stream Computing](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/Stream Computing.md)
--   [hologres](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/hologres.md)
+|Big data|Cloud-native data warehouse|-   [Stream Computing](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/Stream Computing.md)
+-   [Hologres](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/Hologres.md)
 -   [MaxCompute\_Common](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/MaxCompute_Common.md)
 -   [MaxCompute\_PayAsYouGo](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/MaxCompute_PayAsYouGo.md)
 -   [MaxCompute\_ subscription](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/MaxCompute_ subscription.md)
@@ -101,14 +104,14 @@ If you need to call Cloud Monitor API operations, you can click the links in the
 -   [IoT Platform](/intl.en-US/Appendix 1: Metrics/Internet of Things/IoT and cloud services/IoT Platform.md) |
 |Developer services|Developer services|[Log Service](/intl.en-US/Appendix 1: Metrics/Developer services/Developer services/Log Service.md)|
 |API and tools|[OpenAPI](/intl.en-US/Appendix 1: Metrics/Developer services/API and tools/OpenAPI.md)|
-|Enterprise applications|Message queue|-   [Message Service - queue](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/Message Service - queue.md)
+|Enterprise applications|Message Queue|-   [Message Service - queue](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/Message Service - queue.md)
 -   [Kafka](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/Kafka.md)
 -   [MQ for AMQP](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/MQ for AMQP.md)
 -   [MQ for AMQP Instance](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/MQ for AMQP Instance.md)
 -   [RocketMQ](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Message queue/RocketMQ.md) |
 |Application services|-   [DirectMail](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Application services/DirectMail.md)
 -   [API Gateway](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Application services/API Gateway.md) |
-|Video cloud|-   [ApsaraVideo for Media Processing](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Video cloud/ApsaraVideo for Media Processing.md)
+|Media services|-   [ApsaraVideo for Media Processing](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Video cloud/ApsaraVideo for Media Processing.md)
 -   [ApsaraVideo Live](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Video cloud/ApsaraVideo Live.md) |
 |Blockchain|-   [Blockchain Services/Fabric Orderer](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Blockchain/Blockchain Services/Fabric Orderer.md)
 -   [Blockchain Services/Fabric Peer](/intl.en-US/Appendix 1: Metrics/Enterprise applications/Blockchain/Blockchain Services/Fabric Peer.md) |
