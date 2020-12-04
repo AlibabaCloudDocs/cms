@@ -4,15 +4,15 @@ Cloud Monitor sends alert notifications to alert contacts and alert groups. You 
 
 ## Create an alert contact
 
-An alert contact can be added to multiple alert groups. In alert rule configurations, alert notification recipients are alert groups, not alert contacts.
+Each alert contact can be added to multiple alert groups. In alert rule configurations, alert notification recipients are alert groups, not alert contacts.
 
-1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Alert Contacts**.
 
 3.  On the Alert Contacts tab of the Alert Contacts page, click **Create Alert Contact**.
 
-4.  In the Set Alert Contact pane, set the Name, Email ID, and DingTalk Robot parameters.
+4.  In the Set Alert Contact panel,set the name, email, and DingTalk chatbot of the alert contact.
 
 5.  Click **OK**.
 
@@ -21,20 +21,22 @@ An alert contact can be added to multiple alert groups. In alert rule configurat
 
 An alert group is a group of one or more alert contacts. In alert rule configurations, alert notification recipients are alert groups, not alert contacts.
 
-1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
-2.  Click the **Alert Contact Group** tab.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Contacts**.
 
-3.  On the Alert Contact Group tab, click **Create Alert Contact Group**.
+3.  Click the **Alert Contact Group** tab.
 
-4.  In the Create Alert Contact Group pane, specify the alert group name and add alert contacts to the alert group.
+4.  On the Alert Contact Group tab, click **Create Alert Contact Group**.
 
-5.  Click **Confirm**.
+5.  In the Create Alert Contact Group panel, specify the alert group name and add alert contacts to the alert group.
+
+6.  Click **OK**.
 
 
 ## Add multiple alert contacts to an alert group at a time
 
-1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Alert Contacts**.
 
