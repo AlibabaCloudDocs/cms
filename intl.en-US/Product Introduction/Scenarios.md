@@ -1,28 +1,28 @@
 # Scenarios
 
-Cloud Monitor applies to a wide range of scenarios.
+After you purchase and use Alibaba Cloud services supported by Cloud Monitor, Cloud Monitor can help you monitor the resources of these services. Cloud Monitor can monitor your resources in the following scenarios.
 
 ## Cloud service monitoring
 
-After you activate and use Alibaba Cloud services supported by Cloud Monitor, you can view the running status and metrics of the services in the Cloud Monitor console. You can also configure alert rules for the metrics.
+Cloud Monitor monitors the resources of all cloud services within your Alibaba Cloud account. You can view the status of the specified resources and the usage of metrics in the cloud service. You can also configure alert rules for the metrics. If an alert is triggered based on the alert rules, Cloud Monitor sends an alert notification.
 
 ## Host monitoring
 
-Cloud Monitor monitors the basic metrics such as CPU utilization, memory usage, and outbound bandwidth of your Elastic Compute Service \(ECS\) instances. This ensures that the instances run properly and prevents service interruption due to resource overuse.
+Cloud Monitor can monitor the basic metrics of an Elastic Compute Service \(ECS\) instance to ensure that the instance runs as expected. The basic metrics include CPU usage, memory usage, and disk usage.
 
 ## Timely troubleshooting
 
-Based on the alert rules that you configure, Cloud Monitor sends an alert notification immediately if any metric exceeds the specified threshold. This allows you to start troubleshooting immediately when exceptions occur.
+Cloud Monitor sends an alert notification based on the alert rules if a metric exceeds the specified threshold. This allows you to know, query, and handle the exceptions at the earliest opportunity.
 
-## Resource scale-out
+## Timely scaling
 
-After you configure alert rules for metrics such as the bandwidth, connection count, and disk usage, you can receive alert notifications about the usage of your cloud resources. If the existing resources cannot meet your business requirements, you can scale out the resources as required.
+After you configure alert rules for monitoring metrics such as bandwidth, connections, and disk usage, you can monitor the status of cloud services. If your business expands, you can receive alert notifications to scale out your cloud services at the earliest opportunity.
 
 ## Site monitoring
 
-Cloud Monitor can monitor sites by using HTTP \(HTTPS\), ICMP, TCP, UDP, DNS, SMTP, POP3, and FTP. Cloud Monitor monitors the availability, response time, and packet loss rate of your site. This allows you to get a comprehensive view of the site availability and fix exceptions if any.
+Cloud Monitor can monitor sites by using HTTP \(HTTPS\), ICMP, TCP, UDP, DNS, SMTP, POP3, and FTP. Cloud Monitor monitors the availability, response time, and packet loss rate of your site. This allows you to monitor the overall site availability and handle exceptions at the earliest opportunity.
 
 ## Custom monitoring
 
-Custom monitoring is designed as a supplement to cloud service monitoring. If Cloud Monitor does not provide metrics that you expect, you can create a metric, collect monitoring data, and then report the data to Cloud Monitor. Then, Cloud Monitor displays monitoring charts and sends alert notifications based on the new metric.
+If the system metrics cannot meet your requirements, Cloud Monitor allows you to create custom metrics. The monitoring data of custom metrics is collected and reported to Cloud Monitor. Cloud Monitor displays monitoring charts and provides the alert service for the custom metrics.
 
