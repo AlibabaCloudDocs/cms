@@ -1,6 +1,6 @@
 # DescribeMetricLast
 
-调用DescribeMetricLast接口查询指定监控对象的最新监控数据。
+调用DescribeMetricLast接口查询指定监控项的最新监控数据。
 
 **说明：** 云服务Namespace、Project、Metric、Period、Dimensions等参数的取值，请参见[DescribeMetricMetaList](~~98846~~)或[云服务监控项](~~163515~~)。
 
@@ -14,20 +14,18 @@
 |--|--|----|---|--|
 |Action|String|是|DescribeMetricLast|要执行的操作，取值：DescribeMetricLast。 |
 |MetricName|String|是|CPUUtilization|监控项名称。 |
-|Namespace|String|是|acs\_ecs\_dashboard|云服务的数据命名空间。命名方式：acs\_服务名称。 |
-|Period|String|否|60|时间间隔。通常为监控项的上报周期，单位：秒。
+|Namespace|String|是|acs\_ecs\_dashboard|云服务的数据命名空间。命名方式：acs\_云服务名称。 |
+|Period|String|否|60|监控项的统计周期。单位：秒。
 
- **说明：** 如果不设置统计周期，则按照注册监控项时申请的上报周期来查询原始数据；如果设置报警规则时设置了统计周期，则会按照此周期查询对应的统计数据。 |
+ **说明：** 如果不设置统计周期，则按照注册监控项时申请的上报周期来查询原始数据；如果设置报警规则时设置了统计周期，则会按照该周期查询对应的统计数据。 |
 |StartTime|String|否|2019-01-31 10:00:00|开始时间。
 
- 格式为Unix时间戳，即从1970年1月1日开始所经过的毫秒。
-
- **说明：** 只能查询270天以内且开始时间和结束时间不超过31天的监控数据。 |
+ **说明：** 为了避免出现不可预估的结果，不建议使用该参数。 |
 |EndTime|String|否|2019-01-31 10:10:00|结束时间。
 
- 格式为Unix时间戳，即从1970年1月1日开始所经过的毫秒。
-
- **说明：** 只能查询270天以内的监控数据。 |
+ -   对于秒级数据，查询数据的起始时间是EndTime往前倒推20分钟后与startTime对比的最大值。
+-   对于分钟级数据，查询数据的起始时间是EndTime往前倒推2小时后与startTime对比的最大值。
+-   对于小时级数据，查询数据的起始时间是EndTime往前倒推2天后与startTime对比的最大值。 |
 |Dimensions|String|否|\[\{"instanceId":"i-abcdefgh12\*\*\*\*"\}\]|维度Map，用于查询指定资源的监控数据。
 
  格式：key-value键值对形式的集合，常用的key-value集合为`instanceId:i-2ze2d6j5uhg20x47****`。
