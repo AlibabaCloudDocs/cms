@@ -1,46 +1,45 @@
-# Host monitoring {#concept_jf2_pnb_5db .concept}
+# Host monitoring
 
-## Application scenarios {#section_u41_hdc_5db .section}
+Host monitoring collects multiple monitoring data of operating system metrics from your hosts by using the Cloud Monitor agents installed on your hosts.
 
--   **Hybrid cloud monitoring solution**
+Scenarios
 
-    CloudMonitor uses an agent to collect server monitoring data. You can install the agent on a non-ECS server to perform basic monitoring check both locally and on the cloud.
+-   Monitor hosts in a hybrid cloud
 
--   **Enterprise-level monitoring solution**
+    Cloud Monitor collects monitoring data from your hosts by using the Cloud Monitor agents installed on your hosts. You can install the Cloud Monitor agent on both Alibaba Cloud Elastic Compute Service \(ECS\) instances and non-ECS hosts to collect monitoring data from hosts in a hybrid cloud.
 
-    Host monitoring provides an application grouping feature with which you can allocate servers in different regions to the same group for business-based server management. In addition, host monitoring provides group-based alarm management. You can configure one alarm rule for the entire group greatly improving O&M efficiency and your overall management experience.
+-   Monitor hosts of an enterprise
 
-
-## Features {#section_fbb_5dc_5db .section}
-
--   Diverse metrics
-
-    Once a CloudMonitor agent is installed, you can use more than 30 metrics. For details, see [Host monitoring metrics](../../../../../reseller.en-US/User Guide/Host monitoring/Host monitoring metrics.md#).
-
--   Refined collection frequency
-
-    Key metrics are collected every second. All the metrics are reported at a 15-second interval, which is the minimum interval between the data points in a chart.
-
--   Business-level process monitoring
-
-    The host monitoring service collects statistical data from the CPU and memory usage of active processes and the number of opened files, helping you gain insight into server resource allocation. For details, see [Process monitoring](../../../../../reseller.en-US/User Guide/Host monitoring/Process monitoring.md#).
-
--   Application groups
-
-    You can manage servers by group across regions and set alarm rules according to group, greatly reducing monitoring management costs.
-
--   Alarm service
-
-    You can set alarm rules for the metrics. The following alarm notification methods are supported: telephone alarms, messages, email IDs, TradeManager, and DingTalk Robot.
+    Host monitoring allows you to group hosts in different regions to an application group for business-based host management. In addition, host monitoring allows you to manage alert rules by application group. You can apply one alert rule to all hosts of an application group. This improves the O&M efficiency and overall management experience.
 
 
-## Procedure {#section_d12_ydc_5db .section}
+## Install Cloud Monitor agents
 
-1.  Log on to the [CloudMonitor Console](https://partners-intl.console.aliyun.com/#/cms).
-2.  In the left-side navigation pane, click **Host Monitoring**. The Host Monitoring page is displayed.
-3.  Click **Click to install** in the instance list. Alternatively, click **Aliyun ECS install** or **Not Aliyun ecs install** and install the agent manually as prompted.
+1.  Log on to the [Cloud Monitor console](https://cloudmonitor.console.aliyun.com).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/6126/155290356813786_en-US.png)
+2.  In the left-side navigation pane, click **Host Monitoring**.
 
-4.  Wait 1 to 3 minutes and click **Monitoring Charts** to view the monitoring data.
+3.  On the Instances tab of the Host Monitoring page, select the hosts on which you want to install or upgrade the Cloud Monitor agent.
+
+4.  Click **Batch Install**.
+
+    Wait for about 5 minutes. When the **agent status** changes from **Installing** to **Running**, the installation or upgrade is successful.
+
+5.  Turn on **New purchase ECS automatically installs Cloud Monitor**.
+
+    After you turn on this switch, the Cloud Monitor agent is automatically installed on new ECS instances. Otherwise, you must manually install the agent.
+
+
+## View monitoring charts
+
+1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Host Monitoring**.
+
+3.  On the Instances tab of the Host Monitoring page, click the instance name of the host or click **Monitoring Charts** in the **Actions** column.
+
+4.  On the instance details page, you can view the monitoring charts of the key metrics of your host.
+
+
+## Configure an alert rule
 
