@@ -1,6 +1,6 @@
 # DescribeMonitorGroupDynamicRules
 
-调用DescribeMonitorGroupDynamicRules接口查询应用分组动态规则列表。
+调用DescribeMonitorGroupDynamicRules接口查询指定应用分组的动态规则列表。
 
 ## 调试
 
@@ -20,22 +20,28 @@
 |Code|Integer|200|状态码。
 
  **说明：** 200表示成功。 |
-|Message|String|The Request is not authorization.|错误信息。 |
+|Message|String|The specified resource is not found.|错误信息。 |
 |RequestId|String|2170B94A-1576-4D65-900E-2093037CDAF3|请求ID。 |
 |Resource|Array of Resource| |关联资源。 |
 |Resource| | | |
-|Category|String|ecs|产品名称。 |
-|FilterRelation|String|and|筛选条件。 |
-|Filters|Array of Filter| |规则。 |
+|Category|String|ecs|动态规则对应的云服务类型。取值：
+
+ -   ecs：云服务器。
+-   rds：关系型数据库。
+-   slb：负载均衡。 |
+|FilterRelation|String|and|筛选条件。取值：
+
+ -   and：应用分组中满足所有报警规则的实例。
+-   or：应用分组中满足任意报警规则的实例。 |
+|Filters|Array of Filter| |应用分组的动态规则。 |
 |Filter| | | |
 |Function|String|contains|计算方法。取值：
 
  -   contains：包含。
 -   startWith：前缀。
 -   endWith：后缀。 |
-|Name|String|hostName|待检查的字段名称。 |
-|Value|String|aaa|动态规则值。 |
-|GroupId|Long|12345|应用分组ID。 |
+|Name|String|hostName|实例名称。 |
+|Value|String|1|动态规则值。 |
 |Success|Boolean|true|操作是否成功。取值：
 
  -   true：成功。
@@ -57,22 +63,22 @@ http(s)://[Endpoint]/?Action=DescribeMonitorGroupDynamicRules
 
 ```
 <DescribeMonitorGroupDynamicRulesResponse>
-      <Resource>
-            <Resource>
-                  <Filters>
-                        <Filter>
-                              <Name>hostName</Name>
-                              <Value>aaa</Value>
-                              <Function>contains</Function>
-                        </Filter>
-                  </Filters>
-                  <Category>ecs</Category>
-                  <FilterRelation>and</FilterRelation>
-            </Resource>
-      </Resource>
-      <RequestId>2170B94A-1576-4D65-900E-2093037CDAF3</RequestId>
-      <Success>true</Success>
-      <Code>200</Code>
+	  <RequestId>38D0A8B4-7231-4E3E-A39F-D8CE3E242AC7</RequestId>
+	  <Resource>
+		    <Resource>
+			      <FilterRelation>and</FilterRelation>
+			      <Filters>
+				        <Filter>
+					          <Function>contains</Function>
+					          <Value>1</Value>
+					          <Name>hostName</Name>
+				        </Filter>
+			      </Filters>
+			      <Category>ecs</Category>
+		    </Resource>
+	  </Resource>
+	  <Code>200</Code>
+	  <Success>true</Success>
 </DescribeMonitorGroupDynamicRulesResponse>
 ```
 
@@ -80,26 +86,26 @@ http(s)://[Endpoint]/?Action=DescribeMonitorGroupDynamicRules
 
 ```
 {
-  "Resource": {
-    "Resource": [
-      {
-        "Filters": {
-          "Filter": [
-            {
-              "Name": "hostName",
-              "Value": "aaa",
-              "Function": "contains"
-            }
-          ]
-        },
-        "Category": "ecs",
-        "FilterRelation": "and"
-      }
-    ]
-  },
-  "RequestId": "2170B94A-1576-4D65-900E-2093037CDAF3",
-  "Success": true,
-  "Code": 200
+	"RequestId": "38D0A8B4-7231-4E3E-A39F-D8CE3E242AC7",
+	"Resource": {
+		"Resource": [
+			{
+				"FilterRelation": "and",
+				"Filters": {
+					"Filter": [
+						{
+							"Function": "contains",
+							"Value": "1",
+							"Name": "hostName"
+						}
+					]
+				},
+				"Category": "ecs"
+			}
+		]
+	},
+	"Code": 200,
+	"Success": true
 }
 ```
 
