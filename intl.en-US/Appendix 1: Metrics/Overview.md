@@ -85,7 +85,7 @@ When you need to call CloudMonitor API, you can follow the links in the followin
 -   [DTS \(Migration\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS (Migration).md)
 -   [DTS \(Synchronization\)](/intl.en-US/Appendix 1: Metrics/Databases/Database tools/DTS (Synchronization).md) |
 |Security|Cloud security|-   [NewBGPDDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/NewBGPDDoS.md)
--   [DDOSIP](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDOSIP.md)
+-   [DDoSIP](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/DDoSIP.md)
 -   [NewBGPDDoS](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/NewBGPDDoS.md)
 -   [WAF](/intl.en-US/Appendix 1: Metrics/Security/Cloud security/WAF.md) |
 |Big data|Cloud-native data warehouse|-   [Stream Computing](/intl.en-US/Appendix 1: Metrics/Big data/Cloud-native data warehouses/Stream Computing.md)
