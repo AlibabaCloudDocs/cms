@@ -6,7 +6,7 @@ This topic describes how to write alerts from Cloud Monitor to Message Service \
 
 1.  Authorize Cloud Monitor to write alerts to MNS.
 
-    1.  Click [here](https://ram.console.aliyun.com/#/role/authorize?request=%7B%22Requests%22:%20%7B%22request1%22:%20%7B%22RoleName%22:%20%22AliyunCloudMonitorDefaultRole%22,%20%22TemplateId%22:%20%22DefaultRole%22%7D%7D,%20%22ReturnUrl%22:%20%22http:%2F%2Fcms.console.aliyun.com%2F%23%2Feventsubscription%2Ffault%22,%20%22Service%22:%20%22CloudMonitor%22%7D) to allow Cloud Monitor to assume AliyunCloudMonitorDefaultRole.
+    1.  Click [Cloud Resource Access Authorization](https://ram.console.aliyun.com/#/role/authorize?request=%7B%22Requests%22:%20%7B%22request1%22:%20%7B%22RoleName%22:%20%22AliyunCloudMonitorDefaultRole%22,%20%22TemplateId%22:%20%22DefaultRole%22%7D%7D,%20%22ReturnUrl%22:%20%22http:%2F%2Fcms.console.aliyun.com%2F%23%2Feventsubscription%2Ffault%22,%20%22Service%22:%20%22CloudMonitor%22%7D) to allow Cloud Monitor to assume AliyunCloudMonitorDefaultRole.
 
     2.  Click **Confirm Authorization Policy**.
 
