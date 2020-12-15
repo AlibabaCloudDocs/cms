@@ -110,8 +110,6 @@
     |（旧版Agent）磁盘使用率|%|vm.DiskUtilization|userId、instanceId、mountpoint|Maximum、Minimum、Average|
     |（旧版Agent）平均负载|无|vm.LoadAverage|userId、instanceId、period|Maximum、Minimum、Average|
     |（旧版Agent）内存使用率|%|vm.MemoryUtilization|userId、instanceId|Maximum、Minimum、Average|
-    |（旧版Agent）进程数|Count/Min|vm.Process.number|userId、instanceId、processName|Maximum、Minimum、Average|
-    |（旧版Agent）进程总数|Count/Min|vm.ProcessCount|userId、instanceId|Maximum、Minimum、Average|
     |（旧版Agent）TCP连接数|Count/Min|vm.TcpCount|userId、instanceId、state|Maximum、Minimum、Average|
     |（Agent）Host.loadpercore15|无|load\_per\_core\_15m|userId、instanceId|Maximum、Minimum、Average|
     |（Agent） Host.loadpercore1|无|load\_per\_core\_1m|userId、instanceId|Maximum、Minimum、Average|
