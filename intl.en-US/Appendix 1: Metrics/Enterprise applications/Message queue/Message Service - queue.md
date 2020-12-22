@@ -17,6 +17,4 @@ This topic describes the metrics for queues of Message Service \(MNS\).
 |Inactive Messages|Count|InactiveMessages|userId, region, and queue|Maximum, Minimum, and Average|
 |Number of message receiving requests|Count|ReceiveMessageCount|userId, region, and queue|Maximum, Minimum, and Average|
 |Number of message sending requests|Count|SendMessageCount|userId, region, and queue|Maximum, Minimum, and Average|
-|Notification Times|Count|TopicCount|userId, regionName, TopicName, and SubscriptionName|Value|
-|Success Rate|%|TopicSuccessRate|userId, regionName, TopicName, and SubscriptionName|Average|
 
