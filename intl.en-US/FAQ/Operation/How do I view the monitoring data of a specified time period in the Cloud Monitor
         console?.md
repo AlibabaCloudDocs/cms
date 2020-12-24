@@ -12,6 +12,6 @@ You can view only the monitoring data of the last 30 days in the Cloud Monitor c
 
 4.  Specify a time period to view the monitoring data.
 
-    ![Monitoring chart details](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8339997951/p13995.png)
+    ![Monitoring chart details](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0840978061/p13995.png)
 
 
