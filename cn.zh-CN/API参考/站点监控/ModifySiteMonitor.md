@@ -220,12 +220,12 @@
 
 |string
 
-|当request\_format为其他值时，request\_content作为普通字符串发送给POP3/SMTP服务器。 |
+|当request\_format为其他值时，request\_content作为普通字符串发送给TCP/UDP服务器。 |
 |response\_content
 
 |string
 
-|响应内容。当POP3/SMTP服务器返回的内容中不含response\_content时，探测失败。
+|响应内容。当TCP/UDP服务器返回的内容中不含response\_content时，探测失败。
 
  当response\_format为hex时，response\_content中的内容为十六进制紧凑格式。
 
