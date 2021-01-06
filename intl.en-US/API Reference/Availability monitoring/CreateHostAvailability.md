@@ -1,47 +1,67 @@
-# CreateHostAvailability {#doc_api_Cms_CreateHostAvailability .reference}
+# CreateHostAvailability
 
-You can call this operation to create an availability monitoring task.
+Creates an availability monitoring task.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=CreateHostAvailability) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can call APIs, dynamically generate SDK example code, and retrieve APIs.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=CreateHostAvailability&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|AlertConfig.NotifyType|Integer|Yes|2| The type of notifications. Valid values:
+|Action|String|Yes|CreateHostAvailability|The operation that you want to perform. Set the value to CreateHostAvailability. |
+|AlertConfig.NotifyType|Integer|Yes|2|The alert notification method.
 
- -   2: phone call + text message + email + DingTalk Chatbot
--   1: text message + email + DingTalk Chatbot
--   0: email + DingTalk Chatbot
+ 
+ Set the value to 0. The value 0 indicates that alert notifications are sent by using emails and DingTalk chatbots. |
+|AlertConfigEscalationList.N.MetricName|String|Yes|HttpStatus|The metric for which the alert feature is enabled. Valid values of N: 1 to 21. Valid values of the AlertConfigEscalationList.N.MetricName parameter:
 
- |
-|GroupId|Long|Yes|12345| The ID of the application group.
+ -   HttpStatus: HTTP status code
+-   HttpLatency: HTTP response time
+-   TelnetStatus: TELNET status code
+-   TelnetLatency: TELNET response time
+-   PingLostRate: PING packet loss rate |
+|GroupId|Long|Yes|12345|The ID of the application group. |
+|TaskName|String|Yes|task1|The name of the availability monitoring task. The name must be 4 to 100 characters in length and can contain letters, digits, and underscores \(\_\). |
+|TaskType|String|Yes|HTTP|The type of the task. Valid values:
 
- |
-|TaskName|String|Yes|My test task| The name of the task.
+ -   PING
+-   TELNET
+-   HTTP |
+|TaskScope|String|No|GROUP|The monitoring range of the availability monitoring task. Valid values:
 
- |
-|TaskType|String|Yes|HTTP| The type of the task. Valid values: PING, TELNET, and HTTP.
+ -   GROUP: monitors all Elastic Compute Service \(ECS\) instances in the application group
+-   GROUP\_SPEC\_INSTANCE: monitors specific ECS instances in the application group The TaskScope and InstanceList.N parameters must be used in pairs. |
+|TaskOption.HttpURI|String|No|https://www.aliyun.com|The URI that is monitored. This parameter is returned if the TaskType parameter is set to HTTP. |
+|TaskOption.TelnetOrPingHost|String|No|www.aliyun.com|The domain name or IP address to be monitored.
 
- |
-|Action|String|No|CreateHostAvailability| The operation that you want to perform. Set the value to CreateHostAvailability.
+ **Note:** Set this parameter if the TaskType parameter is set to PING or TELNET. |
+|TaskOption.HttpResponseCharset|String|No|UTF-8|The character set that is used in the HTTP response. |
+|TaskOption.HttpPostContent|String|No|params1=paramsValue1|The post body in the HTTP request. |
+|TaskOption.HttpResponseMatchContent|String|No|ok|The response to the HTTP request. |
+|TaskOption.HttpMethod|String|No|GET|The HTTP request method. Valid values:
 
- |
-|AlertConfig.EndTime|Integer|No|23| The end time of the alert period. Unit: hour. A value of 0 indicates 00:59.
+ -   GET
+-   POST
+-   HEAD
 
- |
-|AlertConfig.SilenceTime|Integer|No|86400| The duration of the mute period during which new alerts are not sent even if the trigger conditions are met. Unit: second. Default value: 86,400 \(one day \).
+ **Note:** Set this parameter if the TaskType parameter is set to HTTP. |
+|TaskOption.HttpNegative|Boolean|No|true|The method to trigger an alert. The alert can be triggered based on whether the specified alert rule is included in the response body. Valid values:
 
- |
-|AlertConfig.StartTime|Integer|No|0| The start time of the alert period. Unit: hour. A value of 0 indicates 00:00.
+ -   true: If the HTTP response body includes the alert rule, an alert is triggered.
+-   false: If the HTTP response does not include the alert rule, an alert is triggered.
 
- |
-|AlertConfig.WebHook|String|No|http://www.aliyun.com/webhook.json| The URL callback address.
+ **Note:** This parameter takes effects if the TaskType parameter is set to HTTP. |
+|AlertConfig.StartTime|Integer|No|0|The beginning of the time period during which the alert rule is effective. Valid values: 0 to 23.
 
- |
-|AlertConfigEscalationList.N.Aggregate|String|No|Value| The statistical method. Different statistical methods are used for different metrics:
+ **Note:** If the threshold is exceeded and an alert is triggered not during the effective period, the alert notification is not sent. |
+|AlertConfig.EndTime|Integer|No|23|The end of the time period during which the alert rule is effective. Valid values: 0 to 23.
+
+ **Note:** If the threshold is exceeded and an alert is triggered not during the effective period, the alert notification is not sent. |
+|AlertConfig.SilenceTime|Integer|No|86400|The mute period during which notifications are not repeatedly sent for an alert. Unit: seconds. Default value: 86400. The default value indicates one day. |
+|AlertConfig.WebHook|String|No|https://www.aliyun.com/webhook.json|The callback URL. |
+|AlertConfigEscalationList.N.Aggregate|String|No|Value|The method used to calculate metric values that trigger alerts. Valid values of N: 1 to 21. The following points describe the correspondence between metrics and calculation methods:
 
  -   HttpStatus: Value
 -   HttpLatency: Average
@@ -49,118 +69,74 @@ You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=CreateHostAva
 -   TelnetLatency: Average
 -   PingLostRate: Average
 
- Value indicates the original value and is used for metrics such as status codes. Average indicates the average value and is used for metrics such as latency and packet loss rates.
+ **Note:** The value Value indicates the original value and is used for metrics such as status codes. The value Average indicates the average value and is used for metrics such as latency and packet loss rates. |
+|AlertConfigEscalationList.N.Times|Integer|No|3|The consecutive number of times for which the metric value is measured before an alert is triggered. Valid values of N: 1 to 21. |
+|AlertConfigEscalationList.N.Operator|String|No|\>|The comparison operator that is used in the alert rule. Valid values of N: 1 to 21. Valid values:
 
- |
-|AlertConfigEscalationList.N.MetricName|String|No|HttpStatus| The metrics for which alert is enabled. Valid values:
+ -   `>`
+-   `>=`
+-   `<`
+-   `<=`
+-   `=` |
+|AlertConfigEscalationList.N.Value|String|No|90|The alert threshold. Valid values of N: 1 to 21. |
+|InstanceList.N|RepeatList|No|i-absdfkwl321\*\*\*\*|The ECS instances to be monitored. Valid values of N: 1 to 21.
 
- -   HttpStatus \(HTTP status code\)
--   HttpLatency \(HTTP request timeout\)
--   TelnetStatus \(Telnet status code\)
--   TelnetLatency \(Telnet request timeout\)
--   PingLostRate \(Ping packet loss rate\)\)
+ **Note:** If this parameter is not specified, all instances in the application group are monitored. |
 
- |
-|AlertConfigEscalationList.N.Operator|String|No|\>| The comparison operator. Valid values: `>, >=, <, <=, and =.`
-
- |
-|AlertConfigEscalationList.N.Times|Integer|No|3| The number of consecutive periods in which the metric value exceeds the threshold before an alert is triggered.
-
- |
-|AlertConfigEscalationList.N.Value|String|No|90| The threshold of the metric value.
-
- |
-|InstanceList.N|RepeatList|No|i-absdfkwl3212346| The list of the ECS instances used to initiate the test. A value of null indicates all the servers in the application group.
-
- |
-|TaskOption.HttpMethod|String|No|GET| The method of HTTP tests. Valid values: GET, POST, and HEAD.
-
- |
-|TaskOption.HttpNegative|Boolean|No|1| true: An alert is triggered if the specified content is included.
-
- false: An alert is triggered if the specified content is excluded.
-
- |
-|TaskOption.HttpResponseCharset|String|No|UTF-8| The response character set for HTTP tests.
-
- |
-|TaskOption.HttpResponseMatchContent|String|No|ok| The response content to be matched.
-
- |
-|TaskOption.HttpURI|String|No|http://www.aliyun.com| The URI used for HTTP tests.
-
- |
-|TaskOption.TelnetOrPingHost|String|No|www.aliyun.com| The domain name or address to be tested. This parameter is required for Ping or Telnet tests.
-
- |
-|TaskScope|String|No|GROUP| The scope of the task. Valid values:
-
- -   GROUP: The task is performed on all ECS instances in the group.
--   INSTANCE: The task is performed on one or more specified instances. If you select INSTANCE, you must set the InstanceList parameter.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200| The status code. A value of 200 indicates that the call is successful.
+|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|The ID of the request. |
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|success| The error message.
+ **Note:** The value 200 indicates that the call was successful. |
+|Success|Boolean|true|Indicates whether the call was successful. Valid values:
 
- |
-|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C| The request ID for troubleshooting.
+ -   true: The call was successful.
+-   false: The call failed. |
+|TaskId|Long|12345|The ID of the availability monitoring task. |
+|Message|String|Resources already exist.|The error message. |
 
- |
-|Success|Boolean|true| Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
+## Examples
 
- |
-|TaskId|Long|12345| The ID of the task.
-
- |
-
-## Examples {#demo .section}
-
-Sample requests
-
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=CreateHostAvailability
-&AlertConfig. NotifyType=2
-&GroupId=12345
-&TaskName=My test task
-&TaskType=HTTP
-&<Common request parameters>
+Sample request
 
 ```
+http(s)://[Endpoint]/? Action=CreateHostAvailability
+&AlertConfig.1otifyType=2
+&GroupId=12345
+&TaskName=task1
+&TaskType=HTTP
+&AlertConfigEscalationList.N.MetricName=HttpStatus
+&<Common request parameters>
+```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <CreateHostAvailabilityResponse>
-  <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
-  <Success>true</Success> 
-  <TaskId>12345</TaskId>
-  <Code>200</Code>
+	  <TaskId>91****</TaskId>
+	  <RequestId>CDA78493-F10F-485F-98AD-B4C0B40AB225</RequestId>
+	  <Code>200</Code>
+	  <Success>true</Success>
 </CreateHostAvailabilityResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
-	"TaskId":12345,
-	"Success":true,
-	"Code":200
+	"TaskId": "91****",
+	"RequestId": "CDA78493-F10F-485F-98AD-B4C0B40AB225",
+	"Code": 200,
+	"Success": true
 }
 ```
 
-## Error codes {#section_zmd_3d9_k8y .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
