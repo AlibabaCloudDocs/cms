@@ -1,93 +1,93 @@
-# PutCustomMetric {#doc_api_Cms_PutCustomMetric .reference}
+# PutCustomMetric
 
-You can call this operation to obtain the monitoring data of one or more custom metrics.
+Reports monitoring data.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=PutCustomMetric) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can call APIs, dynamically generate SDK example code, and retrieve APIs.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=PutCustomMetric&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|No|PutCustomMetric|The operation that you want to perform. Set the value to PutCustomMetric.
+|Action|String|Yes|PutCustomMetric|The operation that you want to perform. Set the value to PutCustomMetric. |
+|MetricList.N.Dimensions|String|Yes|\{"sampleName1":"value1","sampleName2":"value2"\}|The dimensions. This parameter is used to specify the resources that you want to query. Valid values of N: 1 to 21.
 
- |
-|MetricList.N.Dimensions|String|No|\{"sampleName1":"value1","sampleName2":"value2"\}|The dimension map. All key-value pairs are strings. A string can contain letters, digits, and connectors such as underscores \(\_\), hyphens \(-\), periods \(.\), forward slashes \(/\), and backslashes \(\\\). The maximum number of key-value pairs is 10. The maximum length of a key is 64 bytes. The maximum length of a value is 64 bytes. Excess characters will be truncated from the string.
+ Set the value to a collection of key-value pairs. Format: `{"Key":"Value"}`.
 
- |
-|MetricList.N.GroupId|String|No|12345|The ID of the application group.
+ The key or value must be 1 to 64 bytes in length. Excessive characters are truncated.
 
- |
-|MetricList.N.MetricName|String|No|cpu\_total|The name of the metric. A metric name can contain letters, digits, and connectors such as underscores \(\_\), hyphens \(-\), periods \(.\), forward slashes \(/\), and backslashes \(\\\). Other characters are invalid. The maximum length is 64 bytes. Excess characters will be truncated from the string.
+ The key or value can contain letters, digits, periods \(.\), hyphens \(-\), underscores \(\_\), forward slashes \(/\), and backslashes \(\\\).
 
- |
-|MetricList.N.Period|String|No|60|The aggregation period. Unit: second.
+ **Note:** Dimensions must be formatted as a JSON string in a specified order. |
+|MetricList.N.GroupId|String|Yes|12345|The ID of the application group. Valid values of N: 1 to 21.
 
- If the preceding Type parameter is set to 1, this field is required. Valid values: 60 and 300.
+ **Note:** If the metric does not belong to any application group, enter 0. |
+|MetricList.N.MetricName|String|Yes|cpu\_total|The name of the metric. Valid values of N: 1 to 21. For more information, see [Cloud service metrics](~~163515~~). |
+|MetricList.N.Type|String|Yes|0|The type of the reported data. Valid values of N: 1 to 21. Valid values of the MetricList.N.Type parameter:
 
- |
-|MetricList.N.Time|String|No|1508136760000|The time at which the metric value is generated. The timestamp can be in the "yyyyMMdd’T’HHmmss.SSSZ" format or long format, such as 20171012T132456.888+0800 or 1508136760000.
+ -   0: reports raw data
+-   1: reports aggregate data
 
- |
-|MetricList.N.Type|String|No|0|The type of the reported value. The value of 0 indicates raw data and the value of 1 indicates aggregate data.
+ **Note:** We recommend that you report aggregate data in both the aggregation periods of 60s and 300s. Otherwise, you cannot query monitoring data in a time span that is more than seven days. |
+|MetricList.N.Values|String|Yes|\{"value":10.5\}|The collection of metric values. Valid values of N: 1 to 21.
 
- We recommend that data with the aggregation period as either 60s or 300s be reported. Otherwise, you will not be able to query monitoring data that is older than seven days.
+ **Note:** If the MetricList.N.Type parameter is set to 0, the keys in this parameter must be set to the specified value. Cloud Monitor aggregates raw data in each aggregation period to generate multiple statistical values, such as the maximum value, the count, and the total value. |
+|MetricList.N.Time|String|No|1508136760000|The timestamp when the metric data is generated. Valid values of N: 1 to 21. The timestamp can be in one of the following formats:
 
- |
-|MetricList.N.Values|String|No|\{"value":10.5\}|The collection of metric values. If the preceding MetricList.N.Type parameter is set to 0, the key must be "value" and raw data is reported. CloudMonitor aggregates raw data generated over the aggregation period into several values, such as maximum, count, and sum.
+ -   The UTC timestamp, in the YYYY-MM-DDThh:mm:ssZ format. Example: 20171012T132456.888+0800.
+-   The UNIX timestamp of the LONG type. Example: 1508136760000. |
+|MetricList.N.Period|String|No|60|The aggregation period. Valid values of N: 1 to 21. Unit: seconds. Valid values: 60 and 300.
 
- |
+ **Note:** If the MetricList.N.Type parameter is set to 1, the MetricList.N.Period parameter is required. |
 
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|RequestId|String|05B36C2C-5F6E-48D5-8B41-CE36DD7EE8E0|The ID of the request. |
+|Code|String|200|The HTTP status code.
 
- |
-|Message|String|success|The error message.
+ **Note:** The value 200 indicates that the call was successful. |
+|Message|String|The request has failed due to a temporary failure of the server.|The error message. |
 
- |
-|RequestId|String|05B36C2C-5F6E-48D5-8B41-CE36DD7EE8E0|The request ID for troubleshooting.
+## Examples
 
- |
-
-## Examples {#demo .section}
-
-Sample requests
-
-``` {#request_demo}
-
-http(s)://[Endpoint]/? Action=PutCustomMetric
-&<Common request parameters>
+Sample request
 
 ```
+http(s)://[Endpoint]/? Action=PutCustomMetric
+&MetricList.1.Dimensions={"sampleName1":"value1","sampleName2":"value2"}
+&MetricList.1.GroupId=12345
+&MetricList.1.MetricName=cpu_total
+&MetricList.1.Type=0
+&MetricList.1.Values={"value":10.5}
+&<Common request parameters>
+```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <PutCustomMetricResponse>
-  <Message>success</Message>
-  <RequestId>05B36C2C-5F6E-48D5-8B41-CE36DD7EE8E0</RequestId>
-  <Code>200</Code>
+	  <RequestId>75D115CE-5DA8-4647-9073-8F72BB85B6F7</RequestId>
+	  <Message>success</Message>
+	  <Code>200</Code>
 </PutCustomMetricResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"Message":"success",
-	"RequestId":"05B36C2C-5F6E-48D5-8B41-CE36DD7EE8E0",
-	"Code":"200"
+  "RequestId": "75D115CE-5DA8-4647-9073-8F72BB85B6F7",
+  "Message": "success",
+  "Code": "200"
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
