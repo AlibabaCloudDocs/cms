@@ -27,8 +27,8 @@
 |MySQL每秒ReplaceSelect量|CountSecond|MySQL\_ComReplaceSelect|userId、instanceId|Maximum、Minimum、Average|
 |MySQL每秒Select量|CountSecond|MySQL\_ComSelect|userId、instanceId|Maximum、Minimum、Average|
 |MySQL每秒Update量|CountSecond|MySQL\_ComUpdate|userId、instanceId|Maximum、Minimum、Average|
-|MySQL每秒逻辑读次数|CountSecond|MySQL\_lbufRequestR|userId、instanceId|Maximum、Minimum、Average|
-|MySQL每秒逻辑写次数|CountSecond|MySQL\_lbufRequestW|userId、instanceId|Maximum、Minimum、Average|
+|MySQL每秒逻辑读次数|CountSecond|MySQL\_IbufRequestR|userId、instanceId|Maximum、Minimum、Average|
+|MySQL每秒逻辑写次数|CountSecond|MySQL\_IbufRequestW|userId、instanceId|Maximum、Minimum、Average|
 |MySQL每秒查询量|CountSecond|MySQL\_QPS|userId、instanceId|Maximum、Minimum、Average|
 |MySQL每秒事务数|CountSecond|MySQL\_TPS|userId、instanceId|Maximum、Minimum、Average|
 |SQLServer网络流入带宽|bit/s|SQLServer\_NetworkInNew|userId、instanceId|Maximum、Minimum、Average|
