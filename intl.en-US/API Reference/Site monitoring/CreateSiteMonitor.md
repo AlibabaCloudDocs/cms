@@ -12,16 +12,16 @@ Creates a site monitoring task.
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|CreateSiteMonitor|The operation that you want to perform. Set the value to CreateSiteMonitor. |
 |Address|String|Yes|https://www.aliyun.com|The URL or IP address monitored by the monitoring task. |
-|TaskName|String|Yes|HanZhou\_ECS1|The name of the site monitoring task. The name must be 4 to 100 characters in length. It can contain letters, digits, and underscores \(\_\). |
-|TaskType|String|Yes|HTTP|The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP, UDP, DNS, SMTP, POP3, and FTP. |
+|TaskName|String|Yes|HanZhou\_ECS1|The name of the monitoring task. The name must be 4 to 100 characters in length. It can contain letters, digits, and underscores \(\_\). |
+|TaskType|String|Yes|HTTP|The type of the monitoring task. Valid values: HTTP, HTTPS, PING, TCP, UDP, DNS, SMTP, POP3, and FTP. |
 |Interval|String|No|1|The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit: minutes. Default value: 1. |
-|IspCities|String|No|\[\{"city":"546","isp":"465"\},\{"city":"572","isp":"465"\},\{"city":"738","isp":"465"\}\]|The information about detection points, which is specified in a JSON array. Example: `[{"city":"546","isp":"465"},{"city":"572","isp":"465"},{"city":"738","isp":"465"}]`. The three city codes represent Beijing, Hangzhou, and Qingdao.
+|IspCities|String|No|\[\{"city":"546","isp":"465"\},\{"city":"572","isp":"465"\},\{"city":"738","isp":"465"\}\]|The information about the detection points, in the format of a JSON array. Example: `[{"city":"546","isp":"465"},{"city":"572","isp":"465"},{"city":"738","isp":"465"}]`. The values of the city field indicate Beijing, Hangzhou, and Qingdao.
 
- **Note:** You can call the DescribeSiteMonitorISPCityList API operation to query the detection points that can be used to create site monitoring tasks. For more information, see [DescribeSiteMonitorISPCityList](~~115045~~) . If this parameter is not specified, the system randomly selects three detection points for site monitoring. |
-|OptionsJson|String|No|\{"time\_out":5000\}|The extended options of the protocol that is used by the site monitoring task. The options vary based on the protocol. |
-|AlertIds|String|No|SystemDefault\_acs\_ecs\_dashboard\_InternetOutRate\_Percent|The ID of the alert rule. The ID of an existing alert rule to be associated with the site monitoring task. You can call the DescribeMetricRuleList API operation to query the IDs of existing alert rules. For more information, see [DescribeMetricRuleList](~~114941~~). |
+**Note:** You can call the DescribeSiteMonitorISPCityList operation to query the detection points. For more information, see [DescribeSiteMonitorISPCityList](~~115045~~). If this parameter is not specified, the system randomly selects three detection points. |
+|OptionsJson|String|No|\{"time\_out":5000\}|The extended options of the protocol that is used by the monitoring task. The options vary based on the protocol. |
+|AlertIds|String|No|SystemDefault\_acs\_ecs\_dashboard\_InternetOutRate\_Percent|The ID of the alert rule. You can call the DescribeMetricRuleList operation to query the IDs of existing alert rules in Cloud Monitor. For more information, see [DescribeMetricRuleList](~~114941~~). |
 
-The TaskType parameter specifies the following protocols that are used by a site monitoring task: HTTP, HTTPS, PING, TCP, UDP, DNS, SMTP. POP3, and FTP. The following tables describe the extended options of these protocols.
+The following tables describe the extended options of the HTTP, HTTPS, PING, TCP, UDP, DNS, SMTP. POP3, and FTP protocols specified by the TaskType parameter.
 
 -   HTTP
 
@@ -35,41 +35,41 @@ The TaskType parameter specifies the following protocols that are used by a site
 
 |String
 
-|The request method. Valid values: GET, POST, and HEAD. Default value: GET. |
+|The HTTP request method. Valid values: GET, POST, and HEAD. Default value: GET. |
 |header
 
 |String
 
-|The HTTP request header. The HTTP request header consists of key-value pairs. Separate the key-value pairs with line feeds \("\\n"\).
+|The custom HTTP headers that are separated with newline characters \(\\n\).
 
- Separate the key and value in each pair with a colon \(:\). |
+Each header must comply with the HTTP protocol. Each header must be a key-value pair in which the key and value are separated with a colon \(:\). |
 |cookie
 
 |String
 
-|The HTTP cookie. Specify the HTTP cookie in compliance with the HTTP request standard. |
+|The HTTP cookie that is specified in compliance with the HTTP request standard. |
 |request\_content
 
 |String
 
-|The content of the request. The content can be in JSON or form format. If this parameter is not specified, the request has no body. |
+|The content of the request. The content can be in the JSON or form format. If this parameter is not specified, the request has no body. |
 |response\_content
 
 |String
 
-|The expected or unexpected content of the response. The first 64 bytes of the content returned from the HTTP server will be checked during site monitoring. |
+|The expected content of the response. The first 64 bytes of the content returned by the HTTP server are checked during site monitoring. |
 |match\_rule
 
 |String
 
-|The match rule. The value 0 indicates that the detection is successful if the response does not contain the unexpected content specified by the response\_content parameter.
+|The value 0 indicates that the detection is successful if the response does not contain the content specified by the response\_content parameter.
 
- The value 1 indicates that the detection is successful if the response contains the expected content specified by the response\_content parameter. |
+The value 1 indicates that the detection is successful if the response contains the content specified by the response\_content parameter. |
 |username
 
 |String
 
-|The username used to authenticate the HTTP request. If this parameter is specified, the HTTP request contains the basic authentication header. |
+|If the username parameter is specified, the HTTP request contains the basic authentication header. |
 |password
 
 |String
@@ -77,18 +77,18 @@ The TaskType parameter specifies the following protocols that are used by a site
 |The password used to authenticate the HTTP request. |
 |time\_out
 
-|int
+|Integer
 
 |The timeout period. Unit: milliseconds. Default value: 5. |
 |max\_redirect
 
-|int
+|Integer
 
-|The maximum number of redirections. The default value is 5 for a detection point provided by Alibaba Cloud and 2 for a detection point provided by an Internet service provider \(ISP\).
+|The maximum number of redirections. The default value is 5 for a detection point that is running on an Elastic Compute Service \(ECS\) instance and 2 for a detection point that is provided by a carrier.
 
- To disable redirections, set the value to 0.
+To disable redirections, set the value to 0.
 
- Valid values: 0 to 50. |
+Valid values: 0 to 50. |
 
 -   PING
 
@@ -100,18 +100,18 @@ The TaskType parameter specifies the following protocols that are used by a site
 |-----------|------|-------------|
 |failure\_rate
 
-|int
+|Integer
 
-|The failure rate threshold. If the failure rate exceeds this threshold, the detection fails and the status code 610 \(PingAllFail\) or 615 \(PingPartialFail\) is returned.
+|If the failure rate of the ping operation exceeds the value of this parameter, the detection fails and the status code 610 or 615 is returned. The error message of the status code 610 is PingAllFail, whereas the error message of the status code 615 is PingPartialFail.
 
- Default value: 0.1. |
+Default value: 0.1. |
 |ping\_num
 
-|int
+|Integer
 
 |The number of times that the monitored address is pinged. Default value: 20.
 
- Valid values: 1 to 100. |
+Valid values: 1 to 100. |
 
 -   DNS
 
@@ -123,32 +123,32 @@ The TaskType parameter specifies the following protocols that are used by a site
 |-----------|------|-------------|
 |dns\_server
 
-|string
+|String
 
 |The domain name or IP address of the Domain Name System \(DNS\) server. |
 |dns\_type
 
-|string
+|String
 
-|The type of DNS records to query. Valid values: A, NS, CNAME, MX, TXT, and ANY. |
+|The type of the DNS records to query. Valid values: A, NS, CNAME, MX, TXT, and ANY. |
 |expect\_value
 
-|string
+|String
 
-|The expected value list, which consists of the IP addresses to be obtained after DNS resolution. Separate the IP addresses with space characters. |
+|The list of expected values. Separate the expected values with space characters. |
 |match\_rule
 
-|string
+|String
 
-|The relationship between the expected value list and the returned value list after DNS resolution. If the two lists do not meet the specified relationship, the detection fails. Valid values:
+|The relationship between the list of expected values and the list of DNS results. If the two lists do not meet the specified relationship, the detection fails. Valid values:
 
- Empty string or IN\_DNS: The expected value list is a subset of the returned value list.
+Empty string or IN\_DNS: The list of expected values is a subset of the list of DNS results.
 
- DNS\_IN: The returned value list is a subset of the expected value list.
+DNS\_IN: The list of DNS results is a subset of the list of expected values.
 
- EQUAL: The returned value list is the same as the expected value list.
+EQUAL: The list of DNS results is the same as the list of expected values.
 
- ANY: The returned value list intersects with the expected value list. |
+ANY: The list of DNS results intersects with the list of expected values. |
 
 -   FTP
 
@@ -160,17 +160,17 @@ The TaskType parameter specifies the following protocols that are used by a site
 |-----------|------|-------------|
 |port
 
-|int
+|Integer
 
-|The port number of the FTP server. If this parameter is not specified, the default port number is used. The default port number is 21 for FTP and 990 for FTPS. |
+|The port number of the FTP server. If this parameter is not specified, the default value is used. The default port number is 21 for FTP and 990 for FTPS. |
 |username
 
-|string
+|String
 
 |The username used to log on to the FTP server. If this parameter is not specified, anonymous logon is used. |
 |password
 
-|string
+|String
 
 |The password used to log on to the FTP server. |
 
@@ -184,17 +184,17 @@ The TaskType parameter specifies the following protocols that are used by a site
 |-----------|------|-------------|
 |port
 
-|int
+|Integer
 
-|The port number of the POP3 server. The default port number is 110 for the POP3 protocol and 995 for the POP3S protocol. |
+|The port number of the POP3 server. The default port number is 110 for POP3 and 995 for POP3S. |
 |username
 
-|string
+|String
 
 |The username used to log on to the POP3 or SMTP server. |
 |password
 
-|string
+|String
 
 |The password used to log on to the POP3 or SMTP server. |
 
@@ -208,66 +208,58 @@ The TaskType parameter specifies the following protocols that are used by a site
 |-----------|------|-------------|
 |port
 
-|int
+|Integer
 
-|The TCP or UDP port to monitor. |
+|The port number of the TCP or UDP server. |
 |request\_content
 
-|string
+|String
 
-|The content of the request. If the request\_format parameter is set to hex, the value of the request\_content parameter must be in the hexadecimal format. |
+|The content of the request. If the request\_format parameter is set to hex, the value of the request\_content parameter is parsed in the hexadecimal format. |
 |request\_format
 
-|string
+|String
 
-|The format of the request content. If the request\_format parameter is not set to hex, the value of the request\_content parameter is be sent to the POP3 or SMTP server as common text. |
+|If the request\_format parameter is set to another value, the value of the request\_content parameter is sent to the TCP or UDP server as a regular string. |
 |response\_content
 
-|string
+|String
 
-|The expected or unexpected content of the response. If the response from the POP3 or SMTP server does not contain the expected content specified by the response\_content parameter, the detection fails.
+|The content of the response. If the response from the TCP or UDP server does not contain the content specified by the response\_content parameter, the detection fails.
 
- If the response\_format parameter is set to hex, the value of the response\_content parameter must be in the hexadecimal format.
+If the response\_format parameter is set to hex, the value of the response\_content parameter is parsed in the hexadecimal format.
 
- If the response\_format parameter is not set to hex, the server considers the value of the response\_content parameter as common text. |
+If the response\_format parameter is set to another value, the value of the response\_content parameter is parsed as a regular string. |
 
 ## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|AlertRule|String|\[\{"alarmActions":\["Default alert group"\],"metricName":"Availability","expression":"$Availability<96"\}\]|The alert rule configured for the site monitoring task. The value is a JSON array in the following format:
-
- `[{"alarmActions":["xxx"],"metricName":"Availability","expression":"$Availability<96"}]`.
-
- -   alarmActions: the alert group to which alert notifications are sent.
--   metricName: the name of the metric that triggers alerts. Valid values:
-    -   Availability: the percentage of available detection points.
-    -   AvailableNumber: the number of available detection points. |
 |Code|String|200|The HTTP status code.
 
- **Note:** The status code 200 indicates that the call was successful. |
-|CreateResultList|Array of CreateResultList| |The results of creating site monitoring tasks. After a task is created, the corresponding result is returned. |
+**Note:** The status code 200 indicates that the call was successful. |
+|CreateResultList|Array of CreateResultList| |The results of creating tasks. If a task is created, the result is returned. If a task fails to be created, no result is returned. |
 |CreateResultList| | | |
-|TaskId|String|df1f48e3-f814-491a-ad5f-\*\*\*\*|The ID of the site monitoring task. |
-|TaskName|String|HanZhou\_ECS1|The name of the site monitoring task. |
-|Data|Struct| |The result of creating the site monitoring task. |
+|TaskId|String|2c8dbdf9-a3ab-46a1-85a4-f094965e\*\*\*\*|The ID of the monitoring task. |
+|TaskName|String|HanZhou\_ECS1|The name of the monitoring task. |
+|Data|Struct| |The result of creating the monitoring task. |
 |AttachAlertResult|Array of Contact| |The result of associating the existing alert rule with the site monitoring task. |
 |Contact| | | |
-|Code|String|200|The HTTP status code returned after a request was sent to associate the existing alert rule with the site monitoring task.
+|Code|String|200|The status code returned after you associate the existing alert rule with the site monitoring task.
 
- **Note:** The status code 200 indicates that the call was successful. |
-|Message|String|successful|The message returned after a request was sent to associate the existing alert rule with the site monitoring task. |
+**Note:** The status code 200 indicates that the association was successful. |
+|Message|String|successful|The message returned after you associate the existing alert rule with the site monitoring task. |
 |RequestId|String|32565d-233-1b98-2231-892813f86c71|The ID of the request that was sent to associate the existing alert rule with the site monitoring task. |
 |RuleId|String|SystemDefault\_acs\_ecs\_dashboard\_InternetOutRate\_Percent|The ID of the existing alert rule that was associated with the site monitoring task. |
 |Success|String|true|Indicates whether the existing alert rule was associated with the site monitoring task. Valid values:
 
- -   true: The association was successful.
+-   true: The association was successful.
 -   false: The association failed. |
 |Message|String|Successful|The returned message. |
 |RequestId|String|68192f5d-0d45-4b98-9724-892813f86c71|The ID of the request. |
 |Success|String|true|Indicates whether the call was successful. Valid values:
 
- -   true: The call was successful.
+-   true: The call was successful.
 -   false: The call failed. |
 
 ## Examples
@@ -288,27 +280,27 @@ Sample success responses
 
 ```
 <CreateSiteMonitorResponse>
-	  <Message>successful</Message>
-	  <RequestId>AB22040B-D13E-4693-9FE8-741615F5CBFC</RequestId>
-	  <Data>
-		    <AttachAlertResult>
-			      <Contact>
-				        <Message>successful</Message>
-				        <RequestId>5dd33455-4f65-4b0c-9200-33d66f3f340b</RequestId>
-				        <RuleId>SystemDefault_acs_ecs_dashboard_InternetOutRate_Percent</RuleId>
-				        <Code>200</Code>
-				        <Success>true</Success>
-			      </Contact>
-		    </AttachAlertResult>
-	  </Data>
-	  <Code>200</Code>
-	  <CreateResultList>
-		    <CreateResultList>
-			      <TaskId>2c8dbdf9-a3ab-46a1-85a4-f094965ebef9</TaskId>
-			      <TaskName>HanZhou_ECS1</TaskName>
-		    </CreateResultList>
-	  </CreateResultList>
-	  <Success>true</Success>
+      <Message>successful</Message>
+      <RequestId>AB22040B-D13E-4693-9FE8-741615F5CBFC</RequestId>
+      <Data>
+            <AttachAlertResult>
+                  <Contact>
+                        <Message>successful</Message>
+                        <RequestId>5dd33455-4f65-4b0c-9200-33d66f3f340b</RequestId>
+                        <RuleId>SystemDefault_acs_ecs_dashboard_InternetOutRate_Percent</RuleId>
+                        <Code>200</Code>
+                        <Success>true</Success>
+                  </Contact>
+            </AttachAlertResult>
+      </Data>
+      <Code>200</Code>
+      <CreateResultList>
+            <CreateResultList>
+                  <TaskId>2c8dbdf9-a3ab-46a1-85a4-f094965e****</TaskId>
+                  <TaskName>HanZhou_ECS1</TaskName>
+            </CreateResultList>
+      </CreateResultList>
+      <Success>true</Success>
 </CreateSiteMonitorResponse>
 ```
 
@@ -316,31 +308,31 @@ Sample success responses
 
 ```
 {
-	"Message": "successful",
-	"RequestId": "AB22040B-D13E-4693-9FE8-741615F5CBFC",
-	"Data": {
-		"AttachAlertResult": {
-			"Contact": [
-				{
-					"Message": "successful",
-					"RequestId": "5dd33455-4f65-4b0c-9200-33d66f3f340b",
-					"RuleId": "SystemDefault_acs_ecs_dashboard_InternetOutRate_Percent",
-					"Code": "200",
-					"Success": true
-				}
-			]
-		}
-	},
-	"Code": "200",
-	"CreateResultList": {
-		"CreateResultList": [
-			{
-				"TaskId": "2c8dbdf9-a3ab-46a1-85a4-f094965ebef9",
-				"TaskName": "HanZhou_ECS1"
-			}
-		]
-	},
-	"Success": true
+    "Message": "successful",
+    "RequestId": "AB22040B-D13E-4693-9FE8-741615F5CBFC",
+    "Data": {
+        "AttachAlertResult": {
+            "Contact": [
+                {
+                    "Message": "successful",
+                    "RequestId": "5dd33455-4f65-4b0c-9200-33d66f3f340b",
+                    "RuleId": "SystemDefault_acs_ecs_dashboard_InternetOutRate_Percent",
+                    "Code": "200",
+                    "Success": true
+                }
+            ]
+        }
+    },
+    "Code": "200",
+    "CreateResultList": {
+        "CreateResultList": [
+            {
+                "TaskId": "2c8dbdf9-a3ab-46a1-85a4-f094965e****",
+                "TaskName": "HanZhou_ECS1"
+            }
+        ]
+    },
+    "Success": true
 }
 ```
 
