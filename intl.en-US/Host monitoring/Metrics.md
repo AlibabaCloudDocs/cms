@@ -21,12 +21,12 @@ Metrics that the host monitoring feature supports include operating system metri
 
     |Metric|Description|Unit|Remarks for Linux|
     |:-----|:----------|:---|:----------------|
-    |Host.cpu.idle|The percentage of CPU that is not utilized.|%|Measures the CPU that is in the idle status.|
-    |Host.cpu.system|The percentage of CPU that is occupied by the kernel.|%|Measures the CPU consumed by a system context switch. A high value indicates that excessive processes or threads run on the host.|
-    |Host.cpu.user|The percentage of CPU that is occupied by user processes.|%|Measures the CPU that is occupied by user processes.|
-    |Host.cpu.iowait|The percentage of CPU that waits for I/O operations to complete.|%|A high value indicates frequent I/O operations.|
-    |Host.cpu.other|The percentage of CPU that is occupied by other operations.|%|Calculation method: CPU utilization of Nice + CPU utilization of SoftIrq + CPU utilization of Irq + CPU utilization of Stolen.|
-    |Host.cpu.totalUsed|The percentage of CPU that is occupied.|%|The sum of the preceding CPU consumption. This metric is usually used for alerting.|
+    |Host.cpu.idle|The percentage of the CPU that is idle.|%|Measures the CPU that is in the idle status.|
+    |Host.cpu.system|The percentage of the CPU that is occupied by the kernel.|%|Measures the CPU consumed by a system context switch. A high value indicates that excessive processes or threads run on the host.|
+    |Host.cpu.user|The percentage of the CPU that is occupied by user processes.|%|Measures the CPU occupied by user processes.|
+    |Host.cpu.iowait|The percentage of the CPU that waits for I/O operations to complete.|%|A high value indicates frequent I/O operations.|
+    |Host.cpu.other|The percentage of the CPU that is occupied by other operations.|%|Calculation method: CPU utilization of Nice + CPU utilization of SoftIrq + CPU utilization of Irq + CPU utilization of Stolen.|
+    |Host.cpu.total|The percentage of the CPU that is occupied.|%|The sum of the preceding CPU consumption. This metric is typically used for alerting.|
 
 -   Memory metrics
 
@@ -51,7 +51,7 @@ Data source: the value of MemFree in the /proc/meminfo file. |
 Calculation method: total - free. |
     |Host.mem.actualused|The memory used by users.|byte|Calculation method:     -   When MemAvailable exists in the /proc/meminfo file: total - MemAvailable.
     -   When MemAvailable does not exist in the /proc/meminfo file: used - buffers - cached.
-**Note:** The calculation result is more accurate in CentOS 7.2, Ubuntu 16.04, or their later versions that use the new Linux kernel. For more information about MemAvailable, see [commit](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773). |
+**Note:** The calculation result is more accurate in CentOS 7.2, Ubuntu 16.04, or their later versions that use the new Linux kernel. For more information about MemAvailable, visit [commit](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773). |
     |Host.mem.freeutilization|The percentage of available memory.|%|Calculation method:     -   When MemAvailable exists in the /proc/meminfo file: MemAvailable/total × 100%.
     -   When MemAvailable does not exist in the /proc/meminfo file: \(total - actualused\)/total × 100%. |
     |Host.mem.usedutilization|The memory usage.|%|Calculation method:     -   When MemAvailable exists in the /proc/meminfo file: \(total - MemAvailable\)/total × 100%.
@@ -84,17 +84,17 @@ Calculation method: total - free. |
 
     -   Windows
 
-        Call the GetDiskFreeSpaceExA function in Kernel32.dll to obtain the used disk space, disk usage, free disk space, and total disk space. Call the RegConnectRegistryA function to connect to the HKEY\_PERFORMANCE\_DATA entry in the registry. Then, call the RegQueryValueExA function to query the disk information in HKEY\_PERFORMANCE\_DATA, including read count, write count, read bytes, written bytes, read time, write time, and disk active time.
+        Call the GetDiskFreeSpaceExA function in Kernel32.dll to obtain the used disk space, disk usage, free disk space, and total disk space. Call the RegConnectRegistryA function to connect to the HKEY\_PERFORMANCE\_DATA entry in the registry. Then, call the RegQueryValueExA function to query the disk information in HKEY\_PERFORMANCE\_DATA, including the read count, write count, read bytes, written bytes, read time, write time, and disk active time.
 
     |Metric|Description|Unit|
     |:-----|:----------|:---|
     |Host.diskusage.used|The disk space in use.|byte|
     |Host.disk.utilization|The disk usage.|%|
-    |Host.diskusage.free|The available disk space for common users and superusers.|byte|
-    |Host.diskusage.avail|The available disk space for common users.|byte|
+    |Host.diskusage.free|The available disk space for regular users and superusers.|byte|
+    |Host.diskusage.avail|The available disk space for regular users.|byte|
     |Host.diskusage.total|The total disk space.|byte|
-    |Host.disk.readbytes|The number of bytes per second read from the disk.|byte/s|
-    |Host.disk.writebytes|The number of bytes per second written to the disk.|byte/s|
+    |Host.disk.readbytes|The number of bytes read from the disk per second.|byte/s|
+    |Host.disk.writebytes|The number of bytes written to the disk per second.|byte/s|
     |Host.disk.readiops|The number of read requests that the disk receives per second.|count/s|
     |Host.disk.writeiops|The number of write requests that the disk receives per second.|count/s|
 
@@ -123,7 +123,7 @@ Calculation method: total - free. |
             2.  Change the value of `netstat.tcp.disable` to `false` in the cloudmonitor/config/conf.properties configuration file.
             3.  Restart the Cloud Monitor agent.
 
-                For more information, see [How do I restart the Cloud Monitor agent?](/intl.en-US/FAQ/Operation/How do I restart the Cloud Monitor agent?.md)
+                For more information, see [How do I restart the Cloud Monitor agent?](/intl.en-US/FAQ/Troubleshooting/How do I restart the Cloud Monitor agent?.md)
 
         -   You can check the output of the iftop command to understand the network metrics.
     -   Windows
@@ -153,14 +153,14 @@ Calculation method: total - free. |
 
         -   Count the number of processes that match the specified keyword
             -   Call the OpenProcess function to obtain the handle of a process. Call the NtQueryInformationProcess function in ntdll.dll to obtain RTL\_USER\_PROCESS\_PARAMETERS of the process. Call the ReadProcessMemory function to obtain the arguments and root path of the process from the command line information. This way, you can obtain the directory of the process.
-            -   Call the OpenProcessToken function to obtain the handle to access the token. Call the GetTokenInformation function to obtain the token information. Call the LookupAccountSid function to obtain the username and user group of the process.
+            -   Call the OpenProcessToken function to obtain the handle of a token. Call the GetTokenInformation function to obtain the token information. Call the LookupAccountSid function to obtain the username and user group of the process.
             -   Match the directory, username, and user group of the process with the keyword. If the process information matches the keyword, increase the value of Host.process.number by 1.
     |Metric|Description|Unit|Remarks|
     |:-----|:----------|:---|:------|
     |Host.process.cpu|The CPU utilization of the process.|%|You cannot configure alert rules for this metric.|
     |Host.process.memory|The memory usage of the process.|%|You cannot configure alert rules for this metric.|
     |Host.process.openfile|The number of files that the process opens.|count|You cannot configure alert rules for this metric.|
-    |Host.process.number|The number of processes that match the specified keyword.|count|You cannot configure alert rules for this metric.|
+    |Host.process.number|The number of processes that match the specific keyword.|count|You cannot configure alert rules for this metric.|
 
 
 ## ECS basic metrics
@@ -174,10 +174,10 @@ Cloud Monitor collects data of the metrics described in the following table from
 |ECS.IntranetInRate|The average rate of inbound internal network traffic.|bit/s|
 |ECS.InternetOutRate|The average rate of outbound Internet traffic.|bit/s|
 |ECS.IntranetOutRate|The average rate of outbound internal network traffic.|bit/s|
-|ECS.SystemDiskReadbps|The number of bytes per second read from the system disk.|byte/s|
-|ECS.SystemDiskWritebps|The number of bytes per second written to the system disk.|byte/s|
-|ECS.SystemDiskReadOps|The number of reads per second from the system disk.|count/s|
-|ECS.SystemDiskWriteOps|The number of writes per second to the system disk.|count/s|
+|ECS.SystemDiskReadbps|The number of bytes read from the system disk per second.|byte/s|
+|ECS.SystemDiskWritebps|The number of bytes written to the system disk per second.|byte/s|
+|ECS.SystemDiskReadOps|The number of reads from the system disk per second.|count/s|
+|ECS.SystemDiskWriteOps|The number of writes to the system disk per second.|count/s|
 |ECS.InternetIn|The inbound Internet traffic.|byte|
 |ECS.InternetOut|The outbound Internet traffic.|byte|
 |ECS.IntranetIn|The inbound traffic of the internal network.|byte|
