@@ -2,53 +2,139 @@
 
 The application group feature allows you to manage resources from different services and regions by group. You can create application groups based on your business requirements and add your cloud resources such as servers and databases to application groups. You can manage alert rules by application group.
 
-The application group feature is applicable to the following scenarios:
+The following table describes the methods of creating application groups and the Alibaba Cloud services that are supported by each creation method.
 
--   Manage resources from the business perspective
+|Creation method|Description|Supported Alibaba Cloud services|
+|---------------|-----------|--------------------------------|
+|**Standard group creation**|You can create a standard application group to manage existing instances based on your business requirements.|[Supported Alibaba Cloud services](/intl.en-US/Appendix 1: Metrics/Overview.md)|
+|**Smart tag synchronization-based creation**|If tags are attached to your instances, you can specify a tag-based matching rule to create an application group. All instances that match the rule are automatically added to the application group for you to manage. An application group is automatically created for a tag of the existing instances if the tag is specified in the matching rule. If a newly created instance has a tag that is specified in the matching rule, an application group is also automatically created for the tag. Up to 3,000 instances can match a rule at a time.For more information about how to create and attach tags in Resource Management, see [Create and bind a tag]().
 
-    You can add resources in your account to different application groups based on the business type. You can then query monitoring data and alerts from the business perspective.
+|-   Elastic Compute Service \(ECS\)
+-   ApsaraDB RDS
+-   Server Load Balancer \(SLB\) |
+|**Smart instance rule-based creation**|You can specify an instance name-based matching rule to create an application group. All instances that match the rule are automatically added to the application group for you to manage.|-   ECS
+-   ApsaraDB RDS
+-   SLB
+-   ApsaraDB for Redis of the cluster edition
+-   ApsaraDB for Redis of the standard edition
+-   ApsaraDB for Redis of the read/write splitting edition
+-   ApsaraDB for MongoDB
+-   ApsaraDB for MongoDB of the sharded cluster architecture |
+|**Resource group-based creation**|If you have specified a resource group, you can create an application group from the resource group. All instances in the resource group are added to the application group for you to manage.For more information about how to create resource groups in Resource Management, see [Create a resource group]().
 
--   Perform routine inspection and detect faults
+|-   ECS
+-   ApsaraDB RDS
+-   SLB
+-   Elastic IP Address \(EIP\)
+-   Anti-DDoS Premium and Anti-DDoS Pro
+-   Alibaba Cloud CDN
+-   EIP Bandwidth Plan
+-   PolarDB
+-   ApsaraDB for Redis |
 
-    After you create application groups, you can use features such as group health check, faulty instance list, and dashboard to monitor the resources in the application groups. You can inspect resource usage in application groups on a routine basis, locate faulty resources, and identify causes at the earliest opportunity if you receive alert notifications.
-
--   Improve resource usage
-
-    Application groups allow you to aggregate and display monitoring data from multiple dimensions. You can query monitoring data of an application group or a single instance to identify frequently accessed resources.
-
+## Create a standard application group
 
 1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Application Groups**.
 
-3.  On the Application Groups page, click **Create Group** in the upper-right corner.
+3.  On the Application grouping tab, click **Create Group** in the upper-right corner.
 
-4.  In the Create Group panel, set the parameters in the **Creation method**, **Basic Information**, **MonitorAlert**,**Region**, **Match Rule**, and **Event Monitor** sections.
+4.  In the Create Group panel, set the **Creation method** parameter to **Standard Group creation** and set other parameters.
 
-    |GUI element|Description|
-    |-----------|-----------|
-    |**Creation method**|Select the method used to create the application group. Valid values:     -   **Smart tag synchronization creation**
-    -   **Standard Group creation**
-    -   **Smart Instance Rule Creation** |
-    |**Basic Information**|Set the Product Group Name and Contact Group parameters.     -   **Product Group Name**: the name of the application group.
+    |Parameter|Description|
+    |---------|-----------|
+    |**Basic Information**|Set the Product Group Name and Contact Group parameters. Valid values:     -   **Product Group Name**: the name of the application group.
+    -   **Contact Group**: the alert group to which alert notifications are sent. You can select an existing alert group or create an alert group. |
+    |**MonitorAlert**|Set the Select Template and Muted parameters. Valid values:    -   **Select Template**: the alert template used to initialize alert rules of the application group.
 
-If you select **Smart tag synchronization creation** for **Creation method**, the system automatically generates a name for the application group. If you select **Standard Group creation** or **Smart Instance Rule Creation** for **Creation method**, you must enter a name for the application group.
+For more information about how to create an alert template, see [Create an alert template](/intl.en-US/Alarm service/Alert templates/Create an alert template.md).
 
-    -   **Contact Group**: the alert group to which alert notifications are sent. You can customize alert groups based on business needs. |
-    |**MonitorAlert**|Set the Select Template and Muted parameters.    -   **Select Template**: the alert template used to initialize alert rules of the application group.
-    -   **Muted**: the interval of re-sending the notification for an alert before the alert is cleared. The minimum value is 5 minutes and the maximum value is 24 hours.
+    -   **Muted**: the interval of re-sending the notification for an alert before the alert is cleared. The minimum value is 5 minutes and the maximum value is 24 hours. |
+    |**Initialize Agent Installation**|After you turn on **Initialize Agent Installation**, Cloud Monitor automatically installs the Cloud Monitor agent on the instances in the application group to collect monitoring data from the instances.|
+    |**Event Monitor**|If you select **Subscribe Event notification**, Cloud Monitor automatically sends alert notifications to you when critical or warning events occur on the instances added to the application group.|
 
-The Muted parameter is available only when you select **Standard Group creation** or **Smart Instance Rule Creation** for **Creation method**. |
-    |**Region**|Select the region to which the application group belongs. The Region section is available only when you select **Smart tag synchronization creation** for **Creation method**.|
-    |**Match Rule**|Specify the matching rule to automatically add instances. All your instances, including those that have not been created, whose names contain, start with, or end with the words you specify will be automatically added to the application group. Only ECS, ApsaraDB RDS, and SLB instances can be added to the application group based on the matching rule that you specify.
+5.  Click **Create Group**.
 
-The Match Rule section is available only when you select **Smart Instance Rule Creation** for **Creation method**. |
-    |**Add Instance dynamically**|Specify the matching rule to automatically add instances.The Add Instance dynamically section is available only when you select **Smart Instance Rule Creation** for **Creation method**. |
-    |**Initialize Agent Installation**|If you turn on **Initialize Agent Installation**, Cloud Monitor automatically installs the Cloud Monitor agent on all instances in the application group.|
-    |**Event Monitor**|If you select Subscribe Event notification, Cloud Monitor automatically sends alert notifications to you when critical or warning events occur on the instances added to the application group.|
+6.  On the Application grouping tab, select Custom to view the application group.
 
-5.  Click **Create Group** or **Add**.
 
-    -   If you select **Standard Group creation** or **Smart Instance Rule Creation** for **Creation method**, click **Create Group**.
-    -   If you select **Smart tag synchronization creation** for **Creation method**, click **Add**.
+## Create an application group based on smart tag synchronization
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Application Groups**.
+
+3.  On the Application grouping tab, click **Create Group** in the upper-right corner.
+
+4.  In the Create Group panel, set the **Creation method** parameter to **Smart tag synchronization creation** and set other parameters.
+
+    |Parameter|Description|
+    |---------|-----------|
+    |**Basic Information**|Set the Product Group Name and Contact Group parameters. Valid values:     -   **Product Group Name**: Cloud Monitor automatically generates a name for the application group.
+    -   **Contact Group**: the alert group to which alert notifications are sent. You can select an existing alert group or create an alert group. |
+    |**MonitorAlert**|Select alert templates. You can initialize alert rules of the application group by using the alert templates.For more information about how to create an alert template, see [Create an alert template](/intl.en-US/Alarm service/Alert templates/Create an alert template.md). |
+    |**Region**|The region where the application group resides.|
+    |**Match Rule**|You can specify a dynamic matching rule based on a resource tag to automatically add instances. Valid values:    -   **Resource Tag Key**: the key of the instance tag.
+    -   **Tag Value**: the value of the instance tag. Instances whose tag values **contain**, **start with**, **end with**, **do not contain**, or **equal to** the value you specify are automatically added to the application group. If you set the Tag Value parameter to **All**, all instances with the specified tag are added to the application group. A newly created instance that matches the rule will also be added to the application group. |
+    |**Initialize Agent Installation**|After you turn on **Initialize Agent Installation**, Cloud Monitor automatically installs the Cloud Monitor agent on the instances in the application group to collect monitoring data from the instances.|
+    |**Event Monitor**|If you select **Subscribe Event notification**, Cloud Monitor automatically sends alert notifications to you when critical or warning events occur on the instances added to the application group.|
+
+5.  Click **Add**.
+
+6.  On the Application grouping tab, select **Resource tags** from the drop-down list and view the created application group.
+
+
+## Create an application group based on a smart instance rule
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Application Groups**.
+
+3.  On the Application grouping tab, click **Create Group** in the upper-right corner.
+
+4.  In the Create Group panel, set the **Creation method** parameter to **Smart Instance Rule Creation** and set other parameters.
+
+    |Parameter|Description|
+    |---------|-----------|
+    |**Basic Information**|Set the Product Group Name and Contact Group parameters. Valid values:     -   **Product Group Name**: the name of the application group.
+    -   **Contact Group**: the alert group to which alert notifications are sent. You can select an existing alert group or create an alert group. |
+    |**MonitorAlert**|Set the Select Template and Muted parameters. Valid values:    -   **Select Template**: the alert template used to initialize alert rules of the application group.
+
+For more information about how to create an alert template, see [Create an alert template](/intl.en-US/Alarm service/Alert templates/Create an alert template.md).
+
+    -   **Muted**: the interval of re-sending the notification for an alert before the alert is cleared. The minimum value is 5 minutes and the maximum value is 24 hours. |
+    |**Add Instance dynamically**|Specify the matching rule so that Cloud Monitor automatically adds instances to the application group based on the name of the instances.|
+    |**Initialize Agent Installation**|After you turn on **Initialize Agent Installation**, Cloud Monitor automatically installs the Cloud Monitor agent on the instances in the application group to collect monitoring data from the instances.|
+    |**Event Monitor**|If you select **Subscribe Event notification**, Cloud Monitor automatically sends alert notifications to you when critical or warning events occur on the instances added to the application group.|
+
+5.  Click **Create Group**.
+
+6.  On the Application grouping tab, select Custom to view the application group.
+
+
+## Create an application group from a resource group
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Application Groups**.
+
+3.  On the Application grouping tab, click **Create Group** in the upper-right corner.
+
+4.  In the Create Group panel, set the **Creation method** parameter to **Resource group creation** and set other parameters.
+
+    |Parameter|Description|
+    |---------|-----------|
+    |**Basic Information**|Set the Resource group creation and Contact Group parameters. Valid values:     -   **Resource group creation**: Select a resource group that was created in the Resource Management console.
+    -   **Contact Group**: the alert group to which alert notifications are sent. You can select an existing alert group or create an alert group. |
+    |**Initialize Agent Installation**|After you turn on **Initialize Agent Installation**, Cloud Monitor automatically installs the Cloud Monitor agent on the instances in the application group to collect monitoring data from the instances.|
+    |**Event Monitor**|If you select **Subscribe Event notification**, Cloud Monitor automatically sends alert notifications to you when critical or warning events occur on the instances added to the application group.|
+
+5.  Click **Add**.
+
+6.  On the Application grouping tab, select **Resource group** from the drop-down list and view the created application group.
+
+
+-   [Add resources to an application group](/intl.en-US/Application groups/Add resources to an application group.md)
+-   [Apply an alert template to an application group](/intl.en-US/Application groups/Apply an alert template to an application group.md)
 
