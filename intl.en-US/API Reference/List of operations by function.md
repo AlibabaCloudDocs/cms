@@ -2,6 +2,8 @@
 
 The following tables list API operations available for use in Cloud Monitor.
 
+**Note:** An Alibaba Cloud account can make a maximum of 20 API calls per second.
+
 ## Monitoring data on time series metrics of cloud services
 
 |Operation|Description|
@@ -82,7 +84,7 @@ The following tables list API operations available for use in Cloud Monitor.
 |[DescribeUnhealthyHostAvailability](/intl.en-US/API Reference/Availability monitoring/DescribeUnhealthyHostAvailability.md)|Queries unhealthy instances.|
 |[DisableHostAvailability](/intl.en-US/API Reference/Availability monitoring/DisableHostAvailability.md)|Disables one or more availability monitoring tasks.|
 
-## Global configurations of the Cloud Monitor agent
+## Global configurations
 
 |Operation|Description|
 |---------|-----------|
@@ -115,14 +117,14 @@ The following tables list API operations available for use in Cloud Monitor.
 |Operation|Description|
 |---------|-----------|
 |[DescribeEventRuleAttribute](/intl.en-US/API Reference/Event-triggered alert rules/DescribeEventRuleAttribute.md)|Queries the details of an event-triggered alert rule.|
-|[PutEventRuleTargets](/intl.en-US/API Reference/Event-triggered alert rules/PutEventRuleTargets.md)|Adds or modifies the targets to which alert notifications are sent based on an event-triggered alert rule.|
-|[DeleteEventRuleTargets](/intl.en-US/API Reference/Event-triggered alert rules/DeleteEventRuleTargets.md)|Deletes the targets to which alert notifications are sent based on an event-triggered alert rule.|
+|[PutEventRuleTargets](/intl.en-US/API Reference/Event-triggered alert rules/PutEventRuleTargets.md)|Adds or modifies the destinations to which alert notifications are sent based on an event-triggered alert rule.|
+|[DeleteEventRuleTargets](/intl.en-US/API Reference/Event-triggered alert rules/DeleteEventRuleTargets.md)|Deletes the destinations to which alert notifications are sent based on an event-triggered alert rule.|
 |[EnableEventRules](/intl.en-US/API Reference/Event-triggered alert rules/EnableEventRules.md)|Enables one or more event-triggered alert rules.|
 |[DescribeEventRuleList](/intl.en-US/API Reference/Event-triggered alert rules/DescribeEventRuleList.md)|Queries event-triggered alert rules.|
 |[DeleteEventRules](/intl.en-US/API Reference/Event-triggered alert rules/DeleteEventRules.md)|Deletes one or more event-triggered alert rules.|
 |[DisableEventRules](/intl.en-US/API Reference/Event-triggered alert rules/DisableEventRules.md)|Disables one or more event-triggered alert rules.|
 |[PutEventRule](/intl.en-US/API Reference/Event-triggered alert rules/PutEventRule.md)|Creates or modifies an event-triggered alert rule.|
-|[DescribeEventRuleTargetList](/intl.en-US/API Reference/Event-triggered alert rules/DescribeEventRuleTargetList.md)|Queries the targets of an event-triggered alert rule.|
+|[DescribeEventRuleTargetList](/intl.en-US/API Reference/Event-triggered alert rules/DescribeEventRuleTargetList.md)|Queries the destinations of an event-triggered alert rule.|
 
 ## Custom monitoring
 
@@ -162,7 +164,7 @@ The following tables list API operations available for use in Cloud Monitor.
 |[DeleteMonitorGroup](/intl.en-US/API Reference/Application groups/DeleteMonitorGroup.md)|Deletes an application group.|
 |[DescribeMonitorGroups](/intl.en-US/API Reference/Application groups/DescribeMonitorGroups.md)|Queries application groups.|
 |[CreateGroupMonitoringAgentProcess](/intl.en-US/API Reference/Application groups/CreateGroupMonitoringAgentProcess.md)|Creates a process monitoring task for an application group.|
-|[DescribeGroupMonitoringAgentProcess](/intl.en-US/API Reference/Application groups/DescribeGroupMonitoringAgentProcess.md)|Queries a process monitoring tasks for an application group.|
+|[DescribeGroupMonitoringAgentProcess](/intl.en-US/API Reference/Application groups/DescribeGroupMonitoringAgentProcess.md)|Queries the process monitoring tasks for an application group.|
 |[ModifyGroupMonitoringAgentProcess](/intl.en-US/API Reference/Application groups/ModifyGroupMonitoringAgentProcess.md)|Modifies a process monitoring task for an application group.|
 |[DeleteGroupMonitoringAgentProcess](/intl.en-US/API Reference/Application groups/DeleteGroupMonitoringAgentProcess.md)|Deletes a process monitoring task for an application group.|
 
