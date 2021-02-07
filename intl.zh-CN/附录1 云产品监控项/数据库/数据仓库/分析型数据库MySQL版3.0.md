@@ -2,12 +2,16 @@
 
 通过本文您可以了解分析型数据库MySQL版3.0的监控项。
 
+当您调用云监控的API接口时，需要获取当前云产品的**Namespace**和**Period**，具体取值如下：
+
 -   **Namespace**为**acs\_adb**。
 -   **Period**默认为60秒，也可以为60的整数倍。
 
-|监控项|单位|Metric|Dimensions|Statistics|
-|---|--|------|----------|----------|
-|连接数|Count|connctions|userId、instanceId|Average|
+当前云产品的**MetricName**和**Dimensions**的取值如下表所示。
+
+|监控项|单位|MetricName|Dimensions|Statistics|
+|---|--|----------|----------|----------|
+|连接数|Count|connections|userId、instanceId|Average|
 |磁盘使用率|%|disk\_used\_percent|userId、instanceId|Average|
 |平均写入响应时间|Milliseconds|insert\_avg\_rt|userId、instanceId|Average|
 |写入吞吐量|Mbyte|insert\_in\_bytes|userId、instanceId|Average|
