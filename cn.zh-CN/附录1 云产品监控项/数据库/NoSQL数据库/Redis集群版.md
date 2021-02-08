@@ -15,15 +15,28 @@
 |连接数使用率|%|ShardingConnectionUsage|userId、instanceId、nodeId|Average、Maximum|
 |CPU使用率|%|ShardingCpuUsage|userId、instanceId、nodeId|Average、Maximum|
 |命中率|%|ShardingHitRate|userId、instanceId、nodeId|Average、Maximum|
-|入方向流量|KByte/s|ShardingIntranetIn|userId、instanceId、nodeId|Average、Maximum|
+|流入带宽|KByte/s|ShardingIntranetIn|userId、instanceId、nodeId|Average、Maximum|
 |流入带宽使用率|%|ShardingIntranetInRatio|userId、instanceId、nodeId|Average、Maximum|
-|出方向流量|KByte/s|ShardingIntranetOut|userId、instanceId、nodeId|Average、Maximum|
+|流出带宽|KByte/s|ShardingIntranetOut|userId、instanceId、nodeId|Average、Maximum|
 |流出带宽使用率|%|ShardingIntranetOutRatio|userId、instanceId、nodeId|Average、Maximum|
 |缓存内Key数量|个|ShardingKeys|userId、instanceId、nodeId|Average、Maximum|
 |最大响应时间|us|ShardingMaxRt|userId、instanceId、nodeId|Average、Maximum|
 |内存使用率|%|ShardingMemoryUsage|userId、instanceId、nodeId|Average、Maximum|
 |QPS使用率|%|ShardingQPSUsage|userId、instanceId、nodeId|Average、Maximum|
 |已用连接数|个|ShardingUsedConnection|userId、instanceId、nodeId|Average、Maximum|
-|内存使用量|Bytes|ShardingUsedMemory|userId、instanceId、nodeId|Average、Maximum、Sum|
+|内存使用量|Bytes|ShardingUsedMemory|userId、instanceId、nodeId|Average、Maximum|
 |平均每秒访问次数|个|ShardingUsedQPS|userId、instanceId、nodeId|Average、Maximum|
+|数据同步时延|Seconds|ShardingSyncDelayTime|userId、instanceId、nodeId|Maximum、Average|
+|Proxy单个请求的平均字节数|Byte|ShardingProxyAvgRequestSize|userId、instanceId、nodeId|Average、Maximum|
+|Proxy单个响应的平均字节数|Byte|ShardingProxyAvgResponseSize|userId、instanceId、nodeId|Average、Maximum|
+|Proxy平均时延|us|ShardingProxyAvgRt|userId、instanceId、nodeId|Average、Maximum|
+|Proxy连接数使用率|%|ShardingProxyConnectionUsage|userId、instanceId、nodeId|Average、Maximum|
+|Proxy CPU使用率|%|ShardingProxyCpuUsage|userId、instanceId、nodeId|Average、Maximum|
+|Proxy入流量速率|bits/s|ShardingProxyIntranetIn|userId、instanceId、nodeId|Average、Maximum|
+|Proxy出流量速率|bits/s|ShardingProxyIntranetOut|userId、instanceId、nodeId|Average、Maximum|
+|Proxy单个请求最大字节数|Byte|ShardingProxyMaxRequestSize|userId、instanceId、nodeId|Average、Maximum|
+|Proxy单个响应的最大字节数|Byte|ShardingProxyMaxResponseSize|userId、instanceId、nodeId|Average、Maximum|
+|Proxy最大时延|us|ShardingProxyMaxRt|userId、instanceId、nodeId|Average、Maximum|
+|Proxy每秒总请求数|Count/s|ShardingProxyTotalQps|userId、instanceId、nodeId|Average、Maximum|
+|Proxy已使用连接数|Count|ShardingProxyUsedConnection|userId、instanceId、nodeId|Average、Maximum|
 
