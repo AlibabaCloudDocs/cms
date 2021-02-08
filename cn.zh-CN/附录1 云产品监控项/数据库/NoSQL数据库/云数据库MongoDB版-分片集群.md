@@ -31,4 +31,5 @@
 |（分片集群）Update操作次数|Count|ShardingOpUpdate|userId、instanceId、subinstanceId、role|Average、Maximum、Minimum|
 |（分片集群）QPS|Count/s|ShardingQPS|userId、instanceId、subinstanceId、role|Average、Maximum、Minimum|
 |（分片集群）ShardingDataDiskAmountOriginal|无|ShardingDataDiskAmountOriginal|userId、instanceId、subinstanceId、role|Average、Maximum、Minimum|
+|（分片集群）复制延迟|Seconds|ShardingReplicationLag|userId、instanceId、subinstanceId、role|Average、Maximum、Minimum|
 
