@@ -25,7 +25,7 @@ Monitoring data is reported to Cloud Monitor. For more information, see [Overvie
 
 2.  In the left-side navigation pane, click **Application Groups**.
 
-3.  On the **Application grouping** tab, click the name or ID of the application group that you want to view.
+3.  On the **Application grouping** tab, click the name or ID of the application group that you want to manage.
 
 4.  In the left-side navigation pane of the page that appears, click **Custom Monitoring**.
 
