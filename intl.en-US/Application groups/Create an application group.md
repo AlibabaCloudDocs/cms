@@ -26,7 +26,7 @@ The following table describes the methods of creating application groups and the
 -   ApsaraDB RDS
 -   SLB
 -   Elastic IP Address \(EIP\)
--   Anti-DDoS Premium and Anti-DDoS Pro
+-   Anti-DDoS Origin
 -   Alibaba Cloud CDN
 -   EIP Bandwidth Plan
 -   PolarDB
