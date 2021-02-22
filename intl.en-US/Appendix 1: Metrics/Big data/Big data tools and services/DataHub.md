@@ -7,5 +7,5 @@ This topic describes the metrics for DataHub.
 
 |Metrics|Unit|Metric|Dimensions|Statistics|
 |-------|----|------|----------|----------|
-|Subscription delay time|Seconds|sub\_delay|userId、subId|Value|
+|Subscription delay time|Seconds|sub\_delay|userId, subId|Value|
 
