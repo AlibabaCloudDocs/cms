@@ -32,7 +32,7 @@ Scenarios
 
 ## View monitoring charts
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -42,4 +42,19 @@ Scenarios
 
 
 ## Configure an alert rule
+
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **Host Monitoring**.
+
+3.  On the Host Monitoring page, click the **Alert Rules** tab.
+
+4.  On the Alert Rules tab, click **Create Alert Rule** in the upper-right corner.
+
+5.  On the Create Alert Rule page, set the parameters.
+
+    For more information about how to set the parameters, see [Create a threshold-triggered alert rule](/intl.en-US/Alarm service/Alarm rules/Create a threshold-triggered alert rule.md).
+
+6.  Click **Confirm**.
+
 
