@@ -1,75 +1,65 @@
-# DisableHostAvailability {#doc_api_Cms_DisableHostAvailability .reference}
+# DisableHostAvailability
 
-You can call this operation to disable an availability monitoring task.
+Disables the specified availability monitoring tasks.
 
-## Debugging {#apiExplorer .section}
+## Debugging
 
-You can use [API Explorer](https://api.aliyun.com/#product=Cms&api=DisableHostAvailability) to perform debugging. API Explorer allows you to perform various operations to simplify API usage. For example, you can call APIs, dynamically generate SDK example code, and retrieve APIs.
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Cms&api=DisableHostAvailability&type=RPC&version=2019-01-01)
 
-## Request parameters {#parameters .section}
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|DisableHostAvailability|The operation that you want to perform. Set the value to DisableHostAvailability.
+|Action|String|Yes|DisableHostAvailability|The operation that you want to perform. Set the value to DisableHostAvailability. |
+|Id.N|RepeatList|Yes|12345|The ID of the availability monitoring task. Valid values of N: 1 to 20. |
 
- |
-|Id.N|RepeatList|Yes|12345|The ID of the task. Valid values of N: 1 to 20.
-
- |
-
-## Response parameters {#resultMapping .section}
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|Code|String|200|The status code. A value of 200 indicates that the call is successful.
+|Code|String|200|The status code.
 
- |
-|Message|String|success|The error message.
+ **Note:** The status code 200 indicates a success. |
+|Message|String|User not authorized to operate on the specified resource.|The error message. |
+|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|The ID of the request. |
+|Success|Boolean|true|Indicates whether the operation was successful. Valid values:
 
- |
-|RequestId|String|ACBDBB40-DFB6-4F4C-8957-51FFB233969C|The request ID for troubleshooting.
+ -   true: successful.
+-   false: failed. |
 
- |
-|Success|Boolean|true|Indicates whether the call is successful. A value of true indicates that the call is successful. A value of false indicates that the call has failed.
-
- |
-
-## Examples {#demo .section}
+## Examples
 
 Sample requests
 
-``` {#request_demo}
-
+```
 http(s)://[Endpoint]/? Action=DisableHostAvailability
-&Id. 1=12345
+&Id.1=12345
 &<Common request parameters>
-
 ```
 
-Successful response examples
+Sample success responses
 
 `XML` format
 
-``` {#xml_return_success_demo}
+```
 <DisableHostAvailabilityResponse>
-  <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
-  <Success>true</Success> 
-  <Code>200</Code>
+      <RequestId>ACBDBB40-DFB6-4F4C-8957-51FFB233969C</RequestId>
+      <Success>true</Success>
+      <Code>200</Code>
 </DisableHostAvailabilityResponse>
-
 ```
 
 `JSON` format
 
-``` {#json_return_success_demo}
+```
 {
-	"RequestId":"ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
-	"Success":true,
-	"Code":200
+  "RequestId": "ACBDBB40-DFB6-4F4C-8957-51FFB233969C",
+  "Success": true,
+  "Code": 200
 }
 ```
 
-## Error codes { .section}
+## Error codes
 
-[View error codes](https://error-center.aliyun.com/status/product/Cms)
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Cms).
 
