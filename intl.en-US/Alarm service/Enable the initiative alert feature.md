@@ -10,7 +10,7 @@ Usage notes if you turn on the initiative alert switch of a cloud service:
 -   The alert rules of the cloud service are applied to the instances that already exist and the instances that are created after the initiative alert feature is enabled.
 -   You can modify, delete, or disable the alert rules of the cloud service.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Initiative Alert**.
 
