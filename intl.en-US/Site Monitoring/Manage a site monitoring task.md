@@ -6,7 +6,7 @@ A site monitoring task is created. For more information, see [Create a site moni
 
 ## Modify a site monitoring task
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **New Site Monitor** \> **Site Manage**.
 
@@ -19,7 +19,7 @@ A site monitoring task is created. For more information, see [Create a site moni
 
 ## Delete the site monitoring task
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **New Site Monitor** \> **Site Manage**.
 
@@ -34,7 +34,7 @@ A site monitoring task is created. For more information, see [Create a site moni
 
 You can disable a site monitoring task only if the task is in the Enabled state.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **New Site Monitor** \> **Site Manage**.
 
@@ -47,7 +47,7 @@ You can disable a site monitoring task only if the task is in the Enabled state.
 
 You can disable a site monitoring task only if the task is in the Disabled state.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **New Site Monitor** \> **Site Manage**.
 
