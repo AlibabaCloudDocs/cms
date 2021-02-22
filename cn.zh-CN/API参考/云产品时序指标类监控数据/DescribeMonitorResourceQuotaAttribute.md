@@ -41,7 +41,7 @@
 |QuotaPackage|Integer|50|套餐包内事件监控的配额。单位：万。 |
 |QuotaUsed|Integer|2|套餐包内事件监控的配额用量。单位：万。 |
 |ExpireTime|String|2021-02-28|套餐到期时间。 |
-|InstanceId|String|cms\_edition-cn-n6w20rn\*\*\*\*|后付费ID标识。 |
+|InstanceId|String|cms\_edition-cn-n6w20rn\*\*\*\*|预付费套餐ID。 |
 |LogMonitor|Struct| |日志监控配额。 |
 |QuotaLimit|Integer|150|日志监控的总配额。单位：MByte/Min。 |
 |QuotaPackage|Integer|150|套餐包内日志监控的配额。单位：MByte/Min。 |
