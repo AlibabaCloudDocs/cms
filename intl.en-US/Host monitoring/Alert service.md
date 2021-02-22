@@ -25,7 +25,7 @@ Configure alert rules for an application group. For more information, see [Manag
 
 ## Delete an alert rule
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -42,7 +42,7 @@ Configure alert rules for an application group. For more information, see [Manag
 
 **Note:** If an alert rule is in the **Disabled** state, the alert rule cannot be modified.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -57,7 +57,7 @@ Configure alert rules for an application group. For more information, see [Manag
 
 ## View the basic information of an alert rule
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -70,7 +70,7 @@ Configure alert rules for an application group. For more information, see [Manag
 
 ## View the alert logs of an alert rule
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -83,7 +83,7 @@ Configure alert rules for an application group. For more information, see [Manag
 
 **Note:** The alert rule must be in the **Enabled** state.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
