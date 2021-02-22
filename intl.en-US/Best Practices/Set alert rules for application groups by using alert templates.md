@@ -6,7 +6,7 @@ This topic describes how to set alert rules for Elastic Compute Service \(ECS\),
 
 1.  Create an alert contact.
 
-    1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+    1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
     2.  In the left-side navigation pane, choose **Alerts** \> **Alert Contacts**.
 
