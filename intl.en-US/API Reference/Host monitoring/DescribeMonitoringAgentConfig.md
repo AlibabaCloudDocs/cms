@@ -25,14 +25,14 @@ Queries the configuration of the Cloud Monitor agent.
 
  -   true
 -   false |
-|Message|String|Successfully|The error message. |
-|Code|String|200|The HTTP status code.
+|Message|String|The Request is not authorization.|The error message. |
+|Code|String|200|The status code.
 
- **Note:** The status code 200 indicates that the call was successful. |
-|Success|Boolean|true|Indicates whether the call was successful. Valid values:
+ **Note:** The status code 200 indicates a success. |
+|Success|Boolean|true|Indicates whether the operation was successful. Valid values:
 
- -   true: The call was successful.
--   false: The call failed. |
+ -   true: successful.
+-   false: failed. |
 |EnableActiveAlert|String|redis,rds,ecs|The service for which one-click alert is enabled. |
 
 ## Examples
