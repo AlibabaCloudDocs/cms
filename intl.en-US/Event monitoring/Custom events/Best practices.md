@@ -111,6 +111,4 @@ The custom event monitoring feature allows you to report custom events by using 
 
     You can also use the custom event monitoring feature to record key events for which alerts do not need to be generated. This allows you to check these events in the future. For example, you can record key business operations, password changes, order changes, and unusual logons.
 
-    ![View key events](../images/p4906.png)
-
 
