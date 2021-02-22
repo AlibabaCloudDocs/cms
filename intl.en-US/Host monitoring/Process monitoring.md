@@ -38,7 +38,7 @@ You can add the following process keywords and obtain the following monitoring r
 -   `nginx.conf`: One process matches this keyword by parameter. Therefore, the number of the processes that match this keyword is 1.
 -   `-c`: One process matches this keyword by parameter. Therefore, the number of the processes that match this keyword is 1.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -55,7 +55,7 @@ You can add the following process keywords and obtain the following monitoring r
 
 ## Delete the process
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
@@ -74,7 +74,7 @@ You can add the following process keywords and obtain the following monitoring r
 
 After you add a process, you can configure an alert rule for the process. You can then receive alert notifications if the number of processes that match the process keyword changes.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Host Monitoring**.
 
