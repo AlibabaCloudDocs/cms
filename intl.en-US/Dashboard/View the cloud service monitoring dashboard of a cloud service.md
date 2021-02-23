@@ -19,5 +19,5 @@ You can view the monitoring dashboard of the cloud service within the Alibaba Cl
 
 ## References
 
-You can click **Alert Rules** in the upper-right corner or click ![Set alert rule icon](../images/p176715.png) in the monitoring chart to configure alert rules for the cloud service.
+You can click **Alert Rules** in the upper-right corner or click ![Set alert rule icon](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2494404161/p176715.png) in the monitoring chart to configure alert rules for the cloud service.
 
