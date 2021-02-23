@@ -4,7 +4,7 @@ You can view the monitoring data of the public IP address of an ECS instance and
 
 The data on the network monitoring page includes the traffic generated when public IP addresses access each other within the same region and across different regions. The Internet bandwidth of the host monitoring does not contain the bandwidth occupied by the network monitoring. Therefore, the monitoring data displayed on this page may be greater than the Internet bandwidth on the host monitoring page.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Dashboard** \> **Flow chart**.
 
