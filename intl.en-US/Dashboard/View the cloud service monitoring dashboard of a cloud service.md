@@ -2,7 +2,7 @@
 
 You can view the monitoring dashboard of the cloud service within the Alibaba Cloud account and the monitoring charts of the resources in the monitoring dashboard. You can also configure alert rules for the dashboards and charts to monitor the status of the resources.
 
-1.  Log on to the[Cloud Monitor console](https://cms-intl.console.aliyun.com).
+1.  Log on to the [Cloud Monitor console](https://cms-intl.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Dashboard** \> **Cloud product charts**.
 
