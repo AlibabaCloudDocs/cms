@@ -41,7 +41,7 @@ http://metrics.cn-hangzhou.aliyuncs.com/?Action=DescribeMetricList
 |华东 1（杭州）|metrics.cn-hangzhou.aliyuncs.com|
 |华东 2（上海）|metrics.cn-shanghai.aliyuncs.com|
 |华南 1（深圳）|metrics.cn-shenzhen.aliyuncs.com|
-|中国香港（香港）|metrics.cn-hongkong.aliyuncs.com|
+|中国（香港）|metrics.cn-hongkong.aliyuncs.com|
 |亚太东南 1（新加坡）|metrics.ap-southeast-1.aliyuncs.com|
 |亚太东南 2（悉尼）|metrics.ap-southeast-2.aliyuncs.com|
 |亚太东南 3（吉隆坡）|metrics.ap-southeast-3.aliyuncs.com|
