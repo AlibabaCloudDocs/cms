@@ -1,8 +1,10 @@
 # CreateMonitorGroupInstances
 
-调用CreateMonitorGroupInstances接口添加资源到应用分组。
+调用CreateMonitorGroupInstances接口添加指定资源到指定应用分组。
 
 一个应用分组中，一个云服务最多添加3000个资源，单次最多添加1000个资源，应用分组中的总资源数无限制。
+
+本文将提供一个示例，将地域`cn-hangzhou`的云服务器ECS的实例（实例ID为`i-2ze26xj5wwy12****`，实例名称为`test-instance-ecs`）添加到应用分组`12345678`。
 
 ## 调试
 
@@ -13,10 +15,10 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|CreateMonitorGroupInstances|要执行的操作，取值：CreateMonitorGroupInstances。 |
-|GroupId|Long|是|12345|应用分组ID。 |
+|GroupId|String|是|12345678|应用分组ID。 |
 |Instances.N.Category|String|是|ECS|云服务名称缩写。取值：
 
- -   ecs：包括阿里云和非阿里云主机。
+ -   ecs：阿里云和非阿里云主机。
 -   rds：云数据库RDS版。
 -   ads：分析型数据库。
 -   slb：负载均衡。
@@ -55,6 +57,8 @@
 |Instances.N.InstanceName|String|是|test-instance-ecs|实例名称。 |
 |Instances.N.RegionId|String|是|cn-hangzhou|实例所在地域。 |
 
+关于公共请求参数的详情，请参见[公共参数](~~199331~~)。
+
 ## 返回数据
 
 |名称|类型|示例值|描述|
@@ -75,7 +79,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=CreateMonitorGroupInstances
-&GroupId=12345
+&GroupId=12345678
 &Instances.1.Category=ECS
 &Instances.1.InstanceId=i-2ze26xj5wwy12****
 &Instances.1.InstanceName=test-instance-ecs
@@ -85,7 +89,7 @@ http(s)://[Endpoint]/?Action=CreateMonitorGroupInstances
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <CreateMonitorGroupInstancesResponse>
@@ -95,7 +99,7 @@ http(s)://[Endpoint]/?Action=CreateMonitorGroupInstances
 </CreateMonitorGroupInstancesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
