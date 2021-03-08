@@ -17,19 +17,19 @@
 
     3.  在报警模板页面，单击**创建报警模板**。
 
-    4.  在创建/修改报警模板页面，输入模板名称，产品选择**容器服务-Kubernetes版**，设置容器服务Kubernetes版的报警规则。
+    4.  在创建/修改报警模板面板，输入模板名称，产品选择**容器服务-Kubernetes版**，设置容器服务Kubernetes版的报警规则。
 
     5.  单击**确定**。
 
 2.  应用容器服务Kubernetes版的报警模板到应用分组。
 
-    1.  在创建/修改报警模板完成对话框中，单击**确定**。
+    1.  在创建/修改报警模板完成对话框，单击**确定**。
 
     2.  在应用模板到分组页面，选择应用分组、通道沉默周期、生效时间、报警回调和模板应用方式。
 
     3.  单击**确认**。
 
-    4.  在应用模板到分组对话框中，单击**确认**。
+    4.  在应用模板到分组对话框，单击**确认**。
 
 
 -   如果您不同的容器服务Kubernetes版的报警通知，需要发送给不同联系人组，则需要修改应用分组关联的报警联系人组。
@@ -38,8 +38,8 @@
 
 -   如果您需要修改多个容器服务Kubernetes版的应用分组的联系人组，可以通过OpenAPI工具进行修改。
 
-    登录[OpenAPI Explorer](https://api.aliyun.com)，调用PutContactGroup接口修改报警联系人组。
+    登录[OpenAPI开发者门户](https://next.api.aliyun.com/api/Cms/2019-01-01)，调用PutContactGroup接口修改报警联系人组。
 
-    PutContactGroup接口中参数的设置方法，请参见[PutContactGroup](/intl.zh-CN/API参考/报警联系人组/PutContactGroup.md)。
+    PutContactGroup接口中参数的设置方法，请参见[PutContactGroup](/intl.zh-CN/API参考/报警服务/报警联系人/PutContactGroup.md)。
 
 
