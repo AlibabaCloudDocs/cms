@@ -38,8 +38,8 @@ Cloud Monitor provides multiple metrics, such as the CPU utilization, memory usa
 
 -   You can call an API operation to modify alert groups for multiple application groups at a time.
 
-    Log on to [OpenAPI Explorer](https://api.aliyun.com) and call the PutContactGroup operation to modify the alert groups.
+    Log on to [OpenAPI Developer Portal](https://next.api.aliyun.com/api/Cms/2019-01-01) and call the PutContactGroup operation to modify the alert groups.
 
-    For more information about how to set the parameters of the PutContactGroup operation, see [PutContactGroup](/intl.en-US/API Reference/Alert groups/PutContactGroup.md).
+    For more information about how to set the parameters of the PutContactGroup operation, see [PutContactGroup](/intl.en-US/API Reference/Alert service/Alert groups/PutContactGroup.md).
 
 
